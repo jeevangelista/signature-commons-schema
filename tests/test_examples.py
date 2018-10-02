@@ -11,11 +11,11 @@ def check_example(valid, example):
   schema = fetch(example['$context'])
   try:
     Draft4Validator(schema).validate(example)
-    result = 'Successful validation'
+    if not valid:
+      raise 'Successful validation'
   except ValidationError as e:
-    result = e
-  assert result == valid, result
-
+    if valid:
+      raise e
 
 def test_examples():
   for root, dirs, files in os.walk('examples'):
