@@ -88,7 +88,7 @@
         },
         "pmid": {
           "type": "string",
-          "pattern": "^\\d+$",
+          "pattern": "^[0-9]+$",
           "description": "The PubMed ID for this publication"
         },
         "doi": {

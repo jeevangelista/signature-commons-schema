@@ -12,16 +12,16 @@
         "lastmodifieddate": "NA",
         "version": "",
         "creators": "",
-        "weighted": "",
+        "weighted": false,
         "perturbationtype": "",
         "accessurl": "",
         "primary resource": "",
         "secondary resource": "",
         "link to paper": "",
         "link to resource": "",
-        "measurement": "",
+        "measurement": "gene expression",
         "pmid": "",
-        "doi": ""
+        "doi": "12345"
       },
       "signatures": [
         "1"
