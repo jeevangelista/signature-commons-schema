@@ -1,0 +1,12 @@
+{
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "$context": {
+      "type": "string",
+      "description": "JSON-LD context to identify attribute vocabulary--doubles as validation"
+    }
+  },
+  "additionalProperties": true
+}

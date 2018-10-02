@@ -1,0 +1,23 @@
+{
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/library.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Globally unique identifier referring to this library."
+    },
+    "meta": {
+      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta.json",
+      "description": "Arbitrary validatable metadata describing the library"
+    },
+    "signatures": {
+      "type": "array",
+      "description": "List of signatures that make up this library",
+      "items": {
+        "type": "string",
+        "description": "Globally unique identifier referring to the actual signature"
+      }
+    }
+  }
+}
