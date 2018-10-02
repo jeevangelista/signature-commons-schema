@@ -4,7 +4,7 @@ from urllib import request
 from jsonschema import validate
 
 def fetch(url):
-  return json.loads(request.urlopen(url).decode())
+  return json.load(request.urlopen(url))
 
 def check_example(example):
   schema = fetch(example['$context'])
