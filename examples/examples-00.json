@@ -2,10 +2,10 @@
   "valid": true,
   "tests": [
     {
-      "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json",
+      "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json",
       "id": "0",
       "meta": {
-        "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json",
+        "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json",
         "Assay": "RNA-seq",
         "description": "test"
       },
@@ -14,10 +14,11 @@
       ]
     },
     {
-      "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/signature.json",
+      "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/signature.json",
       "id": "1",
+      "memberOf": "0",
       "meta": {
-        "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
+        "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
         "Gesne": "STAT3"
       },
       "valudes": [
@@ -28,10 +29,10 @@
       ]
     },
     {
-      "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/entity.json",
+      "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/entity.json",
       "id": "2",
       "meta": {
-        "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/entity/draft-1.json",
+        "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/entity/draft-1.json",
         "aliases": [
           "STAT3",
           "NCBI:6774",
