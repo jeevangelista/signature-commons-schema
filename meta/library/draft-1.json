@@ -1,95 +1,117 @@
 {
   "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "Assay": {
-      "type": "string",
-      "description": "Type of assay (TODO: validate against official list)",
-      "enum": [
-        "RNA-seq",
-        "CellViability",
-        "Microarrays",
-        "LiteratureCuration",
-        "MassSpectrometry",
-        "ChIPseq",
-        "SequenceAnalysis",
-        "TextMining",
-        "L1000",
-        "KOMousePhenotyping",
-        "DNASequencing",
-        "?"
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "Assay": {
+          "type": "string",
+          "description": "Type of assay (TODO: validate against official list)",
+          "enum": [
+            "RNA-seq",
+            "CellViability",
+            "Microarrays",
+            "LiteratureCuration",
+            "MassSpectrometry",
+            "ChIPseq",
+            "SequenceAnalysis",
+            "TextMining",
+            "L1000",
+            "KOMousePhenotyping",
+            "DNASequencing",
+            "?"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the library"
+        },
+        "creationdate": {
+          "type": "string",
+          "pattern": "^(NA|[0-1][0-9])-[0-9]{4,}$",
+          "description": "The data this was created (TODO: more formal timestamp format)"
+        },
+        "lastmodifieddate": {
+          "type": "string",
+          "pattern": "^(NA|[0-1][0-9])-[0-9]{4,}$",
+          "description": "The data this was last modified (TODO: more formal timestamp format)"
+        },
+        "version": {
+          "type": "string",
+          "description": "The version of this library (TODO: more formal version format)"
+        },
+        "creators": {
+          "type": "string",
+          "description": "The author(s) of this library (TODO: more formal author format)"
+        },
+        "weighted": {
+          "type": "boolean",
+          "description": "Whether the signatures are weighted or not (TODO: entire vocabulary for sig type)"
+        },
+        "perturbationtype": {
+          "type": "string",
+          "description": "The type of perturbation"
+        },
+        "accessurl": {
+          "type": "string",
+          "format": "uri",
+          "description": "The url that this library can be acccessed from."
+        },
+        "primary resource": {
+          "type": "string",
+          "description": "TODO: What is this"
+        },
+        "secondary resource": {
+          "type": "string",
+          "description": "TODO: What is this"
+        },
+        "measurement": {
+          "type": "string",
+          "description": "What is being measured in this signature",
+          "enum": [
+            "gene expression"
+          ]
+        },
+        "link to paper": {
+          "type": "string",
+          "format": "uri",
+          "description": "The link to the paper where this was published"
+        },
+        "link to resource": {
+          "type": "string",
+          "format": "uri",
+          "description": "The link to the resource"
+        },
+        "pmid": {
+          "type": "string",
+          "pattern": "^\\d+$",
+          "description": "The PubMed ID for this publication"
+        },
+        "doi": {
+          "type": "string",
+          "description": "The DOI for this publication"
+        }
+      },
+      "required": [
+        "Assay",
+        "description",
+        "creationdate",
+        "lastmodifieddate",
+        "version",
+        "creators",
+        "weighted",
+        "perturbationtype",
+        "accessurl",
+        "primary link",
+        "secondary link",
+        "measurement",
+        "pmid",
+        "doi"
       ]
-    },
-    "description": {
-      "type": "string",
-      "description": "Description of the library"
-    },
-    "creationdate": {
-      "type": "string",
-      "pattern": "^(NA|[0-1][0-9])-[0-9]{4,}$",
-      "description": "The data this was created (TODO: more formal timestamp format)"
-    },
-    "lastmodifieddate": {
-      "type": "string",
-      "pattern": "^(NA|[0-1][0-9])-[0-9]{4,}$",
-      "description": "The data this was last modified (TODO: more formal timestamp format)"
-    },
-    "version": {
-      "type": "string",
-      "description": "The version of this library (TODO: more formal version format)"
-    },
-    "creators": {
-      "type": "string",
-      "description": "The author(s) of this library (TODO: more formal author format)"
-    },
-    "weighted": {
-      "type": "boolean",
-      "description": "Whether the signatures are weighted or not (TODO: entire vocabulary for sig type)"
-    },
-    "perturbationtype": {
-      "type": "string",
-      "description": "The type of perturbation"
-    },
-    "accessurl": {
-      "type": "string",
-      "format": "uri",
-      "description": "The url that this library can be acccessed from."
-    },
-    "primary resource": {
-      "type": "string",
-      "description": "TODO: What is this"
-    },
-    "secondary resource": {
-      "type": "string",
-      "description": "TODO: What is this"
-    },
-    "measurement": {
-      "type": "string",
-      "description": "What is being measured in this signature",
-      "enum": [
-        "gene expression"
-      ]
-    },
-    "link to paper": {
-      "type": "string",
-      "format": "uri",
-      "description": "The link to the paper where this was published"
-    },
-    "link to resource": {
-      "type": "string",
-      "format": "uri",
-      "description": "The link to the resource"
-    },
-    "pmid": {
-      "type": "string",
-      "pattern": "^\\d+$",
-      "description": "The PubMed ID for this publication"
-    },
-    "doi": {
-      "type": "string",
-      "description": "The DOI for this publication"
     }
-  },
-  "additionalProperties": false
+  ]
 }

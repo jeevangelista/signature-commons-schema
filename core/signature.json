@@ -1,43 +1,49 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/signature.json",
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/signature.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Globally unique identifier referring to this signature."
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
     },
-    "memberOf": {
-      "type": "string",
-      "description": "Globally unique identifier referring to this signature's parent library."
-    },
-    "meta": {
-      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
-      "description": "Arbitrary validatable metadata describing the library"
-    },
-    "values": {
-      "type": "array",
-      "description": "List of values that make up this signature",
-      "item": {
-        "type": "object",
-        "properties": {
-          "entity": {
-            "type": "string",
-            "description": "Globally unique identifier referring to the entity measured"
-          },
-          "value": {
-            "type": "string",
-            "description": "Value of this entity, this type and format is defined by signature meta"
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Globally unique identifier referring to this signature."
+        },
+        "memberOf": {
+          "type": "string",
+          "description": "Globally unique identifier referring to this signature's parent library."
+        },
+        "meta": {
+          "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
+          "description": "Arbitrary validatable metadata describing the library"
+        },
+        "values": {
+          "type": "array",
+          "description": "List of values that make up this signature",
+          "item": {
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "description": "Globally unique identifier referring to the entity measured"
+              },
+              "value": {
+                "type": "string",
+                "description": "Value of this entity, this type and format is defined by signature meta"
+              }
+            }
           }
         }
-      }
+      },
+      "required": [
+        "id",
+        "memberOf",
+        "meta",
+        "values"
+      ]
     }
-  },
-  "required": [
-    "id",
-    "memberOf",
-    "meta",
-    "values"
-  ],
-  "additionalProperties": false
+  ]
 }
