@@ -12,7 +12,7 @@
       "description": "Globally unique identifier referring to this signature's parent library."
     },
     "meta": {
-      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta.json",
+      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
       "description": "Arbitrary validatable metadata describing the library"
     },
     "values": {
