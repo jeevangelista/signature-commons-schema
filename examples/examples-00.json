@@ -33,7 +33,9 @@
       "memberOf": "0",
       "meta": {
         "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
-        "Gesne": "STAT3"
+        "Gene": "STAT3",
+        "Gene_Family": "",
+        "Organism": ""
       },
       "values": [
         {
