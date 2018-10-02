@@ -32,12 +32,12 @@
         },
         "creationdate": {
           "type": "string",
-          "pattern": "^(NA|[0-1][0-9])-[0-9]{4,}$",
+          "pattern": "^(NA|[0-1][0-9]-[0-9]{4,})$",
           "description": "The data this was created (TODO: more formal timestamp format)"
         },
         "lastmodifieddate": {
           "type": "string",
-          "pattern": "^(NA|[0-1][0-9])-[0-9]{4,}$",
+          "pattern": "^(NA|[0-1][0-9]-[0-9]{4,})$",
           "description": "The data this was last modified (TODO: more formal timestamp format)"
         },
         "version": {
@@ -106,8 +106,10 @@
         "weighted",
         "perturbationtype",
         "accessurl",
-        "primary link",
-        "secondary link",
+        "primary resource",
+        "secondary resource",
+        "link to paper",
+        "link to resource",
         "measurement",
         "pmid",
         "doi"
