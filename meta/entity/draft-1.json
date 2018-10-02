@@ -1,0 +1,14 @@
+{
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/entity/draft-1.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "aliases": {
+      "type": "array",
+      "description": "Aliases for this specific entity",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
