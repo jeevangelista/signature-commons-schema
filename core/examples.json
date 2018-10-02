@@ -1,0 +1,30 @@
+{
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/examples.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "The schema describing the examples for testing",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "description": "Whether or not these examples are meant to be valid or not"
+        },
+        "tests": {
+          "type": "array",
+          "description": "The actual examples to be tested, should be an instance of meta.",
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
+          }
+        }
+      },
+      "required": [
+        "valid",
+        "tests"
+      ]
+    }
+  ]
+}

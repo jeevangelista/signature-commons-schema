@@ -1,4 +1,5 @@
 {
+  "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/examples.json",
   "valid": true,
   "tests": [
     {
