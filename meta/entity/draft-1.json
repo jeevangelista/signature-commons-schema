@@ -10,5 +10,9 @@
         "type": "string"
       }
     }
-  }
+  },
+  "required": [
+    "aliases"
+  ],
+  "additionalProperties": false
 }

@@ -11,5 +11,10 @@
       "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
       "description": "Arbitrary validatable metadata describing the entity"
     }
-  }
+  },
+  "required": [
+    "id",
+    "meta"
+  ],
+  "additionalProperties": false
 }

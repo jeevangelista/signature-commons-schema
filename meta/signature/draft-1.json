@@ -15,5 +15,6 @@
       "type": "string",
       "description": "The organism (TODO: validate against official list)"
     }
-  }
+  },
+  "additionalProperties": false
 }

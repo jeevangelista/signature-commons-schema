@@ -8,5 +8,8 @@
       "description": "JSON-LD context to identify attribute vocabulary--doubles as validation"
     }
   },
+  "required": [
+    "$context"
+  ],
   "additionalProperties": true
 }

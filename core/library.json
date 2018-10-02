@@ -19,5 +19,11 @@
         "description": "Globally unique identifier referring to the actual signature"
       }
     }
-  }
+  },
+  "required": [
+    "id",
+    "meta",
+    "signatures"
+  ],
+  "additionalProperties": false
 }

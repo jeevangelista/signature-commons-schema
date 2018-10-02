@@ -32,5 +32,12 @@
         }
       }
     }
-  }
+  },
+  "required": [
+    "id",
+    "memberOf",
+    "meta",
+    "values"
+  ],
+  "additionalProperties": false
 }
