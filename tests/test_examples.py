@@ -11,19 +11,21 @@ def fetch(url):
   fetch_cache[url] = fetch_cache.get(url, json.load(request.urlopen(url)))
   return fetch_cache[url]
 
-def check_example(valid, example, schema):
+def deep_validation(data):
+  for ctx in Tree(data).execute('$..*[@.@context is not None]'):
+    schema = fetch(ctx['@context'])
+    Draft4Validator(schema).validate(ctx)
+
+def check_example(valid, example):
   try:
-    Draft4Validator(schema).validate(example)
-    if not valid:
-      raise 'Successful validation'
-  except ValidationError as e:
-    if valid:
-      raise e
+    deep_validation(example)
+    assert valid, 'Successful validation'
+  except Exception as e:
+    assert not valid, e
 
 def test_examples():
   for root, dirs, files in os.walk('examples'):
     for f in files:
       examples = json.load(open(os.path.join(root, f), 'r'))
-      for ctx in Tree(examples).execute('$..*[@.@context is not None]'):
-        schema = fetch(ctx['@context'])
-        yield check_example, examples['valid'], ctx, schema
+      for example in examples['tests']:
+        yield check_example, examples['valid'], example
