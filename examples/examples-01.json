@@ -1,38 +1,23 @@
 {
-  "valid": true,
+  "valid": false,
   "tests": [
     {
       "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json",
       "id": "0",
-      "meta": {
-        "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json",
-        "Assay": "RNA-seq",
-        "description": "test"
-      },
       "signatures": [
         "1"
       ]
     },
     {
       "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/signature.json",
-      "id": "1",
-      "meta": {
-        "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
-        "Gesne": "STAT3"
-      },
-      "valudes": [
-        {
-          "entity": "2",
-          "value": "0.1"
-        }
-      ]
+      "id": "1"
     },
     {
       "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/entity.json",
       "id": "2",
       "meta": {
         "$context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/entity/draft-1.json",
-        "aliases": [
+        "al_iases": [
           "STAT3",
           "NCBI:6774",
           "Ensembl:ENSG00000168610",
