@@ -7,7 +7,21 @@
       "meta": {
         "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json",
         "Assay": "RNA-seq",
-        "description": "test"
+        "description": "test",
+        "creationdate": "NA",
+        "lastmodifieddate": "NA",
+        "version": "",
+        "creators": "",
+        "weighted": "",
+        "perturbationtype": "",
+        "accessurl": "",
+        "primary resource": "",
+        "secondary resource": "",
+        "link to paper": "",
+        "link to resource": "",
+        "measurement": "",
+        "pmid": "",
+        "doi": ""
       },
       "signatures": [
         "1"
@@ -21,7 +35,7 @@
         "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
         "Gesne": "STAT3"
       },
-      "valudes": [
+      "values": [
         {
           "entity": "2",
           "value": "0.1"
