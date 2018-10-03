@@ -2,6 +2,30 @@
 
 JSON-Schema validators for signature commons entities. Designed to allow one to flexibly validate arbitrary metadata in the signature commons database.
 
+## Usage
+You can install the validators for this with pip.
+```bash
+pip install https://github.com/dcic/signature-commons-schema/archive/master.zip
+```
+
+Once installed, it can be used like so:
+```python
+from signature_commons_validator import deep_validation
+
+deep_validation({
+  '@context': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json',
+  'id': 'library_id',
+  'meta': {
+    '@context': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json',
+    'Assay': 'RNA-seq',
+    ...
+  },
+  ...
+})
+```
+
+This will perform assertions to ensure `@context` is being respected properly, reporting any discrepencies.
+
 ## Introduction
 At the most basic level, a given instance should reference the validation context which it implements.
 
