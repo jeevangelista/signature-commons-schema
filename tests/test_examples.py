@@ -1,6 +1,6 @@
 import os
 import json
-from validator import deep_validation, context_validation
+from signature_commons_validator import deep_validation, context_validation
 
 def check_example(valid, example):
   try:

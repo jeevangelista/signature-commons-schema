@@ -1,6 +1,6 @@
 import os
 import json
-from validator import schema_validation
+from signature_commons_validator import schema_validation
 
 def test_meta_schemas():
   for root, dirs, files in os.walk('meta'):
