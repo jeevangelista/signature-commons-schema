@@ -31,17 +31,17 @@
     {
       "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/signature.json",
       "id": "1",
-      "memberOf": "0",
+      "library": "0",
       "meta": {
         "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
         "Gene": "STAT3",
         "Gene_Family": "",
         "Organism": ""
       },
-      "values": [
+      "entities": [
         {
           "entity": "2",
-          "value": "0.1"
+          "value": 0.1
         }
       ]
     },
@@ -57,7 +57,13 @@
           "MIM:102582",
           "Vega:OTTHUMG00000150645"
         ]
-      }
+      },
+      "signatures": [
+        {
+          "signature": "1",
+          "value": 0.1
+        }
+      ]
     }
   ]
 }
