@@ -8,7 +8,7 @@
     {
       "type": "object",
       "properties": {
-        "id": {
+        "@id": {
           "type": "string",
           "description": "Globally unique identifier referring to this entity."
         },
@@ -36,7 +36,7 @@
         }
       },
       "required": [
-        "id",
+        "@id",
         "meta"
       ]
     }

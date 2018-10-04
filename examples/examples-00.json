@@ -1,12 +1,13 @@
 {
-  "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/examples.json",
+  "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/",
+  "@type": "core/examples.json",
   "valid": true,
   "tests": [
     {
-      "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json",
-      "id": "0",
+      "@type": "core/library.json",
+      "@id": "0",
       "meta": {
-        "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json",
+        "@type": "meta/library/draft-1.json",
         "Assay": "RNA-seq",
         "description": "test",
         "creationdate": "NA",
@@ -29,11 +30,11 @@
       ]
     },
     {
-      "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/signature.json",
-      "id": "1",
+      "@type": "core/signature.json",
+      "@id": "1",
       "library": "0",
       "meta": {
-        "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
+        "@type": "meta/signature/draft-1.json",
         "Gene": "STAT3",
         "Gene_Family": "",
         "Organism": ""
@@ -46,10 +47,10 @@
       ]
     },
     {
-      "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/entity.json",
-      "id": "2",
+      "@type": "core/entity..json",
+      "@id": "2",
       "meta": {
-        "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/entity/draft-1.json",
+        "@type": "meta/entity/draft-1..json",
         "aliases": [
           "STAT3",
           "NCBI:6774",

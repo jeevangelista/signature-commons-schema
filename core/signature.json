@@ -8,7 +8,7 @@
     {
       "type": "object",
       "properties": {
-        "id": {
+        "@id": {
           "type": "string",
           "description": "Globally unique identifier referring to this signature."
         },
@@ -42,7 +42,7 @@
         }
       },
       "required": [
-        "id",
+        "@id",
         "meta",
         "library"
       ]

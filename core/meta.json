@@ -5,10 +5,14 @@
   "properties": {
     "@context": {
       "type": "string",
-      "description": "JSON-LD context to identify attribute vocabulary--doubles as validation"
+      "description": "JSON-LD context of @type (base URL, children inherit the nearest @context)"
+    },
+    "@type": {
+      "type": "string",
+      "description": "JSON-LD type to identify attribute vocabulary--doubles as validation"
     }
   },
   "required": [
-    "@context"
+    "@type"
   ]
 }
