@@ -12,18 +12,18 @@
           "type": "string",
           "description": "Globally unique identifier referring to this signature."
         },
-        "memberOf": {
-          "type": "string",
-          "description": "Globally unique identifier referring to this signature's parent library."
-        },
         "meta": {
           "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
           "description": "Arbitrary validatable metadata describing the library"
         },
-        "values": {
+        "library": {
+          "type": "string",
+          "description": "Globally unique identifier referring to this signature's parent library."
+        },
+        "entities": {
           "type": "array",
-          "description": "List of values that make up this signature",
-          "item": {
+          "description": "List of entities that make up this signature",
+          "items": {
             "type": "object",
             "properties": {
               "entity": {
@@ -31,18 +31,20 @@
                 "description": "Globally unique identifier referring to the entity measured"
               },
               "value": {
-                "type": "string",
-                "description": "Value of this entity, this type and format is defined by signature meta"
+                "type": "number",
+                "description": "Value attached to this relationshio, what this value means is defined by signature meta"
               }
-            }
+            },
+            "required": [
+              "entity"
+            ]
           }
         }
       },
       "required": [
         "id",
-        "memberOf",
         "meta",
-        "values"
+        "library"
       ]
     }
   ]
