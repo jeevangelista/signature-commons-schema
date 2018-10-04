@@ -5,6 +5,7 @@ setup(
   version='0.1',
   packages=['signature_commons_validator'],
   license='Apache-2.0',
+  include_package_data=True,
   long_description=open('README.md', 'r').read(),
   test_suite = 'nose.collector',
 )
