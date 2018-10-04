@@ -27,8 +27,7 @@
       },
       "required": [
         "id",
-        "meta",
-        "signatures"
+        "meta"
       ]
     }
   ]
