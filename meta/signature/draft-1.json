@@ -35,10 +35,6 @@
         "Processing Type": {
           "type": "string",
           "description": "The processing type (TODO: validate against official list)"
-        },
-        "Resource": {
-          "type": "string",
-          "description": "The resource"
         }
       },
       "required": [
@@ -46,9 +42,7 @@
         "Gene",
         "Gene Family",
         "Number of genes",
-        "Organism",
-        "Processing Type",
-        "Resource"
+        "Organism"
       ]
     }
   ]
