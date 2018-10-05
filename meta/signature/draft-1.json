@@ -56,8 +56,7 @@
       },
       "required": [
         "Assay",
-        "Number of genes",
-        "Organism"
+        "Number of genes"
       ],
       "oneOf": [
         {
