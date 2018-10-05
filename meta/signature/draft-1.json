@@ -16,6 +16,23 @@
           "type": "string",
           "description": "The gene (TODO: validate against official list)"
         },
+        "Cell Line": {
+          "type": "object",
+          "properties": {
+            "Accession": {
+              "type": "string",
+              "description": "Accession number"
+            },
+            "Name": {
+              "type": "string",
+              "description": "Official name of cell line"
+            }
+          },
+          "required": [
+            "Accession",
+            "Name"
+          ]
+        },
         "Gene Family": {
           "type": "string",
           "description": "The family of genes (TODO: validate against official list)"
@@ -39,10 +56,21 @@
       },
       "required": [
         "Assay",
-        "Gene",
-        "Gene Family",
         "Number of genes",
         "Organism"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "Gene",
+            "Gene Family"
+          ]
+        },
+        {
+          "required": [
+            "Cell Line"
+          ]
+        }
       ]
     }
   ]
