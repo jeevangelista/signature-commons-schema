@@ -49,8 +49,12 @@
           "description": "The author(s) of this library (TODO: more formal author format)"
         },
         "weighted": {
-          "type": "boolean",
-          "description": "Whether the signatures are weighted or not (TODO: entire vocabulary for sig type)"
+          "type": "string",
+          "description": "Whether the signatures are weighted or not (TODO: entire vocabulary for sig type)",
+          "enum": [
+            "True",
+            "False"
+          ]
         },
         "perturbationtype": {
           "type": "string",
