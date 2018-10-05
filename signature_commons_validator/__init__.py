@@ -1,4 +1,3 @@
-
 import os
 import json
 from objectpath import Tree
@@ -21,7 +20,10 @@ def get_local(url):
 
 def context_validation(ctx, typ, data):
   if ctx == 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/':
-    schema = fetch(typ, get=get_local)
+    try:
+      schema = fetch(typ, get=get_local)
+    except:
+      schema = fetch(ctx + typ)
   else:
     schema = fetch(ctx + typ)
 
