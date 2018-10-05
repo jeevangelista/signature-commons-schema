@@ -35,9 +35,13 @@
       "library": "0",
       "meta": {
         "@type": "meta/signature/draft-1.json",
+        "Assay": "RNA-seq",
         "Gene": "STAT3",
-        "Gene_Family": "",
-        "Organism": ""
+        "Gene Family": "",
+        "Number of genes": 0,
+        "Organism": "",
+        "Processing Type": "",
+        "Resource": ""
       },
       "entities": [
         {

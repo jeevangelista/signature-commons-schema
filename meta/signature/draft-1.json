@@ -8,23 +8,47 @@
     {
       "type": "object",
       "properties": {
+        "Assay": {
+          "type": "string",
+          "description": "The assay (TODO: validate against official list)"
+        },
         "Gene": {
           "type": "string",
           "description": "The gene (TODO: validate against official list)"
         },
-        "Gene_Family": {
+        "Gene Family": {
           "type": "string",
           "description": "The family of genes (TODO: validate against official list)"
+        },
+        "Number of genes": {
+          "type": "number",
+          "description": "Number of genes in the signature"
         },
         "Organism": {
           "type": "string",
           "description": "The organism (TODO: validate against official list)"
+        },
+        "Original String": {
+          "type": "string",
+          "description": "The original string recognized during processing"
+        },
+        "Processing Type": {
+          "type": "string",
+          "description": "The processing type (TODO: validate against official list)"
+        },
+        "Resource": {
+          "type": "string",
+          "description": "The resource"
         }
       },
       "required": [
+        "Assay",
         "Gene",
-        "Gene_Family",
-        "Organism"
+        "Gene Family",
+        "Number of genes",
+        "Organism",
+        "Processing Type",
+        "Resource"
       ]
     }
   ]
