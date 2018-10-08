@@ -79,6 +79,7 @@
           "enum": [
             "association",
             "chromatin association",
+            "chromosome location",
             "co-expression",
             "co-immunoprecipitation",
             "comparison between time points",
@@ -109,13 +110,10 @@
         }
       },
       "required": [
-        "Assay",
         "description",
-        "creators",
         "weighted",
         "accessurl",
         "link to paper",
-        "link to resource",
         "doi"
       ]
     }
