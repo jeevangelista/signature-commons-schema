@@ -110,11 +110,7 @@
         }
       },
       "required": [
-        "description",
-        "weighted",
-        "accessurl",
-        "link to paper",
-        "doi"
+        "description"
       ]
     }
   ]
