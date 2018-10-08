@@ -12,18 +12,18 @@
           "type": "string",
           "description": "Type of assay (TODO: validate against official list)",
           "enum": [
-            "RNA-seq",
             "CellViability",
-            "Microarrays",
+            "ChIPseq",
+            "DNASequencing",
+            "KOMousePhenotyping",
+            "L1000",
             "LiteratureCuration",
             "MassSpectrometry",
-            "ChIPseq",
+            "Microarrays",
+            "MiningQueries",
+            "RNA-seq",
             "SequenceAnalysis",
-            "TextMining",
-            "L1000",
-            "KOMousePhenotyping",
-            "DNASequencing",
-            "?"
+            "TextMining"
           ]
         },
         "description": {
@@ -32,12 +32,12 @@
         },
         "creationdate": {
           "type": "string",
-          "pattern": "^(NA|[0-1][0-9]-[0-9]{4,})$",
+          "pattern": "^[0-1][0-9]-[0-9]{4,}$",
           "description": "The data this was created (TODO: more formal timestamp format)"
         },
         "lastmodifieddate": {
           "type": "string",
-          "pattern": "^(NA|[0-1][0-9]-[0-9]{4,})$",
+          "pattern": "^[0-1][0-9]-[0-9]{4,}$",
           "description": "The data this was last modified (TODO: more formal timestamp format)"
         },
         "version": {
@@ -77,7 +77,13 @@
           "type": "string",
           "description": "What is being measured in this signature",
           "enum": [
-            "gene expression"
+            "association",
+            "chromatin association",
+            "co-expression",
+            "comparison between time points",
+            "gene expression",
+            "phenotype",
+            "protein expression"
           ]
         },
         "link to paper": {
@@ -92,7 +98,7 @@
         },
         "pmid": {
           "type": "string",
-          "pattern": "^[0-9]+$",
+          "pattern": "^([0-9]+(; *)?)+$",
           "description": "The PubMed ID for this publication"
         },
         "doi": {
@@ -103,19 +109,14 @@
       "required": [
         "Assay",
         "description",
-        "creationdate",
         "lastmodifieddate",
         "version",
         "creators",
         "weighted",
-        "perturbationtype",
         "accessurl",
-        "primary resource",
-        "secondary resource",
         "link to paper",
         "link to resource",
         "measurement",
-        "pmid",
         "doi"
       ]
     }
