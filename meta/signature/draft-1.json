@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/signature/draft-1.json",
+  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/master/meta/signature/draft-1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
