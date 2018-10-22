@@ -343,9 +343,16 @@
           "type": "string"
         },
         "Tissue": {
-          "description": "Tissue used in the study", 
-          "type": "string"
-        },
+          "properties": {"Accession": {
+                            "description": "Accession number",
+                            "type": "string"
+                          },
+                          "Name": {
+                            "description": "Official name of cell line",
+                            "type": "string"}
+                          },
+          "required": ["Name"],
+          "type": "object"},
         "Virus": {
           "description": "Name of the Virus", 
           "type": "string"

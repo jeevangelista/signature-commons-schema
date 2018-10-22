@@ -20,7 +20,7 @@ def get_local(url):
     return fh
 
 def context_validation(ctx, typ, data):
-  if ctx == 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/':
+  if ctx == 'https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/master/':
     try:
       schema = fetch(typ, get=get_local)
     except:
