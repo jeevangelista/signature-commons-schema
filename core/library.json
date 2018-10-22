@@ -1,9 +1,9 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json",
+  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/master/core/library.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
+      "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/master/core/meta.json"
     },
     {
       "type": "object",
@@ -13,7 +13,7 @@
           "description": "Globally unique identifier referring to this library."
         },
         "meta": {
-          "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/master/core/meta.json",
           "description": "Arbitrary validatable metadata describing the library"
         },
         "signatures": {
