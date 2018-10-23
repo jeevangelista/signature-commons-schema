@@ -1,19 +1,19 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/signature.json",
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/signature.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
+      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/meta.json"
     },
     {
       "type": "object",
       "properties": {
-        "@id": {
+        "id": {
           "type": "string",
           "description": "Globally unique identifier referring to this signature."
         },
         "meta": {
-          "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
+          "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/meta.json",
           "description": "Arbitrary validatable metadata describing the library"
         },
         "library": {
@@ -42,7 +42,7 @@
         }
       },
       "required": [
-        "@id",
+        "id",
         "meta",
         "library"
       ]

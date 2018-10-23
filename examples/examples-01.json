@@ -1,24 +1,23 @@
 {
-  "@context": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/",
-  "@type": "core/examples.json",
+  "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
   "valid": false,
   "tests": [
     {
-      "@type": "core/library.json",
-      "@id": "0",
+      "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/library.json",
+      "id": "0",
       "signatures": [
         "1"
       ]
     },
     {
-      "@type": "core/signature.json",
-      "@id": "1"
+      "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/signature/draft-1.json",
+      "id": "1"
     },
     {
-      "@type": "core/entity.json",
-      "@id": "2",
+      "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/entity.json",
+      "id": "2",
       "meta": {
-        "@type": "meta/entity/draft-1.json",
+        "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/entity/draft-1.json",
         "al_iases": [
           "STAT3",
           "NCBI:6774",

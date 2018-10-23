@@ -1,18 +1,14 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/meta.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "@context": {
+    "$schema": {
       "type": "string",
-      "description": "JSON-LD context of @type (base URL, children inherit the nearest @context)"
-    },
-    "@type": {
-      "type": "string",
-      "description": "JSON-LD type to identify attribute vocabulary--doubles as validation"
+      "description": "JSON-Schema validation"
     }
   },
   "required": [
-    "@type"
+    "$schema"
   ]
 }
