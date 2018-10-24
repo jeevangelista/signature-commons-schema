@@ -49,14 +49,16 @@
           "type": "string"
         },
         "Cell Line": {
-          "properties": {"Accession": {
-                            "description": "Accession number",
-                            "type": "string"
-                          },
-                          "Name": {
-                            "description": "Official name of cell line",
-                            "type": "string"}
-                          },
+          "properties": {
+            "Accession": {
+              "description": "Accession number",
+              "type": "string"
+            },
+            "Name": {
+              "description": "Official name of cell line",
+              "type": "string"
+            }
+          },
           "required": ["Name"],
           "type": "object"},
         "Cellular Component": {
@@ -176,7 +178,7 @@
           "description": "Genome assembly build", 
           "type": "string"
         },
-        "GrantNumber": {
+        "Grant Number": {
           "description": "Grant Number", 
           "type": "string"
         },
@@ -287,8 +289,8 @@
           "type": "string"
         },
         "Processing Type": {
-            "description": "The processing type (TODO: validate against official list)",
-            "type": "string"
+          "description": "The processing type (TODO: validate against official list)",
+          "type": "string"
         },
         "Program": {
           "description": "The program/project involved witht the signature", 
@@ -308,7 +310,7 @@
         },
         "Sex": {
           "description": "the sex of the sample",
-          "enum":[
+          "enum": [
             "female",
             "male"
           ], 
@@ -343,14 +345,16 @@
           "type": "string"
         },
         "Tissue": {
-          "properties": {"Accession": {
-                            "description": "Accession number",
-                            "type": "string"
-                          },
-                          "Name": {
-                            "description": "Official name of cell line",
-                            "type": "string"}
-                          },
+          "properties": {
+            "Accession": {
+              "description": "Accession number",
+              "type": "string"
+            },
+            "Name": {
+              "description": "Official name of cell line",
+              "type": "string"
+            }
+          },
           "required": ["Name"],
           "type": "object"},
         "Virus": {
