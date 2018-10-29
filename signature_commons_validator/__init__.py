@@ -12,11 +12,12 @@ def fetch(url, get=request.urlopen):
 
 def get_local(url):
   d, f = os.path.split(__file__)
-  return open(
+  with open(
     os.path.join(
       d, '..', url
     ), 'r'
-  )
+  ) as fh:
+    return fh
 
 def context_validation(ctx, data):
   schema = fetch(ctx)
