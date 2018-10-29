@@ -1,10 +1,10 @@
 {
-  "$id": "https://raw.githubusercontent.com/ddcic/signature-commons-schema/master/core/examples.json",
+  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/examples.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "The schema describing the examples for testing",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/ddcic/signature-commons-schema/master/core/meta.json"
+      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
     },
     {
       "type": "object",
@@ -17,7 +17,7 @@
           "type": "array",
           "description": "The actual examples to be tested, should be an instance of meta.",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/ddcic/signature-commons-schema/master/core/meta.json"
+            "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
           }
         }
       },
