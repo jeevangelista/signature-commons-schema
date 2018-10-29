@@ -24,7 +24,6 @@ def context_validation(ctx, data):
   Draft4Validator(schema).validate(data)
 
 def deep_validation(data):
-  # NOTE: This misses @type's that don't have a parent @context
   for ctx in Tree(data).execute('$..*[@."$schema" is not None]'):
     context_validation(ctx['$schema'], data)
 

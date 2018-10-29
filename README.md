@@ -13,10 +13,10 @@ Once installed, it can be used like so:
 from signature_commons_validator import deep_validation
 
 deep_validation({
-  '@context': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json',
+  '$schema': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json',
   'id': 'library_id',
   'meta': {
-    '@context': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json',
+    '$schema': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json',
     'Assay': 'RNA-seq',
     ...
   },
@@ -24,7 +24,7 @@ deep_validation({
 })
 ```
 
-This will perform assertions to ensure `@context` is being respected properly, reporting any discrepencies.
+This will perform assertions to ensure `$schema` is being respected properly, reporting any discrepencies.
 
 ## Introduction
 At the most basic level, a given instance should reference the validation context which it implements.
@@ -55,29 +55,29 @@ Given an abstract concept, we can write a validator for it:
 }
 ```
 
-Meta here enforces the constraint of the `@context` definition, which references the abstract validation. Now we can write any number of instances for our concept.
+Meta here enforces the constraint of the `$schema` definition, which references the abstract validation. Now we can write any number of instances for our concept.
 ```json
 {
-  "@context": "myimportantconcept.json",
+  "$schema": "myimportantconcept.json",
   "my_important_field": "my_important_value"
 }
 ```
 
-We can validate that this is true by grabbing the `@context` file and validating the json itself.
+We can validate that this is true by grabbing the `$schema` file and validating the json itself.
 ```python
 validate(
   data=data,
-  schema=fetch(data['@context'])
+  schema=fetch(data['$schema'])
 )
 ```
 
-The `@context` here is therefore doubling as semantic meaning, as described in the descriptions, and computational validation. Better yet, this allows us to support self-described objects, which is how we can deal with arbitrary metadata.
+The `$schema` here is therefore doubling as semantic meaning, as described in the descriptions, and computational validation. Better yet, this allows us to support self-described objects, which is how we can deal with arbitrary metadata.
 
 ```json
 {
-  "@context": "core/signature.json",
+  "$schema": "core/signature.json",
   "meta": {
-    "@context": "meta/signature/gene.json",
+    "$schema": "meta/signature/gene.json",
     ...all the gene signature relevant metadata
   },
   "values": {
