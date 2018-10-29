@@ -2,31 +2,16 @@
 
 JSON-Schema validators for signature commons entities. Designed to allow one to flexibly validate arbitrary metadata in the signature commons database.
 
-## Usage
-You can install the validators for this with pip.
-```bash
-pip install https://github.com/dcic/signature-commons-schema/archive/master.zip
-```
+## Project Layout
+- `core/`: Fundamental schemas which define how the schemas should even be used
+  - `meta.json`: JSON-LD style constraints
+  - `library.json`, `signature.json`, `entity.json`: Primary signature common primitives, they expose `meta` as an instance of `meta.json`
+  - `examples.json`: Schema example tests structure
+- `examples/`: Valid and invalid examples of schema structures for testing
+- `meta/`: Meta schemas designed for the respective primary signature common primitive meta fields.
+- `util/**/*`: Validator libraries written in different languages
 
-Once installed, it can be used like so:
-```python
-from signature_commons_validator import deep_validation
-
-deep_validation({
-  '$schema': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/library.json',
-  'id': 'library_id',
-  'meta': {
-    '$schema': 'https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/library/draft-1.json',
-    'Assay': 'RNA-seq',
-    ...
-  },
-  ...
-})
-```
-
-This will perform assertions to ensure `$schema` is being respected properly, reporting any discrepencies.
-
-## Introduction
+## Discussion
 At the most basic level, a given instance should reference the validation context which it implements.
 
 Given an abstract concept, we can write a validator for it:
@@ -107,20 +92,3 @@ The `$schema` here is therefore doubling as semantic meaning, as described in th
 ```
 
 This repository has examples and tests which should be re-used to validate that APIs and Databases as part of the signature commons are serving and consuming data which follows this same approach. The actual schemas can be stored and referenced from this repository as they are public, persistent, and versioned.
-
-### Project Layout
-- `core/`: Fundamental schemas which define how the schemas should even be used
-  - `meta.json`: JSON-LD style constraints
-  - `library.json`, `signature.json`, `entity.json`: Primary signature common primitives, they expose `meta` as an instance of `meta.json`
-  - `examples.json`: Schema example tests structure
-- `examples/`: Valid and invalid examples of schema structures for testing
-- `meta/`: Meta schemas designed for the respective primary signature common primitive meta fields.
-- `tests/`: nosetests-driven python tests for validating the schemas and examples
-
-## Development
-
-### Setup
-Install python dependencies with `pip install -r requirements.txt`.
-
-### Testing
-Run tests with `nosetests`.
