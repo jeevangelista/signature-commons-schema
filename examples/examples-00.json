@@ -1,12 +1,12 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
+  "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
   "valid": true,
   "tests": [
     {
-      "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/library.json",
+      "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/library.json",
       "id": "0",
       "meta": {
-        "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/library/draft-1.json",
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/library/draft-1.json",
         "Assay": "RNA-seq",
         "description": "test",
         "creationdate": "NA",
@@ -29,11 +29,11 @@
       ]
     },
     {
-      "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/signature.json",
+      "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/signature.json",
       "id": "1",
       "library": "0",
       "meta": {
-        "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/signature/draft-1.json",
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/signature/draft-1.json",
         "Assay": "RNA-seq",
         "Gene": "STAT3",
         "Gene Family": "",
@@ -48,10 +48,10 @@
       ]
     },
     {
-      "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/entity.json",
+      "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/entity.json",
       "id": "2",
       "meta": {
-        "$schema": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/entity/draft-1.json",
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/entity/draft-1.json",
         "aliases": [
           "STAT3",
           "NCBI:6774",
