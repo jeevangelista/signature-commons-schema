@@ -4,7 +4,7 @@
   "type": "object",
   "$validator": {
     "$comment": "Validate based on run-time property of $validator on instance",
-    "$data": "#/properties/$validator"
+    "$data": "0/properties/$validator"
   },
   "properties": {
     "$validator": {
