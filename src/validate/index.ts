@@ -1,8 +1,8 @@
-import {fetch_cached} from './fetch-cached'
+import {fetch_cached} from '../util/fetch-cached'
 import * as Ajv from 'ajv'
 import draft4metaSchema from 'ajv/lib/refs/json-schema-draft-04.json'
-import {promise_like_to_promise, promise_to_promise_like} from './util'
-import debug from './debug'
+import {promise_like_to_promise, promise_to_promise_like} from '../util/promise_like'
+import debug from '../util/debug'
 
 // Prepare ajv object with custom params/keywords
 export const ajv = new Ajv({

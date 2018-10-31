@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert'
-import { ajv, validate } from './validate'
+import { ajv, validate } from '.'
 
 const testJSON = {
   "tests": [

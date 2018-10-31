@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert'
-import { ajv, validate } from './validate'
+import { ajv, validate } from '.'
 
 const testJSON = {
   "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
@@ -9,7 +9,7 @@ const testJSON = {
       "valid": true,
       "schema": "m",
       "data": {
-        "$validator": "./test/test_function",
+        "$validator": "./test_function",
         "id": 0
       }
     },
@@ -18,7 +18,7 @@ const testJSON = {
       "valid": false,
       "schema": "m",
       "data": {
-        "$validator": "./test/test_function"
+        "$validator": "./test_function"
       }
     }
   ],

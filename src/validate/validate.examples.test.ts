@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert'
-import { validate } from './validate'
+import { validate } from '.'
 import * as glob from 'glob'
 import * as path from 'path'
 
@@ -9,7 +9,7 @@ describe('util', () => {
       for(const examples_file of glob.sync(
         path.join(
           __dirname,
-          '../../../',
+          '../../',
           'examples/',
           '**/*.json',
         )
