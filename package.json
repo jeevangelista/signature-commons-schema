@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "JSON-Schema validators for signature commons entities",
   "main": "dist/index.js",
+  "types": "dist/**/*.d.ts",
   "directories": {
-    "example": "examples",
-    "test": "tests"
+    "core": "cores",
+    "dist": "dist",
+    "examples": "examples",
+    "meta": "meta"
   },
   "scripts": {
     "build": "tsc",
