@@ -9,22 +9,40 @@
     {
       "type": "object",
       "properties": {
-        "valid": {
-          "type": "boolean",
-          "description": "Whether or not these examples are meant to be valid or not"
-        },
         "tests": {
           "type": "array",
           "description": "The actual examples to be tested, should be an instance of meta.",
           "items": {
-            "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/meta.json"
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name/description of this test"
+              },
+              "valid": {
+                "type": "boolean",
+                "description": "Whether or not this test is expected to pass or fail"
+              },
+              "schema": {
+                "type": "string",
+                "description": "Schema to use for validation of this test"
+              },
+              "data": {
+                "type": "object",
+                "description": "Data to be validated with schema",
+                "$validate": {
+                  "$data": "0/schema"
+                }
+              }
+            },
+            "required": [
+              "name",
+              "valid",
+              "data"
+            ]
           }
         }
-      },
-      "required": [
-        "valid",
-        "tests"
-      ]
+      }
     }
   ]
 }

@@ -1,71 +1,119 @@
 {
   "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
-  "valid": true,
   "tests": [
     {
-      "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/library.json",
-      "id": "0",
-      "meta": {
-        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/library/draft-1.json",
-        "Assay": "RNA-seq",
-        "description": "test",
-        "creationdate": "NA",
-        "lastmodifieddate": "NA",
-        "version": "",
-        "creators": "",
-        "weighted": "False",
-        "perturbationtype": "",
-        "accessurl": "",
-        "primary resource": "",
-        "secondary resource": "",
-        "link to paper": "",
-        "link to resource": "",
-        "measurement": "gene expression",
-        "pmid": "12345",
-        "doi": ""
-      },
-      "signatures": [
-        "1"
-      ]
-    },
-    {
-      "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/signature.json",
-      "id": "1",
-      "library": "0",
-      "meta": {
-        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/signature/draft-1.json",
-        "Assay": "RNA-seq",
-        "Gene": "STAT3",
-        "Gene Family": "",
-        "Number of genes": 0,
-        "Organism": ""
-      },
-      "entities": [
-        {
-          "entity": "2",
-          "value": 0.1
-        }
-      ]
-    },
-    {
-      "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/entity.json",
-      "id": "2",
-      "meta": {
-        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/entity/draft-1.json",
-        "aliases": [
-          "STAT3",
-          "NCBI:6774",
-          "Ensembl:ENSG00000168610",
-          "MIM:102582",
-          "Vega:OTTHUMG00000150645"
+      "name": "Library (valid)",
+      "valid": true,
+      "data": {
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/library.json",
+        "id": "0",
+        "meta": {
+          "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/library/draft-1.json",
+          "Assay": "RNA-seq",
+          "description": "test",
+          "creationdate": "NA",
+          "lastmodifieddate": "NA",
+          "version": "",
+          "creators": "",
+          "weighted": "False",
+          "perturbationtype": "",
+          "accessurl": "",
+          "primary resource": "",
+          "secondary resource": "",
+          "link to paper": "",
+          "link to resource": "",
+          "measurement": "gene expression",
+          "pmid": "12345",
+          "doi": ""
+        },
+        "signatures": [
+          "1"
         ]
-      },
-      "signatures": [
-        {
-          "signature": "1",
-          "value": 0.1
+      }
+    },
+    {
+      "name": "Signature (valid)",
+      "valid": true,
+      "data": {
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/signature.json",
+        "id": "1",
+        "library": "0",
+        "meta": {
+          "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/signature/draft-1.json",
+          "Assay": "RNA-seq",
+          "Gene": "STAT3",
+          "Gene Family": "",
+          "Number of genes": 0,
+          "Organism": ""
+        },
+        "entities": [
+          {
+            "entity": "2",
+            "value": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Entity (valid)",
+      "valid": true,
+      "data": {
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/entity.json",
+        "id": "2",
+        "meta": {
+          "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/entity/draft-1.json",
+          "aliases": [
+            "STAT3",
+            "NCBI:6774",
+            "Ensembl:ENSG00000168610",
+            "MIM:102582",
+            "Vega:OTTHUMG00000150645"
+          ]
+        },
+        "signatures": [
+          {
+            "signature": "1",
+            "value": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Library (Invalid)",
+      "valid": false,
+      "data": {
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/library.json",
+        "id": "0",
+        "signatures": [
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Signature (Invalid)",
+      "valid": false,
+      "data": {
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/signature/draft-1.json",
+        "id": "1"
+      }
+    },
+    {
+      "name": "Entity (Invalid)",
+      "valid": false,
+      "data": {
+        "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/entity.json",
+        "id": "2",
+        "meta": {
+          "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/entity/draft-1.json",
+          "al_iases": [
+            "STAT3",
+            "NCBI:6774",
+            "Ensembl:ENSG00000168610",
+            "MIM:102582",
+            "Vega:OTTHUMG00000150645"
+          ]
         }
-      ]
+      }
     }
   ]
 }
