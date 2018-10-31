@@ -9,22 +9,10 @@
         "id": "0",
         "meta": {
           "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/library/draft-1.json",
-          "Assay": "RNA-seq",
-          "description": "test",
-          "creationdate": "NA",
-          "lastmodifieddate": "NA",
-          "version": "",
-          "creators": "",
-          "weighted": "False",
-          "perturbationtype": "",
-          "accessurl": "",
-          "primary resource": "",
-          "secondary resource": "",
-          "link to paper": "",
-          "link to resource": "",
-          "measurement": "gene expression",
-          "pmid": "12345",
-          "doi": ""
+          "Description": "My random description",
+          "Database": "whatever",
+          "Filename": "blah",
+          "Spec": "hmm"
         },
         "signatures": [
           "1"
