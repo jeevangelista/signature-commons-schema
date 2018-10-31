@@ -4,7 +4,7 @@ Common validators utilized in the schemas, these modules can be evaluated by ref
 
 ```json
 {
-  "$validator": "signature-commons-schema/validators/entrez_gene",
+  "$validator": "signature-commons-schema/dist/validators/entrez_gene",
   "type": "string",
   "description": "Provide a valid entrez gene."
 }

@@ -9,7 +9,7 @@ npm install --save signature-commons-schema
 
 ### Usage
 ```ts
-import { validate } from 'signature-commons-schema/validate'
+import { validate } from 'signature-commons-schema'
 validate({your_object})
 ```
 
