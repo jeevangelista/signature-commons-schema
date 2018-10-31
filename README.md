@@ -9,7 +9,7 @@ JSON-Schema validators for signature commons entities. Designed to allow one to 
   - `examples.json`: Schema example tests structure
 - `examples/`: Valid and invalid examples of schema structures for testing
 - `meta/`: Meta schemas designed for the respective primary signature common primitive meta fields.
-- `util/**/*`: Validator libraries written in different languages
+- `src`: Validator built with https://github.com/epoberezkin/ajv
 
 ## Discussion
 At the most basic level, a given instance should reference the validation context which it implements.
@@ -49,11 +49,9 @@ Meta here enforces the constraint of the `$validator` definition, which referenc
 ```
 
 We can validate that this is true by grabbing the `$validator` file and validating the json itself.
-```python
-validate(
-  data=data,
-  schema=fetch(data['$validator'])
-)
+```ts
+import {validate} from 'signature-commons-schema/validate'
+validate(data)
 ```
 
 The `$validator` here is therefore doubling as semantic meaning, as described in the descriptions, and computational validation. Better yet, this allows us to support self-described objects, which is how we can deal with arbitrary metadata.
