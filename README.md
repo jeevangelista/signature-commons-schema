@@ -2,6 +2,17 @@
 
 JSON-Schema validators for signature commons entities. Designed to allow one to flexibly validate arbitrary metadata in the signature commons database.
 
+## Installation
+```bash
+npm install --save signature-commons-schema
+```
+
+### Usage
+```ts
+import { validate } from 'signature-commons-schema/validate'
+validate({your_object})
+```
+
 ## Project Layout
 - `core/`: Fundamental schemas which define how the schemas should even be used
   - `meta.json`: JSON-LD style constraints
