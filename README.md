@@ -40,29 +40,29 @@ Given an abstract concept, we can write a validator for it:
 }
 ```
 
-Meta here enforces the constraint of the `$schema` definition, which references the abstract validation. Now we can write any number of instances for our concept.
+Meta here enforces the constraint of the `$validator` definition, which references the abstract validation. Now we can write any number of instances for our concept.
 ```json
 {
-  "$schema": "myimportantconcept.json",
+  "$validator": "myimportantconcept.json",
   "my_important_field": "my_important_value"
 }
 ```
 
-We can validate that this is true by grabbing the `$schema` file and validating the json itself.
+We can validate that this is true by grabbing the `$validator` file and validating the json itself.
 ```python
 validate(
   data=data,
-  schema=fetch(data['$schema'])
+  schema=fetch(data['$validator'])
 )
 ```
 
-The `$schema` here is therefore doubling as semantic meaning, as described in the descriptions, and computational validation. Better yet, this allows us to support self-described objects, which is how we can deal with arbitrary metadata.
+The `$validator` here is therefore doubling as semantic meaning, as described in the descriptions, and computational validation. Better yet, this allows us to support self-described objects, which is how we can deal with arbitrary metadata.
 
 ```json
 {
-  "$schema": "core/signature.json",
+  "$validator": "core/signature.json",
   "meta": {
-    "$schema": "meta/signature/gene.json",
+    "$validator": "meta/signature/gene.json",
     ...all the gene signature relevant metadata
   },
   "values": {
