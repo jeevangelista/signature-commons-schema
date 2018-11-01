@@ -40,7 +40,7 @@ const testJSON = {
 
 describe('util', () => {
   describe('validate', () => {
-    describe('standalone inline validation', () => {
+    describe('inline validation', () => {
       for(const test of testJSON.tests) {
         it(test.name, async () => {
           try {
