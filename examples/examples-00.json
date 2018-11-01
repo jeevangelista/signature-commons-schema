@@ -2,7 +2,7 @@
   "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
   "tests": [
     {
-      "name": "Library (valid)",
+      "name": "Library (Valid)",
       "valid": true,
       "data": {
         "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/library.json",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "name": "Signature (valid)",
+      "name": "Signature (Valid)",
       "valid": true,
       "data": {
         "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/signature.json",
@@ -43,7 +43,7 @@
       }
     },
     {
-      "name": "Entity (valid)",
+      "name": "Entity (Valid)",
       "valid": true,
       "data": {
         "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/entity.json",
