@@ -4,12 +4,12 @@ JSON-Schema validators for signature commons entities. Designed to allow one to 
 
 ## Installation
 ```bash
-npm install --save signature-commons-schema
+npm install --save @dcic/signature-commons-schema
 ```
 
 ### Usage
 ```ts
-import { validate } from 'signature-commons-schema'
+import { validate } from '@dcic/signature-commons-schema'
 validate({your_object})
 ```
 
@@ -61,7 +61,7 @@ Meta here enforces the constraint of the `$validator` definition, which referenc
 
 We can validate that this is true by grabbing the `$validator` file and validating the json itself.
 ```ts
-import {validate} from 'signature-commons-schema/validate'
+import {validate} from '@dcic/signature-commons-schema/validate'
 validate(data)
 ```
 

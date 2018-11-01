@@ -1,5 +1,5 @@
 {
-  "name": "signature-commons-schema",
+  "name": "@dcic/signature-commons-schema",
   "version": "1.0.0",
   "description": "JSON-Schema validators for signature commons entities",
   "main": "dist/validate/index.js",
