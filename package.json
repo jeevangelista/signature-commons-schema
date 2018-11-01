@@ -1,8 +1,8 @@
 {
   "name": "@dcic/signature-commons-schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JSON-Schema validators for signature commons entities",
-  "main": "dist/validate/index.js",
+  "main": "dist/index.js",
   "types": "dist/**/*.d.ts",
   "directories": {
     "core": "cores",
