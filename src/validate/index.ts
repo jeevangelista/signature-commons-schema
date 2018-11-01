@@ -4,6 +4,29 @@ import draft4metaSchema from 'ajv/lib/refs/json-schema-draft-04.json'
 import {promise_like_to_promise, promise_to_promise_like} from '../util/promise_like'
 import debug from '../util/debug'
 
+/**
+ * Typescript Validator type
+ */
+export type Validator<T = any> = (data: Partial<T>) => Promise<T>
+
+/**
+ * ValidatorFunction module definition
+ */
+export interface ValidatorFunction<T extends {} = any> {
+  /**
+   * default export should be a function for validating
+   *  the (potentially incomplete) input and returning
+   *  it completely valid.
+   * 
+   * @param obj Potentially incomplete object
+   * 
+   * @returns The complete, validated object
+   * 
+   * @throws AssertionError, Ajv.ErrorParameters
+   */
+  default: Validator<T>
+}
+
 // Prepare ajv object with custom params/keywords
 export const ajv = new Ajv({
   // Fetch schema from remote if necessary
@@ -49,17 +72,17 @@ ajv.addKeyword('$validator', {
  * 
  * @param validator Function, URL, or Module path to validation function
  * 
- * @throws Ajv.ValidationError
+ * @throws Ajv.ErrorParameters
  * @returns Validation function
  */
-async function get_validator(validator: any): Promise<(data: object) => Promise<object>> {
+export async function get_validator(validator: string | object | Validator): Promise<Validator> {
   debug('get_validator(' + validator + ')')
 
   if(typeof validator === 'string') {
     debug('validator is a string, resolving as pointer')
 
     try {
-      const ret = ajv.getSchema(validator)
+      const ret = ajv.getSchema(validator) as object
       if(ret !== undefined)
         validator = ret
     } catch(e) {}
@@ -69,7 +92,7 @@ async function get_validator(validator: any): Promise<(data: object) => Promise<
     debug('validator is a string, resolving as importable')
 
     try {
-      const ret = (await import(validator)).default
+      const ret = (await import(validator) as ValidatorFunction).default
       if(ret !== undefined)
         validator = ret
     } catch(e) {}
@@ -79,7 +102,7 @@ async function get_validator(validator: any): Promise<(data: object) => Promise<
     debug('validator is a string, resolving as url')
 
     try {
-      const ret = await fetch_cached(validator)
+      const ret = (await fetch_cached(validator)) as object
       if(ret !== undefined)
         validator = ret
     } catch(e) {}
@@ -88,12 +111,12 @@ async function get_validator(validator: any): Promise<(data: object) => Promise<
   if(typeof validator === 'object') {
     debug('validator is a object, converting to function')
 
-    validator = await promise_like_to_promise(
+    validator = (await promise_like_to_promise(
       ajv.compileAsync({
         ...validator,
         $async: true
       }) as PromiseLike<any>
-    )
+    )) as Validator
   }
 
   if(typeof validator !== 'function') {
@@ -104,21 +127,22 @@ async function get_validator(validator: any): Promise<(data: object) => Promise<
     } as Ajv.ErrorParameters
   }
 
-  return validator
+  return validator as Validator
 }
 
 /**
  * Given data validate it.
  * 
  * @param data Object being validated
- * @param schema (optional) validator for which to validate against (schema, function, etc..)
+ * @param validator (optional) validator for which to validate against (schema, function, etc..)
  * 
- * @returns List of strings corresponding to errors, or empty list
+ * @returns A promise to the complete object
+ * @throws Ajv.ErrorParameters
  */
-export async function validate(data: object, validator?: any): Promise<object> {
+export async function validate<T extends {$validator?: any}>(data: Partial<T>, validator?: any): Promise<T> {
   this.root = data
   const validator_func = await get_validator.call(this,
-    validator || (<any>data).$validator || draft4metaSchema
+    validator || data.$validator || draft4metaSchema
   )
   if(ajv.errors) throw ajv.errors
   const result = await validator_func.call(this,
