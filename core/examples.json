@@ -1,10 +1,10 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
+  "$id": "/@dcic/signature-commons-schema/core/examples.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "The schema describing the examples for testing",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
       "type": "object",

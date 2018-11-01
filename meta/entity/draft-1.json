@@ -1,9 +1,9 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/meta/entity/draft-1.json",
+  "$id": "/@dcic/signature-commons-schema/meta/entity/draft-1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
       "type": "object",

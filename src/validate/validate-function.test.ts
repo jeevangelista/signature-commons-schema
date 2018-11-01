@@ -2,7 +2,7 @@ import { strict as assert } from 'assert'
 import { ajv, validate } from '.'
 
 const testJSON = {
-  "$validator": "https://raw.githubusercontent.com/dcic/signature-commons-schema/next/core/examples.json",
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
   "tests": [
     {
       "name": "function pass",
