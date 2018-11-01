@@ -147,10 +147,10 @@ describe('util', () => {
       for(const test of testJSON.tests) {
         it(test.name, async () => {
           try {
-            const result = await validate(test.data)
+            const result = await validate(<any>test.data)
             assert.equal(test.valid, true, 'Validated successfully')
           } catch(e) {
-            assert.equal(test.valid, false, JSON.stringify(e.errors))
+            assert.equal(test.valid, false, e)
           }
         })
       }
