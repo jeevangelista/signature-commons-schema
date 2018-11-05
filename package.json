@@ -5,14 +5,15 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "directories": {
-    "core": "cores",
+    "core": "core",
     "dist": "dist",
-    "examples": "examples",
     "meta": "meta"
   },
   "scripts": {
     "build": "tsc",
-    "test": "tsc && mocha -r ts-node/register src/**/*.test.ts"
+    "clean": "rm -r ./dist",
+    "test": "tsc && mocha -r ts-node/register src/**/*.test.ts",
+    "prepublish": "npm run clean && npm run build && npm run test"
   },
   "repository": {
     "type": "git",
