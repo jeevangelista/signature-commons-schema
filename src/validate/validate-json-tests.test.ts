@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert'
-import { validate } from '.'
+import { validate, init_ajv } from '.'
 import * as glob from 'glob'
 import * as path from 'path'
 
@@ -19,15 +19,23 @@ describe('util', () => {
         }
       )) {
         describe(examples_file, () => {
+          const ajv = init_ajv()
           const examples = require(examples_file)
+
+          before(async () => {
+            for(const def of (examples.definitions || [])) {
+              ajv.addSchema({...def, $async: true})
+            }
+          })
+
           for(const test of examples.tests) {
             it(test.name, async () => {
               let success: boolean
               let error: string
               try {
-                const result = await validate(test.data)
+                const result = await validate.call({ajv}, test.data)
                 success = true
-                error = 'Successfully validated'
+                error = 'Successfully validated (' + JSON.stringify(result) + ')'
               } catch(e) {
                 success = false
                 error = JSON.stringify(e)

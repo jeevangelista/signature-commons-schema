@@ -1,7 +1,5 @@
-import { strict as assert } from 'assert'
-import { validate } from '.'
-
-const testJSON = {
+{
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
   "tests": [
     {
       "name": "simple pass",
@@ -37,20 +35,3 @@ const testJSON = {
     }
   ]
 }
-
-describe('util', () => {
-  describe('validate', () => {
-    describe('inline validation', () => {
-      for(const test of testJSON.tests) {
-        it(test.name, async () => {
-          try {
-            const result = await validate(<any>test.data)
-            assert.equal(test.valid, true, 'Validated successfully')
-          } catch(e) {
-            assert.equal(test.valid, false, e)
-          }
-        })
-      }
-    })
-  })
-})
