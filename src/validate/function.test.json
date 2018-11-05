@@ -2,26 +2,43 @@
   "$validator": "/@dcic/signature-commons-schema/core/examples.json",
   "tests": [
     {
-      "name": "function pass",
+      "name": "function (Valid)",
       "valid": true,
-      "schema": "m",
+      "schema": "meta",
       "data": {
-        "$validator": "./test_function",
+        "$validator": "/@dcic/signature-commons-schema/dist/validate/test_function.js",
         "id": 0
       }
     },
     {
-      "name": "function fail",
+      "name": "function (Invalid)",
       "valid": false,
-      "schema": "m",
+      "schema": "meta",
       "data": {
-        "$validator": "./test_function"
+        "$validator": "/@dcic/signature-commons-schema/dist/validate/test_function.js"
+      }
+    },
+    {
+      "name": "async function (Valid)",
+      "valid": true,
+      "schema": "meta",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/dist/validate/test_async_function.js",
+        "id": 0
+      }
+    },
+    {
+      "name": "async function (Invalid)",
+      "valid": false,
+      "schema": "meta",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/dist/validate/test_async_function.js"
       }
     }
   ],
   "definitions": [
     {
-      "$id": "m",
+      "$id": "meta",
       "type": "object",
       "$validator": {
         "$comment": "Validate based on run-time property of $validator on instance",
