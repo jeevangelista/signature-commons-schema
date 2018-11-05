@@ -18,7 +18,6 @@ validate({your_object})
   - `meta.json`: JSON-LD style constraints
   - `library.json`, `signature.json`, `entity.json`: Primary signature common primitives, they expose `meta` as an instance of `meta.json`
   - `examples.json`: Schema example tests structure
-- `examples/`: Valid and invalid examples of schema structures for testing
 - `meta/`: Meta schemas designed for the respective primary signature common primitive meta fields.
 - `src`: Validator built with https://github.com/epoberezkin/ajv
 

@@ -9,21 +9,30 @@ describe('util', () => {
       for(const examples_file of glob.sync(
         path.join(
           __dirname,
-          '../../',
-          'examples/',
-          '**/*.json',
-        )
+          '../../**/*.test.json',
+        ),
+        {
+          ignore: [
+            '**/node_modules/**',
+            '**/dist/**',
+          ],
+        }
       )) {
         describe(examples_file, () => {
           const examples = require(examples_file)
           for(const test of examples.tests) {
             it(test.name, async () => {
+              let success: boolean
+              let error: string
               try {
                 const result = await validate(test.data)
-                assert.equal(test.valid, true, 'Validated successfully')
+                success = true
+                error = 'Successfully validated'
               } catch(e) {
-                assert.equal(test.valid, false, e)
+                success = false
+                error = JSON.stringify(e)
               }
+              assert.equal(test.valid, success, error)
             })
           }
         })

@@ -1,0 +1,34 @@
+{
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "tests": [
+    {
+      "name": "Library (Valid)",
+      "valid": true,
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/core/library.json",
+        "id": "0",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
+          "Description": "My random description",
+          "Database": "whatever",
+          "Filename": "blah",
+          "Spec": "hmm"
+        },
+        "signatures": [
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Library (Invalid)",
+      "valid": false,
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/core/library.json",
+        "id": "0",
+        "signatures": [
+          "1"
+        ]
+      }
+    }
+  ]
+}

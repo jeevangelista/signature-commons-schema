@@ -1,0 +1,36 @@
+{
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "tests": [
+    {
+      "name": "Signature (Valid)",
+      "valid": true,
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
+        "id": "1",
+        "library": "0",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+          "Assay": "RNA-seq",
+          "Gene": "STAT3",
+          "Gene Family": "",
+          "Number of genes": 0,
+          "Organism": ""
+        },
+        "entities": [
+          {
+            "entity": "2",
+            "value": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Signature (Invalid)",
+      "valid": false,
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+        "id": "1"
+      }
+    }
+  ]
+}
