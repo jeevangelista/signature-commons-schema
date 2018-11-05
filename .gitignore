@@ -1,7 +1,8 @@
+__pycache__/
+.env
 *.egg-info/
 *.ipynb
 *.ipynb_checkpoints/
-__pycache__/
 build/
 dist/
 node_modules/
