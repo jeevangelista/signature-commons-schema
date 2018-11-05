@@ -27,45 +27,51 @@ export interface ValidatorFunction<T extends {} = any> {
   default: Validator<T>
 }
 
-// Prepare ajv object with custom params/keywords
-export const ajv = new Ajv({
-  // Fetch schema from remote if necessary
-  loadSchema: fetch_cached,
-  // Support $data keyword, enables schema mutatations via instance
-  $data: true,
-  // Ensure we can pass context variables
-  passContext: true,
-
-  allErrors: true,
-  jsonPointers: true,
-  verbose: true,
-  // $comment: true,
-})
-// Based on draft 4 meta schema
-ajv.addMetaSchema(draft4metaSchema, 'http://json-schema.org/draft-04/schema')
-
 /**
- * Custom `$validator` keyword, enables us to validate the object in question based on a reference
- *  unlike `$ref`, this supports arbitrary functions and works with $data to enable instance-driven validation.
+ * Initialize an ajv instance
  */
-ajv.addKeyword('$validator', {
-  $data: true,
-  async: true,
-  errors: true,
-  validate: function(schema: any, data: any) {
-    if(this.root === data) {
-      // $validate should be ignored on the current element as it is currently being handled
-      debug('skipped $validator(' + JSON.stringify(schema) + ', ' + JSON.stringify(data) + ')')
-      return true
-    } else {
-      // $validate should trigger another validate to process children
-      debug('$validator(' + JSON.stringify(schema) + ', ' + JSON.stringify(data) + ')')
-      return promise_to_promise_like(
-        validate.call(this, data/*, schema*/)
-      )
+export function init_ajv() {
+  // Prepare ajv object with custom params/keywords
+  const ajv = new Ajv({
+    // Fetch schema from remote if necessary
+    loadSchema: fetch_cached,
+    // Support $data keyword, enables schema mutatations via instance
+    $data: true,
+    // Ensure we can pass context variables
+    passContext: true,
+
+    allErrors: true,
+    jsonPointers: true,
+    verbose: true,
+    // $comment: true,
+  })
+  // Based on draft 4 meta schema
+  ajv.addMetaSchema(draft4metaSchema, 'http://json-schema.org/draft-04/schema')
+
+  /**
+   * Custom `$validator` keyword, enables us to validate the object in question based on a reference
+   *  unlike `$ref`, this supports arbitrary functions and works with $data to enable instance-driven validation.
+   */
+  ajv.addKeyword('$validator', {
+    $data: true,
+    async: true,
+    errors: true,
+    validate: function(schema: any, data: any) {
+      if(this.root === data) {
+        // $validate should be ignored on the current element as it is currently being handled
+        debug('skipped $validator(' + JSON.stringify(schema) + ', ' + JSON.stringify(data) + ')')
+        return true
+      } else {
+        // $validate should trigger another validate to process children
+        debug('$validator(' + JSON.stringify(schema) + ', ' + JSON.stringify(data) + ')')
+        return promise_to_promise_like(
+          validate.call(this, data/*, schema*/)
+        )
+      }
     }
-  }
-})
+  })
+  return ajv
+}
 
 /**
  * Given a validator reference, resolve it into a function capable of doing a validation.
@@ -82,17 +88,7 @@ export async function get_validator(validator: string | object | Validator): Pro
     debug('validator is a string, resolving as pointer')
 
     try {
-      const ret = ajv.getSchema(validator) as object
-      if(ret !== undefined)
-        validator = ret
-    } catch(e) {}
-  }
-
-  if(typeof validator === 'string') {
-    debug('validator is a string, resolving as importable')
-
-    try {
-      const ret = (await import(validator) as ValidatorFunction).default
+      const ret = this.ajv.getSchema(validator) as object
       if(ret !== undefined)
         validator = ret
     } catch(e) {}
@@ -103,16 +99,21 @@ export async function get_validator(validator: string | object | Validator): Pro
 
     try {
       const ret = (await fetch_cached(validator)) as object
-      if(ret !== undefined)
-        validator = ret
+      if(ret !== undefined) {
+        if(validator.endsWith('.json')) {
+          validator = ret
+        } else {
+          validator = (<ValidatorFunction>ret).default
+        }
+      }
     } catch(e) {}
   }
 
   if(typeof validator === 'object') {
-    debug('validator is a object, converting to function')
+    debug('validator is a object, converting to function (' + validator + ')')
 
     validator = (await promise_like_to_promise(
-      ajv.compileAsync({
+      this.ajv.compileAsync({
         ...validator,
         $async: true
       }) as PromiseLike<any>
@@ -140,14 +141,26 @@ export async function get_validator(validator: string | object | Validator): Pro
  * @throws Ajv.ErrorParameters
  */
 export async function validate<T extends {$validator?: any}>(data: Partial<T>, validator?: any): Promise<T> {
+  // Setup context
+  if(this.ajv === undefined) {
+    this.ajv = init_ajv()
+  }
   this.root = data
+
+  // Obtain validator function
   const validator_func = await get_validator.call(this,
     validator || data.$validator || draft4metaSchema
   )
-  if(ajv.errors) throw ajv.errors
+  // Throw any errors
+  if(this.ajv.errors) throw this.ajv.errors
+
+  // Obtain results
   const result = await validator_func.call(this,
     data
   )
-  if(ajv.errors) throw ajv.errors
+  // Throw any errors
+  if(this.ajv.errors) throw this.ajv.errors
+
+  // Return those results
   return result
 }

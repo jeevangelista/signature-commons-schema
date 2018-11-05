@@ -1,4 +1,5 @@
 import fetch from 'node-fetch'
+import debug from './debug'
 
 const cache: {
   [key: string]: object
@@ -18,7 +19,7 @@ export async function fetch_cached<T extends {} = {}>(url: string): Promise<T> {
       await import(
         url.replace(
           /^\/@dcic\/signature-commons-schema/,
-          '/../../'
+          '/../..'
         ).substr(1)
       )
     ) as T
