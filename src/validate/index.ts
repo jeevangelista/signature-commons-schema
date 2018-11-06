@@ -1,7 +1,7 @@
 import {fetch_cached} from '../util/fetch-cached'
 import * as Ajv from 'ajv'
 import draft4metaSchema from 'ajv/lib/refs/json-schema-draft-04.json'
-import {promise_like_to_promise, promise_to_promise_like} from '../util/promise_like'
+import {promise_like_to_promise, promise_to_promise_like_boolean, promise_to_promise_like} from '../util/promise_like'
 import debug from '../util/debug'
 
 /**
@@ -68,11 +68,7 @@ export function init_ajv() {
         // $validate should trigger another validate to process children
         debug('$validator.validate(' + JSON.stringify(validator) + ', ' + JSON.stringify(data) + ')')
 
-        if(validator.$validator !== undefined) {
-          this.args = validator
-          validator = validator.bind(this)
-        }
-        return promise_to_promise_like(
+        return promise_to_promise_like_boolean(
           validate.call(this, data, validator)
         )
       }
@@ -91,6 +87,13 @@ export function init_ajv() {
  */
 export async function get_validator(validator: string | object | Validator): Promise<Validator> {
   debug('get_validator(' + JSON.stringify(validator) + ')')
+
+  if(Array.isArray(validator)) {
+    debug('validator is array, resolving 2nd arg as context')
+
+    this.context = validator[1]
+    validator = validator[0]
+  }
 
   if(typeof validator === 'string') {
     debug('validator is a string, resolving as pointer')
@@ -136,7 +139,7 @@ export async function get_validator(validator: string | object | Validator): Pro
     } as Ajv.ErrorParameters
   }
 
-  return validator as Validator
+  return validator.bind(this) as Validator
 }
 
 /**

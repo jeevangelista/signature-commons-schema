@@ -18,3 +18,15 @@ export function promise_to_promise_like<T, E = never>(p: Promise<T>): PromiseLik
     } as PromiseLike<T>)
   )
 }
+
+export function promise_to_promise_like_boolean<T, E = never>(p: Promise<T>): PromiseLike<boolean> {
+  return p.then(
+    (resolved: any) => ({
+      then: (onfulfilled, onrejected) => onfulfilled(true)
+    } as PromiseLike<boolean>)
+  ).catch(
+    (rejected: any) => ({
+      then: (onfulfilled, onrejected) => onfulfilled(false)
+    } as PromiseLike<boolean>)
+  )
+}
