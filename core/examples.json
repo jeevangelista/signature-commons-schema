@@ -23,6 +23,11 @@
                 "type": "boolean",
                 "description": "Whether or not this test is expected to pass or fail"
               },
+              "skip": {
+                "type": "boolean",
+                "description": "Whether or not to skip this test",
+                "default": false
+              },
               "schema": {
                 "type": "string",
                 "description": "Schema to use for validation of this test"

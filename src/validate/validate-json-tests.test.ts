@@ -29,11 +29,17 @@ describe('util', () => {
           })
 
           for(const test of examples.tests) {
-            it(test.name, async () => {
+            let _it
+            if(test.skip !== undefined && test.skip) {
+              _it = it.skip
+            } else {
+              _it = it
+            }
+            _it(test.name, async () => {
               let success: boolean
               let error: string
               try {
-                const result = await validate.call({ajv}, test.data)
+                const result = await validate.call({ajv}, test.data, test.schema)
                 success = true
                 error = 'Successfully validated (' + JSON.stringify(result) + ')'
               } catch(e) {
