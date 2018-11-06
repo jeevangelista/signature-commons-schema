@@ -4,14 +4,18 @@ import { BioOntologyAPI } from './api'
 interface BioOntologySchema {
   $validator: string
   "@id": string
-  ontology: string
   label: string
 }
 
+interface BioOntologyContext {
+  ontology: string
+}
+
 export default async function bioontology<T extends BioOntologySchema>(obj: Partial<T>): Promise<T> {
-  console.log(obj)
-  if(obj.ontology === undefined) {
-    assert.fail('Ontology must be specified')
+  const context: BioOntologyContext = this.context
+
+  if(context.ontology === undefined) {
+    assert.fail('validator argument: ontology must be specified')
   }
 
   if(obj.label === undefined && obj["@id"] === undefined) {
@@ -20,7 +24,7 @@ export default async function bioontology<T extends BioOntologySchema>(obj: Part
 
   const result = (await BioOntologyAPI.search({
     q: obj["@id"] === undefined ? obj.label : obj["@id"],
-    ontologies: [obj.ontology],
+    ontologies: [context.ontology],
     limit: 1,
   }))[0]
 

@@ -4,45 +4,58 @@
     {
       "name": "Bio ontology with term (Valid)",
       "valid": true,
+      "schema": "specific-ontology",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/dist/validators/bioontology",
-        "ontology": "BTO",
         "label": "allantoic fluid"
       }
     },
     {
       "name": "Bio ontology with id (Valid)",
       "valid": true,
+      "schema": "specific-ontology",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/dist/validators/bioontology",
-        "ontology": "BTO",
         "@id": "http://purl.obolibrary.org/obo/BTO_0001662"
-      }
-    },
-    {
-      "name": "Bio ontology without ontology (Invalid)",
-      "valid": false,
-      "data": {
-        "$validator": "/@dcic/signature-commons-schema/dist/validators/bioontology",
-        "label": "allantoic fluid"
       }
     },
     {
       "name": "Bio ontology with neither (Invalid)",
       "valid": false,
+      "schema": "specific-ontology",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/dist/validators/bioontology",
-        "ontology": "BTO"
       }
     },
     {
       "name": "Bio ontology with both (Invalid)",
       "valid": false,
+      "schema": "specific-ontology",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/dist/validators/bioontology",
-        "ontology": "BTO",
         "@id": "http://purl.obolibrary.org/obo/BTO_0001662",
         "label": "blah"
+      }
+    },
+    {
+      "name": "Bio ontology without ontology (Invalid)",
+      "valid": false,
+      "schema": "/@dcic/signature-commons-schema/dist/validators/bioontology",
+      "data": {
+        "label": "allantoic fluid"
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "$id": "specific-ontology",
+      "$validator": [
+        "/@dcic/signature-commons-schema/dist/validators/bioontology",
+        {
+          "ontology": "BTO"
+        }
+      ],
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        }
       }
     }
   ]
