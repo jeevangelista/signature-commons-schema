@@ -4,6 +4,7 @@
     {
       "name": "Signature (Valid)",
       "valid": true,
+      "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
         "$validator": "/@dcic/signature-commons-schema/core/signature.json",
         "id": "1",
@@ -27,6 +28,7 @@
     {
       "name": "Signature (Invalid)",
       "valid": false,
+      "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
         "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
         "id": "1"

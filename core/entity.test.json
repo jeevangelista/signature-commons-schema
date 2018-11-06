@@ -4,6 +4,7 @@
     {
       "name": "Entity (Valid)",
       "valid": true,
+      "schema": "/@dcic/signature-commons-schema/core/entity.json",
       "data": {
         "$validator": "/@dcic/signature-commons-schema/core/entity.json",
         "id": "2",
@@ -28,6 +29,7 @@
     {
       "name": "Entity (Invalid)",
       "valid": false,
+      "schema": "/@dcic/signature-commons-schema/core/entity.json",
       "data": {
         "$validator": "/@dcic/signature-commons-schema/core/entity.json",
         "id": "2",

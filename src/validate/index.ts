@@ -41,9 +41,10 @@ export function init_ajv() {
     passContext: true,
 
     allErrors: true,
-    jsonPointers: true,
-    verbose: true,
     // $comment: true,
+    jsonPointers: true,
+    useDefaults: true,
+    verbose: true,
   })
   // Based on draft 4 meta schema
   ajv.addMetaSchema(draft4metaSchema, 'http://json-schema.org/draft-04/schema')
@@ -56,16 +57,23 @@ export function init_ajv() {
     $data: true,
     async: true,
     errors: true,
-    validate: function(schema: any, data: any) {
-      if(this.root === data) {
+    validate: function(validator: any, data: any) {
+      const currentNode = JSON.stringify([data, validator])
+      if(this.currentNode === currentNode) {
         // $validate should be ignored on the current element as it is currently being handled
-        debug('skipped $validator(' + JSON.stringify(schema) + ', ' + JSON.stringify(data) + ')')
+        debug('skipped $validator.validate(' + JSON.stringify(validator) + ', ' + JSON.stringify(data) + ')')
+
         return true
       } else {
         // $validate should trigger another validate to process children
-        debug('$validator(' + JSON.stringify(schema) + ', ' + JSON.stringify(data) + ')')
+        debug('$validator.validate(' + JSON.stringify(validator) + ', ' + JSON.stringify(data) + ')')
+
+        if(validator.$validator !== undefined) {
+          this.args = validator
+          validator = validator.bind(this)
+        }
         return promise_to_promise_like(
-          validate.call(this, data/*, schema*/)
+          validate.call(this, data, validator)
         )
       }
     }
@@ -82,7 +90,7 @@ export function init_ajv() {
  * @returns Validation function
  */
 export async function get_validator(validator: string | object | Validator): Promise<Validator> {
-  debug('get_validator(' + validator + ')')
+  debug('get_validator(' + JSON.stringify(validator) + ')')
 
   if(typeof validator === 'string') {
     debug('validator is a string, resolving as pointer')
@@ -110,7 +118,7 @@ export async function get_validator(validator: string | object | Validator): Pro
   }
 
   if(typeof validator === 'object') {
-    debug('validator is a object, converting to function (' + validator + ')')
+    debug('validator is a object, converting to function (' + JSON.stringify(validator) + ')')
 
     validator = (await promise_like_to_promise(
       this.ajv.compileAsync({
@@ -140,16 +148,18 @@ export async function get_validator(validator: string | object | Validator): Pro
  * @returns A promise to the complete object
  * @throws Ajv.ErrorParameters
  */
-export async function validate<T extends {$validator?: any}>(data: Partial<T>, validator?: any): Promise<T> {
+export async function validate<T>(data: Partial<T>, validator: any): Promise<T> {
+  debug('validate(' + JSON.stringify(data) + ', ' + JSON.stringify(validator) + ')')
+
   // Setup context
   if(this.ajv === undefined) {
     this.ajv = init_ajv()
   }
-  this.root = data
+  this.currentNode = JSON.stringify([data, validator])
 
   // Obtain validator function
   const validator_func = await get_validator.call(this,
-    validator || data.$validator || draft4metaSchema
+    validator || draft4metaSchema
   )
   // Throw any errors
   if(this.ajv.errors) throw this.ajv.errors

@@ -4,6 +4,7 @@
     {
       "name": "Library (Valid)",
       "valid": true,
+      "schema": "/@dcic/signature-commons-schema/core/library.json",
       "data": {
         "$validator": "/@dcic/signature-commons-schema/core/library.json",
         "id": "0",
@@ -22,6 +23,7 @@
     {
       "name": "Library (Invalid)",
       "valid": false,
+      "schema": "/@dcic/signature-commons-schema/core/library.json",
       "data": {
         "$validator": "/@dcic/signature-commons-schema/core/library.json",
         "id": "0",

@@ -33,5 +33,24 @@
         "id": "test"
       }
     }
+  ],
+  "definitions": [
+    {
+      "$id": "meta",
+      "type": "object",
+      "$validator": {
+        "$comment": "Validate based on run-time property of $validator on instance",
+        "$data": "0/$validator"
+      },
+      "properties": {
+        "$validator": {
+          "type": "object",
+          "description": "Schema for validation of this instance"
+        }
+      },
+      "required": [
+        "$validator"
+      ]
+    }
   ]
 }
