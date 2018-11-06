@@ -36,6 +36,29 @@
         "$validator": "test"
       },
       "data": "hi"
+    },
+    {
+      "name": "example",
+      "valid": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "typeOfVal": {
+            "type": "object"
+          },
+          "val": {
+            "$validator": {
+              "$data": "1/typeOfVal"
+            }
+          }
+        }
+      },
+      "data": {
+        "typeOfVal": {
+          "type": "number"
+        },
+        "val": 6
+      }
     }
   ],
   "definitions": [
