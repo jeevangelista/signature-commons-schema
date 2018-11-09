@@ -2,6 +2,7 @@ import { strict as assert } from 'assert'
 import { validate, init_ajv } from '.'
 import * as glob from 'glob'
 import * as path from 'path'
+import debug from '../util/debug'
 
 describe('util', () => {
   describe('validate', () => {
@@ -46,6 +47,7 @@ describe('util', () => {
                 success = false
                 error = JSON.stringify(e)
               }
+              debug(error)
               assert.equal(test.valid, success, error)
             })
           }

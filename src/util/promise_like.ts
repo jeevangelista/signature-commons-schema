@@ -25,8 +25,8 @@ export function promise_to_promise_like_boolean<T, E = never>(p: Promise<T>): Pr
       then: (onfulfilled, onrejected) => onfulfilled(true)
     } as PromiseLike<boolean>)
   ).catch(
-    (rejected: any) => ({
-      then: (onfulfilled, onrejected) => onfulfilled(false)
+    (err: E) => ({
+      then: (onfulfilled, onrejected) => onrejected(err)
     } as PromiseLike<boolean>)
   )
 }
