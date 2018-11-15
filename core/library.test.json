@@ -27,7 +27,10 @@
       "data": {
         "$validator": "/@dcic/signature-commons-schema/core/library.json",
         "id": "0",
-        "meta": {},
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
+          "Description": 5
+        },
         "signatures": [
           "1"
         ]

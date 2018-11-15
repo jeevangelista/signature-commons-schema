@@ -31,6 +31,10 @@
       "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
         "$validator": "/@dcic/signature-commons-schema/core/signature.json",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+          "Assay": []
+        },
         "id": "1"
       }
     }
