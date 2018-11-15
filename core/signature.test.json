@@ -30,7 +30,7 @@
       "valid": false,
       "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
         "id": "1"
       }
     }
