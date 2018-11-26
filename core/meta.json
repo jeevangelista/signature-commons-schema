@@ -1,18 +1,18 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json",
+  "$id": "/@dcic/signature-commons-schema/core/meta.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "$validator": {
+    "$comment": "Validate based on run-time property of $validator on instance",
+    "$data": "0/$validator"
+  },
   "properties": {
-    "@context": {
+    "$validator": {
       "type": "string",
-      "description": "JSON-LD context of @type (base URL, children inherit the nearest @context)"
-    },
-    "@type": {
-      "type": "string",
-      "description": "JSON-LD type to identify attribute vocabulary--doubles as validation"
+      "description": "URI to schema or module for validation of this instance"
     }
   },
   "required": [
-    "@type"
+    "$validator"
   ]
 }

@@ -1,0 +1,56 @@
+{
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "tests": [
+    {
+      "name": "simple pass",
+      "valid": true,
+      "schema": "meta",
+      "data": {
+        "$validator": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            }
+          }
+        },
+        "id": 0
+      }
+    },
+    {
+      "name": "simple fail",
+      "valid": false,
+      "schema": "meta",
+      "data": {
+        "$validator": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            }
+          }
+        },
+        "id": "test"
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "$id": "meta",
+      "type": "object",
+      "$validator": {
+        "$comment": "Validate based on run-time property of $validator on instance",
+        "$data": "0/$validator"
+      },
+      "properties": {
+        "$validator": {
+          "type": "object",
+          "description": "Schema for validation of this instance"
+        }
+      },
+      "required": [
+        "$validator"
+      ]
+    }
+  ]
+}

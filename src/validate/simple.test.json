@@ -1,0 +1,70 @@
+{
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "tests": [
+    {
+      "name": "simple inline pass",
+      "valid": true,
+      "schema": {
+        "$validator": {
+          "type": "number"
+        }
+      },
+      "data": 0
+    },
+    {
+      "name": "simple inline fail",
+      "valid": false,
+      "schema": {
+        "$validator": {
+          "type": "number"
+        }
+      },
+      "data": "hi"
+    },
+    {
+      "name": "simple pointer pass",
+      "valid": true,
+      "schema": {
+        "$validator": "test"
+      },
+      "data": 0
+    },
+    {
+      "name": "simple pointer fail",
+      "valid": false,
+      "schema": {
+        "$validator": "test"
+      },
+      "data": "hi"
+    },
+    {
+      "name": "example",
+      "valid": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "typeOfVal": {
+            "type": "object"
+          },
+          "val": {
+            "$validator": {
+              "$data": "1/typeOfVal"
+            }
+          }
+        }
+      },
+      "data": {
+        "typeOfVal": {
+          "type": "number"
+        },
+        "val": 6
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "$id": "test",
+      "type": "number"
+    }
+  ]
+}

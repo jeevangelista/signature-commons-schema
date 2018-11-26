@@ -1,10 +1,10 @@
 {
-  "$id": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/meta/entity/ilincs-library.json",
+  "$id": "/@dcic/signature-commons-schema/meta/entity/ilincs-library.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Library metadata as described by http://www.ilincs.org/ilincs.json",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/dcic/signature-commons-schema/master/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
       "type": "object",
