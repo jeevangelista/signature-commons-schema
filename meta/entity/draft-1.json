@@ -8,6 +8,18 @@
     {
       "type": "object",
       "properties": {
+        "Name": {
+          "type": "string",
+          "description": "Preferred gene name"
+        },
+        "Taxon id": {
+          "type": "string",
+          "description": "Preferred gene name"
+        },
+        "Gene ID": {
+          "type": "string",
+          "description": "Preferred gene name"
+        },
         "aliases": {
           "type": "array",
           "description": "Aliases for this specific entity",
@@ -17,7 +29,8 @@
         }
       },
       "required": [
-        "aliases"
+        "aliases",
+        "Name"
       ]
     }
   ]
