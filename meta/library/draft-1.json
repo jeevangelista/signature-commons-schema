@@ -23,7 +23,7 @@
             "computational prediction",
             "DNA sequencing",
             "genome browser",
-            "KO mouse phenotyping",
+            "phenotyping",
             "L1000",
             "literature curation",
             "mass spectrometry",
@@ -86,9 +86,13 @@
           "description": "Link to the script used to process the library"
         },
         "Link to resource": {
-          "type": "string",
-          "format": "uri",
-          "description": "The link to the resource"
+          "type": "array",
+          "description": "List of links to library resource",
+          "items":{
+            "type": "string",
+            "format": "uri",
+            "description": "The link to the resource"
+          }
         },
         "Measurement": {
           "type": "string",
