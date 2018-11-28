@@ -57,14 +57,6 @@
           "type": "string",
           "example": "C0028043"
         },
-        "uuid_dn": {
-          "type": "string",
-          "example": "44ced60d-cfa8-412d-b791-0d3a321410fb"
-        },
-        "uuid_up": {
-          "type": "string",
-          "example": "96192947-584e-49da-abf3-fee29141a85c"
-        },
         "version": {
           "type": "string",
           "example": "1.0"
@@ -97,8 +89,6 @@
         "pert_ids",
         "platform",
         "umls_cui",
-        "uuid_dn",
-        "uuid_up",
         "version"
       ]
     }
