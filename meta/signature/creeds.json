@@ -76,19 +76,33 @@
         "smiles": {
           "type": "string",
           "example": "C1=C(C(=O)NC(=O)N1)F"
+        },
+        "chdir_norm": {
+          "type": "string",
+          "example": "C1=C(C(=O)NC(=O)N1)F"
+        },
+        "hs_gene_symbol": {
+          "type": "string",
+          "example": "FOX01"
+        },
+        "mm_gene_symbol": {
+          "type": "string",
+          "example": "Foxo1"
+        },
+        "pert_type": {
+          "type": "string",
+          "example": "KO"
         }
       },
       "required": [
         "cell_type",
         "ctrl_ids",
         "curator",
-        "disease_name",
         "geo_id",
         "id",
         "organism",
         "pert_ids",
         "platform",
-        "umls_cui",
         "version"
       ]
     }
