@@ -242,7 +242,8 @@
           "type": "string"
         },
         "id": {
-          "$ref": "#/definitions/ObjectID"
+          "type":"string",
+          "pattern":"^[a-fA-F\\d]{24}$"
         },
         "created": {
           "type": "string",
