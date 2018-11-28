@@ -251,9 +251,47 @@
         "last_modified": {
           "type": "string",
           "format": "date-time"
+        },
+        "pert_mfc_desc": {
+          "type": "string",
+          "example": "DMSO"
+        },
+        "qc_tag": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": ["NOT_SELFCON"]
         }
       },
-      "additionalProperties": false
+      "required": [
+        "brew_prefix",
+        "cell_id",
+        "created",
+        "distil_cc_q75",
+        "distil_id",
+        "distil_nsample",
+        "distil_ss",
+        "ds_index",
+        "id",
+        "is_gold",
+        "ngenes_modulated_dn_lm",
+        "ngenes_modulated_up_lm",
+        "pct_self_rank_q25",
+        "pert_dose_unit",
+        "pert_dose",
+        "pert_id",
+        "pert_idose",
+        "pert_iname",
+        "pert_itime",
+        "pert_time_unit",
+        "pert_time",
+        "pert_type",
+        "pool_id",
+        "provenance_code",
+        "sig_id",
+        "zmad_ref"
+      ]
     }
   ]
 }
