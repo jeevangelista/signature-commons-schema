@@ -8,16 +8,37 @@
     {
       "type": "object",
       "properties": {
+        "Accession":{
+          "description": "External accession of the signature",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ID": {
+                "description": "External identifier",
+                "type": "string"
+              },
+              "Type": {
+                "description": "The type of the identifier",
+                "type": "string",
+                "enum": [
+                  "ArrayExpress Accession",
+                  "GEO Dataset Accession",
+                  "GEO Platform Accession",
+                  "GEO Series Accession",
+                  "NCI PID UUID",
+                  "Grant Number"
+                ]
+              }
+            },
+            "required": [
+              "ID",
+              "Type"
+            ]
+          }
+        },
         "Age": {
           "description": "Age of the samples", 
-          "type": "string"
-        },
-        "Annotation": {
-          "description": "Annotation of the signature", 
-          "type": "string"
-        },
-        "ArrayExpress Accession": {
-          "description": "Accession number of the data on the ArrayExpress data store.", 
           "type": "string"
         },
         "Assay": {
@@ -59,8 +80,11 @@
               "type": "string"
             }
           },
-          "required": ["Name"],
-          "type": "object"},
+          "required": [
+            "Name"
+          ],
+          "type": "object"
+        },
         "Cellular Component": {
           "description": "GO Cellular Component", 
           "type": "string"
@@ -89,20 +113,12 @@
           "description": "Algorithm used", 
           "type": "string"
         },
-        "Concentration": {
-          "description": "Concentration of the small molecule", 
-          "type": "string"
-        },
         "Contributor": {
           "description": "Names of the contributors", 
           "type": "string"
         },
         "Contributor Org": {
           "description": "Contributing organization", 
-          "type": "string"
-        },
-        "DOID": {
-          "description": "Disease ontology ID", 
           "type": "string"
         },
         "Description": {
@@ -119,7 +135,27 @@
         },
         "Disease": {
           "description": "Disease being studied", 
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "description": "Name of the disease",
+                "type": "string"
+              },
+              "Accession": {
+                "description": "Ontology accession of the disease (DOID, MONDO)",
+                "type": "string"
+              },
+              "Reference": {
+                "description": "External reference for the disease",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ]
+          }
         },
         "Exact Source": {
           "description": "Source of the signature", 
@@ -138,25 +174,6 @@
           "format": "uri", 
           "type": "string"
         },
-        "Focus": {
-          "description": "Focus of the study", 
-          "type": "string"
-        },
-        "GEO Dataset Accession": {
-          "description": "Accession number of GEO dataset", 
-          "pattern": "GDS[0-9]+",
-          "type": "string"
-        },
-        "GEO Platform Accession": {
-          "description": "Accession number of GEO platform", 
-          "pattern": "GPS[0-9]+",
-          "type": "string"
-        },
-        "GEO Series Accession": {
-          "description": "Accession number of GEO series", 
-          "pattern": "GSE[0-9]+",
-          "type": "string"
-        },
         "GOID": {
           "description": "Gene ontology ID",
           "pattern" : "GO:[0-9]+", 
@@ -164,7 +181,23 @@
         },
         "Gene": {
           "description": "The gene (TODO: validate against official list)",
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "description": "Name of the disease",
+                "type": "string"
+              },
+              "Accession": {
+                "description": "Ontology accession of the disease (DOID, MONDO)",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ]
+          }
         },
         "Gene Family": {
           "description": "The family of genes (TODO: validate against official list)",
@@ -178,10 +211,6 @@
           "description": "Genome assembly build", 
           "type": "string"
         },
-        "Grant Number": {
-          "description": "Grant Number", 
-          "type": "string"
-        },
         "HMDID": {
           "description": "HMDB ID",
           "pattern": "HMDB[0-9]+", 
@@ -190,10 +219,6 @@
         "HPOID": {
           "description": "Human Phenotype Ontology ID",
           "pattern": "[0-9]+" ,
-          "type": "string"
-        },
-        "Human Phenotype": {
-          "description": "The human phenotype", 
           "type": "string"
         },
         "KEGG ID": {
@@ -217,18 +242,9 @@
           "description": "GO molecular funtion", 
           "type": "string"
         },
-        "Mouse Phenotype": {
-          "description": "Phenotype of the mouse", 
-          "type": "string"
-        },
         "Mouse Phenotype ID": {
           "description": "",
           "pattern": "MP[0-9]+",
-          "type": "string"
-        },
-        "NCI PID UUID": {
-          "description": "NCI ID",
-          "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}", 
           "type": "string"
         },
         "Number of genes": {
@@ -274,7 +290,32 @@
         },
         "Perturbation": {
           "description": "The perturbation performed in the study", 
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "description": "Name of the Perturbation",
+                "type": "string"
+              },
+              "Original String": {
+                "description": "The original string",
+                "type": "string"
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "Original String"
+                ]
+              },
+              {
+                "required": [
+                  "Name"
+                ]
+              }
+            ]
+          }
         },
         "Perturbation ID": {
           "description": "The ID of the perturbation", 
@@ -318,7 +359,27 @@
         },
         "Small Molecule": {
           "description": "Small molecule used in the study", 
-          "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "description": "Name of the disease",
+                "type": "string"
+              },
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Concentration": {
+                "description": "External reference for the disease",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ]
+          }
         },
         "Sub Category Code": {
           "description": "Sub-collection the signature belongs to",
@@ -345,18 +406,57 @@
           "type": "string"
         },
         "Tissue": {
-          "properties": {
-            "Accession": {
-              "description": "Accession number",
-              "type": "string"
+          "description": "The tissue context", 
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "description": "Name of the tissue",
+                "type": "string"
+              },
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Original String": {
+                "description": "The original string",
+                "type": "string"
+              }
             },
-            "Name": {
-              "description": "Official name of cell line",
-              "type": "string"
-            }
-          },
-          "required": ["Name"],
-          "type": "object"},
+            "oneOf": [
+              {
+                "required": [
+                  "Name",
+                  "Accession"
+                ]
+              },
+              {
+                "required": [
+                  "Name",
+                  "Accession",
+                  "Original String"
+                ]
+              },
+              {
+                "required": [
+                  "Name",
+                  "Original String"
+                ]
+              },
+              {
+                "required": [
+                  "Original String"
+                ]
+              },
+              {
+                "required": [
+                  "Name"
+                ]
+              }
+            ]
+          }
+        },
         "Virus": {
           "description": "Name of the Virus", 
           "type": "string"
