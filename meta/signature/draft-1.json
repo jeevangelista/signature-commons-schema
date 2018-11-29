@@ -186,11 +186,11 @@
             "type": "object",
             "properties": {
               "Name": {
-                "description": "Name of the disease",
+                "description": "Name of the Gene",
                 "type": "string"
               },
               "Accession": {
-                "description": "Ontology accession of the disease (DOID, MONDO)",
+                "description": "Ontology accession of the gene",
                 "type": "string"
               }
             },
@@ -364,7 +364,7 @@
             "type": "object",
             "properties": {
               "Name": {
-                "description": "Name of the disease",
+                "description": "Name of the molecule",
                 "type": "string"
               },
               "Accession": {
@@ -372,7 +372,7 @@
                 "type": "string"
               },
               "Concentration": {
-                "description": "External reference for the disease",
+                "description": "The concentration used in the experiment",
                 "type": "string"
               }
             },
