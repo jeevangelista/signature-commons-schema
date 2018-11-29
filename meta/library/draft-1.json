@@ -113,7 +113,7 @@
         "Ontology type": {
           "type": "string",
           "description": "Type of onthology (TODO: Have an official list of ontologies)",
-          "enum":[
+          "enum": [
             "pathway",
             "cellular component",
             "molecular component",
