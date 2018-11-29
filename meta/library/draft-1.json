@@ -88,7 +88,7 @@
         "Link to resource": {
           "type": "array",
           "description": "List of links to library resource",
-          "items":{
+          "items": {
             "type": "string",
             "format": "uri",
             "description": "The link to the resource"

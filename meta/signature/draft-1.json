@@ -8,7 +8,7 @@
     {
       "type": "object",
       "properties": {
-        "Accession":{
+        "Accession": {
           "description": "External accession of the signature",
           "type": "array",
           "items": {
