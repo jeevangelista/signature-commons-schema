@@ -299,21 +299,12 @@
                 "type": "string"
               },
               "Original String": {
-                "description": "The original string",
+                "description": "The original string as extracted via regex",
                 "type": "string"
               }
             },
-            "oneOf": [
-              {
-                "required": [
-                  "Original String"
-                ]
-              },
-              {
-                "required": [
-                  "Name"
-                ]
-              }
+            "required": [
+              "Original String"
             ]
           }
         },
@@ -420,7 +411,7 @@
                 "type": "string"
               },
               "Original String": {
-                "description": "The original string",
+                "description": "The original string as extracted via regex",
                 "type": "string"
               }
             },
