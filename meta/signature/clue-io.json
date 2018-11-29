@@ -19,18 +19,15 @@
         },
         "cgs_vs_sister_cc": {
           "description": "Spearman correlation of cgs with each hp",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "distil_cc_pw": {
           "description": "Upper triangle of pair-wise spearman correlation matrix between hairpins",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "distil_cc_q75": {
           "description": "75th quantile of pairwise spearman correlations in landmark space of replicate zscores",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "distil_id": {
           "description": "Identifiers of replicate instances",
@@ -41,13 +38,11 @@
         },
         "distil_nrep": {
           "description": "Number of input signatures, note might be different from distil_nsample",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "distil_nsample": {
           "description": "Number of replicates",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "distil_pert_id": {
           "description": "Source perturbagen identifiers for consensus signatures",
@@ -58,15 +53,13 @@
         },
         "distil_ss": {
           "description": "Signature strength with n=100 landmarks",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "distil_wt": {
           "description": "Weights of replicates used for modz",
           "type": "array",
           "items": {
-            "type": "number",
-            "format": "double"
+            "type": "number"
           }
         },
         "dn100_bing": {
@@ -92,8 +85,7 @@
         },
         "ds_index": {
           "description": "one-based index of columns of the signature score and rank matrix",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "in_summly": {
           "description": "Is in summly space",
@@ -105,23 +97,19 @@
         },
         "ngenes_modulated_dn_lm": {
           "description": "Number of downregulated landmarks (zs <= -2)",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "ngenes_modulated_up_lm": {
           "description": "Number of upregulated landmarks (zs >= 2)",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "num_brew": {
           "description": "Number of input brew cohorts included",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "pct_self_rank_q25": {
           "description": "Self connectivity of replicates expressed as a percentage of total instances in a brew",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "pert_desc": {
           "description": "Perturbation description",
@@ -129,8 +117,7 @@
         },
         "pert_dose": {
           "description": "Treatment dose",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "pert_dose_unit": {
           "description": "Treatment dose unit",
@@ -158,8 +145,7 @@
         },
         "pert_time": {
           "description": "Treatment time",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "pert_time_unit": {
           "description": "Treatment time unit",
@@ -199,13 +185,11 @@
         },
         "target_rank_bing": {
           "description": "Column rank of target gene in bing space",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "target_rank_full": {
           "description": "Column rank of target gene in full space",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "target_seq": {
           "description": "Full 21-length sequence targeted by hairpin",
@@ -213,8 +197,7 @@
         },
         "target_zs": {
           "description": "zscore of target gene",
-          "type": "number",
-          "format": "double"
+          "type": "number"
         },
         "up100_bing": {
           "description": "100 most up regulated bing entrez gene ids",
