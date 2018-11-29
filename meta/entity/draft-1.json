@@ -20,7 +20,7 @@
           "type": "string",
           "description": "Preferred gene name"
         },
-        "aliases": {
+        "Synonyms": {
           "type": "array",
           "description": "Aliases for this specific entity",
           "items": {
@@ -29,7 +29,7 @@
         }
       },
       "required": [
-        "aliases",
+        "Synonyms",
         "Name"
       ]
     }
