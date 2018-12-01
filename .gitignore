@@ -8,3 +8,5 @@ build/
 dist/
 key_group\.txt
 node_modules/
+
+tree\.json

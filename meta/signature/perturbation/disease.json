@@ -1,0 +1,30 @@
+{
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/draft-1.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
+    },
+    {
+      "type": "object",
+      "description": "The disease being studied",
+      "properties": {
+        "Name": {
+          "description": "The name of the disease",
+          "type": "string"
+        },
+        "Accession" : {
+          "description": "The ontology accession of the disease",
+          "type": "string"
+        },
+        "Reference": {
+          "description": "External reference for the disease",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name"
+      ]
+    }
+  ]
+}

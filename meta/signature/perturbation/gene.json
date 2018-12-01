@@ -1,0 +1,30 @@
+{
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/draft-1.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
+    },
+    {
+      "type": "object",
+      "description": "The gene involved in the study",
+      "properties": {
+        "Name": {
+          "description": "The name of the gene",
+          "type": "string"
+        },
+        "Accession" : {
+          "description": "The ontology accession of the gene",
+          "type": "string"
+        },
+        "Gene perturbation": {
+          "description": "The type of perturbation used",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name"
+      ]
+    }
+  ]
+}
