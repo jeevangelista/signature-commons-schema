@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/draft-1.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
@@ -13,8 +13,8 @@
           "description": "The name of the phenotype",
           "type": "string"
         },
-        "Accession" : {
-          "description": "The ontology accession of the phenotype",
+        "Phenotype ID" : {
+          "description": "External ID of the phenotype",
           "type": "string"
         }
       },

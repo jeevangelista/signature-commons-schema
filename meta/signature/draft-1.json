@@ -37,10 +37,6 @@
             ]
           }
         },
-        "Age": {
-          "description": "Age of the samples",
-          "type": "string"
-        },
         "Assay": {
           "description": "The assay (TODO: validate against official list)",
           "type": "string"
@@ -133,42 +129,6 @@
             "down"
           ]
         },
-        "Disease": {
-          "description": "Disease being studied",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "Name": {
-                "description": "Name of the disease",
-                "type": "string"
-              },
-              "Accession": {
-                "description": "Ontology accession of the disease (DOID, MONDO)",
-                "type": "string"
-              },
-              "Reference": {
-                "description": "External reference for the disease",
-                "type": "string"
-              }
-            },
-            "required": [
-              "Name"
-            ]
-          }
-        },
-        "Exact Source": {
-          "description": "Source of the signature",
-          "type": "string"
-        },
-        "Experiment": {
-          "description": "Experiment performed",
-          "type": "string"
-        },
-        "Experimental Group": {
-          "description": "Experimental group",
-          "type": "string"
-        },
         "External Details Url": {
           "description": "External link for more details",
           "format": "uri",
@@ -178,26 +138,6 @@
           "description": "Gene ontology ID",
           "pattern": "GO:[0-9]+",
           "type": "string"
-        },
-        "Gene": {
-          "description": "The gene (TODO: validate against official list)",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "Name": {
-                "description": "Name of the Gene",
-                "type": "string"
-              },
-              "Accession": {
-                "description": "Ontology accession of the gene",
-                "type": "string"
-              }
-            },
-            "required": [
-              "Name"
-            ]
-          }
         },
         "Gene Family": {
           "description": "The family of genes (TODO: validate against official list)",
@@ -214,11 +154,6 @@
         "HMDID": {
           "description": "HMDB ID",
           "pattern": "HMDB[0-9]+",
-          "type": "string"
-        },
-        "HPOID": {
-          "description": "Human Phenotype Ontology ID",
-          "pattern": "[0-9]+",
           "type": "string"
         },
         "KEGG ID": {
@@ -242,11 +177,6 @@
           "description": "GO molecular funtion",
           "type": "string"
         },
-        "Mouse Phenotype ID": {
-          "description": "",
-          "pattern": "MP[0-9]+",
-          "type": "string"
-        },
         "Number of genes": {
           "description": "Number of genes in the signature",
           "type": "number"
@@ -262,10 +192,6 @@
         "PMID": {
           "description": "PubMed ID",
           "pattern": "[0-9]+",
-          "type": "string"
-        },
-        "PubChem CID": {
-          "description": "PubChem CID",
           "type": "string"
         },
         "PTM": {
@@ -290,39 +216,126 @@
         },
         "Perturbation": {
           "description": "The perturbation performed in the study",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "Name": {
-                "description": "Name of the Perturbation",
-                "type": "string"
-              },
-              "Original String": {
-                "description": "The original string as extracted via regex",
-                "type": "string"
-              }
+          "type": "object",
+          "properties": {
+            "Perturbation Type": {
+              "description": "The type of perturbation performed the study.",
+              "type": "string"
             },
-            "required": [
-              "Original String"
-            ]
-          }
-        },
-        "Perturbation ID": {
-          "description": "The ID of the perturbation",
-          "type": "string"
-        },
-        "Perturbation Type": {
-          "description": "The type of perturbation",
-          "type": "string"
-        },
-        "Phenotype": {
-          "description": "The phenotype being studied (TODO: Should we collapse Human Phenotype, Mouse Phenotype, and Phenotype into just Phenotype",
-          "type": "string"
-        },
-        "Processing Type": {
-          "description": "The processing type (TODO: validate against official list)",
-          "type": "string"
+            "Perturbation ID": {
+              "description": "The type of perturbation performed the study.",
+              "type": "string"
+            },
+            "Age": {
+              "description": "Age/ age group of the subjects",
+              "type": "string"
+            },
+            "Time Point": {
+             "description": "Time point of measurememt",
+             "type": "string" 
+            },
+            "Experiment": {
+             "description": "Experiment performed. TODO: Finish NERO stuff",
+             "type": "string" 
+            },
+            "Experimental Group": {
+             "description": "The group being measured",
+             "type": "string" 
+            },
+            "Exact Source": {
+             "description": "Source of the Gene set",
+             "type": "string" 
+            },
+            "Disease": {
+              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+              "description": "Disease perturbations" 
+            },
+            "Gene": {
+              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
+              "description": "Gene perturbations" 
+            },
+            "Phenotype": {
+              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
+              "description": "Phenotype perturbations" 
+            },
+            "Small Molecule": {
+              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
+              "description": "Small Molecule used in the study" 
+            },
+            "Virus": {
+              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+              "description": "Virus perturbations TODO: Merge with disease perturbations" 
+            }
+          },
+          "required": [
+            "Perturbation Type"
+          ],
+          "oneOf": [
+            {
+              "required": [
+                "Perturbation Type",
+                "Disease"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Gene"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Phenotype"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Small Molecule"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Phenotype",
+                "Small Molecule"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Disease",
+                "Gene"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Disease",
+                "Small Molecule"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Small Molecule",
+                "Gene"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Experiment"
+              ]
+            },
+            {
+              "required": [
+                "Perturbation Type",
+                "Exact Source"
+              ]
+            }
+          ]
         },
         "Program": {
           "description": "The program/project involved witht the signature",
@@ -347,30 +360,6 @@
             "male"
           ],
           "type": "string"
-        },
-        "Small Molecule": {
-          "description": "Small molecule used in the study",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "Name": {
-                "description": "Name of the molecule",
-                "type": "string"
-              },
-              "Accession": {
-                "description": "Ontology accession",
-                "type": "string"
-              },
-              "Concentration": {
-                "description": "The concentration used in the experiment",
-                "type": "string"
-              }
-            },
-            "required": [
-              "Name"
-            ]
-          }
         },
         "Sub Category Code": {
           "description": "Sub-collection the signature belongs to",
@@ -447,10 +436,6 @@
               }
             ]
           }
-        },
-        "Virus": {
-          "description": "Name of the Virus",
-          "type": "string"
         },
         "Wiki Pathway ID": {
           "description": "Wiki Pathway identifier",
