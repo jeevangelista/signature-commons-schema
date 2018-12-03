@@ -37,20 +37,12 @@
             ]
           }
         },
-        "Assay": {
-          "description": "The assay (TODO: validate against official list)",
-          "type": "string"
-        },
         "Authors": {
           "description": "The authors involved with the signature.",
           "type": "string"
         },
         "Batch": {
           "description": "The batch",
-          "type": "string"
-        },
-        "Biological Process": {
-          "description": "GO Biological Process.",
           "type": "string"
         },
         "Brain Region": {
@@ -81,10 +73,6 @@
           ],
           "type": "object"
         },
-        "Cellular Component": {
-          "description": "GO Cellular Component",
-          "type": "string"
-        },
         "Cellular Compartment": {
           "description": "Subcellular localization information",
           "type": "string"
@@ -103,10 +91,6 @@
         },
         "Complex ID": {
           "description": "Complex Identifier",
-          "type": "string"
-        },
-        "Computational Method": {
-          "description": "Algorithm used",
           "type": "string"
         },
         "Contributor": {
@@ -134,31 +118,58 @@
           "format": "uri",
           "type": "string"
         },
-        "GOID": {
-          "description": "Gene ontology ID",
-          "pattern": "GO:[0-9]+",
-          "type": "string"
+        "GO": {
+          "description": "Gene ontology annotations",
+          "type": "object",
+          "properties": {
+            "GOID": {
+              "description": "Gene ontology ID",
+              "pattern": "GO:[0-9]+",
+              "type": "string"
+            },
+            "Biological Process": {
+              "description": "GO Biological Process.",
+              "type": "string"
+            },
+            "Cellular Component": {
+              "description": "GO Cellular Component",
+              "type": "string"
+            },
+            "Molecular Function": {
+              "description": "GO molecular funtion",
+              "type": "string"
+            },
+            "required": [
+              "GOID"
+            ],
+            "oneOf": [
+              {
+                "required": [
+                  "GOID",
+                  "Biological Process"
+                ]
+              },
+              {
+                "required": [
+                  "GOID",
+                  "Cellular Component"
+                ]
+              },
+              {
+                "required": [
+                  "GOID",
+                  "Molecular Function"
+                ]
+              }
+            ]
+          }
         },
         "Gene Family": {
           "description": "The family of genes (TODO: validate against official list)",
           "type": "string"
         },
-        "Gene Set": {
-          "description": "Name of the gene set",
-          "type": "string"
-        },
         "Genome Build": {
           "description": "Genome assembly build",
-          "type": "string"
-        },
-        "HMDID": {
-          "description": "HMDB ID",
-          "pattern": "HMDB[0-9]+",
-          "type": "string"
-        },
-        "KEGG ID": {
-          "description": "",
-          "pattern": "hsa[0-9]+",
           "type": "string"
         },
         "Library": {
@@ -167,14 +178,24 @@
         },
         "Metabolite": {
           "description": "The metabolite.",
-          "type": "string"
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "Name of the metabolite",
+              "type": "string"
+            },
+            "HMDID": {
+              "description": "HMDB ID",
+              "pattern": "HMDB[0-9]+",
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name"
+          ]
         },
         "MicroRNA": {
           "description": "The microRNA",
-          "type": "string"
-        },
-        "Molecular Function": {
-          "description": "GO molecular funtion",
           "type": "string"
         },
         "Number of genes": {
@@ -204,11 +225,20 @@
         },
         "Pathway": {
           "description": "The signature's pathway",
-          "type": "string"
-        },
-        "Pathway ID": {
-          "description": "The ID of the pathway",
-          "type": "string"
+          "type": "Object",
+          "properties": {
+            "Name": {
+              "description": "Name/ description of the pathway",
+              "type": "string"
+            },
+            "Accession":{
+              "description": "External accession of the pathway (Wiki Pathway ID/Pathway ID/KEGG ID)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name"
+          ]
         },
         "Patient ID": {
           "description": "Patient Identifier",
@@ -245,6 +275,10 @@
             "Exact Source": {
              "description": "Source of the Gene set",
              "type": "string" 
+            },
+            "Gene Set": {
+              "description": "Name of the gene set",
+              "type": "string"
             },
             "Disease": {
               "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
@@ -332,7 +366,8 @@
             {
               "required": [
                 "Perturbation Type",
-                "Exact Source"
+                "Exact Source",
+                "Gene Set"
               ]
             }
           ]
@@ -345,12 +380,30 @@
           "description": "Structural protein domain.",
           "type": "string"
         },
+        "Readout": {
+          "description": "Readout context of the signature",
+          "type": "object",
+          "properties": {
+            "Assay": {
+              "description": "The assay (TODO: validate against official list)",
+              "type": "string"
+            },
+            "Computational Method": {
+              "description": "Algorithm used",
+              "type": "string"
+            },
+            "Measurement": {
+              "description": "Measurement used in the study (inherited from library)",
+              "type": "string"
+            },
+            "Resource": {
+              "description": "Resource used to gather the signature",
+              "type": "string"
+            }
+          }
+        },
         "Receptor": {
           "description": "The receptor",
-          "type": "string"
-        },
-        "Resource": {
-          "description": "Resource used to gather the signature",
           "type": "string"
         },
         "Sex": {
@@ -436,10 +489,6 @@
               }
             ]
           }
-        },
-        "Wiki Pathway ID": {
-          "description": "Wiki Pathway identifier",
-          "type": "string"
         }
       },
       "required": [
