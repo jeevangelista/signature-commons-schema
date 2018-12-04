@@ -27,6 +27,10 @@
             "PubChemID": {
               "description": "The pubchem ID accession of the small molecule",
               "type": "string"
+            },
+            "Remarks": {
+              "description": "Remark about this perturbation",
+              "type": "string"
             }
           },
           "required": [

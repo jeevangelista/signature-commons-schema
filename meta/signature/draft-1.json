@@ -288,6 +288,10 @@
               "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
               "description": "Gene perturbations" 
             },
+            "Other": {
+              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
+              "description": "Other perturbations" 
+            },
             "Phenotype": {
               "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
               "description": "Phenotype perturbations" 
@@ -402,10 +406,6 @@
             }
           }
         },
-        "Receptor": {
-          "description": "The receptor",
-          "type": "string"
-        },
         "Sex": {
           "description": "the sex of the sample",
           "enum": [
@@ -451,42 +451,10 @@
               "Accession": {
                 "description": "Ontology accession",
                 "type": "string"
-              },
-              "Original String": {
-                "description": "The original string as extracted via regex",
-                "type": "string"
               }
             },
-            "oneOf": [
-              {
-                "required": [
-                  "Name",
-                  "Accession"
-                ]
-              },
-              {
-                "required": [
-                  "Name",
-                  "Accession",
-                  "Original String"
-                ]
-              },
-              {
-                "required": [
-                  "Name",
-                  "Original String"
-                ]
-              },
-              {
-                "required": [
-                  "Original String"
-                ]
-              },
-              {
-                "required": [
-                  "Name"
-                ]
-              }
+            "required": [
+              "Name"
             ]
           }
         }
