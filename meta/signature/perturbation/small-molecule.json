@@ -1,33 +1,38 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-moleculß.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
       "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
-      "type": "object",
+      "type": "array",
       "description": "The small molecule used in the study",
-      "properties": {
-        "Name": {
-          "description": "The name of the small molecule",
-          "type": "string"
-        },
-        "Accession" : {
-          "description": "The ontology accession of the small molecule",
-          "type": "string"
-        },
-        "Concentration": {
-          "description": "The concentration used for the study",
-          "type": "string"
-        },
-        "PubChemID": {
-          "description": "The pubchem ID accession of the small molecule",
-          "type": "string"
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "The name of the small molecule",
+              "type": "string"
+            },
+            "Accession": {
+              "description": "The ontology accession of the small molecule",
+              "type": "string"
+            },
+            "Concentration": {
+              "description": "The concentration used for the study",
+              "type": "string"
+            },
+            "PubChemID": {
+              "description": "The pubchem ID accession of the small molecule",
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name"
+          ]
         }
-      },
-      "required": [
-        "Name"
       ]
     }
   ]

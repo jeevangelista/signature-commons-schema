@@ -6,24 +6,29 @@
       "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
-      "type": "object",
+      "type": "array",
       "description": "The disease being studied",
-      "properties": {
-        "Name": {
-          "description": "The name of the disease",
-          "type": "string"
-        },
-        "Accession" : {
-          "description": "The ontology accession of the disease",
-          "type": "string"
-        },
-        "Reference": {
-          "description": "External reference for the disease",
-          "type": "string"
+      "items":[
+        {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "The name of the disease",
+              "type": "string"
+            },
+            "Accession" : {
+              "description": "The ontology accession of the disease",
+              "type": "string"
+            },
+            "Reference": {
+              "description": "External reference for the disease",
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name"
+          ]
         }
-      },
-      "required": [
-        "Name"
       ]
     }
   ]
