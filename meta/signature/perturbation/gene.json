@@ -17,7 +17,7 @@
           "description": "The ontology accession of the gene",
           "type": "string"
         },
-        "Gene perturbation": {
+        "Gene Perturbation": {
           "description": "The type of perturbation used",
           "type": "string"
         }
