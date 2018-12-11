@@ -38,6 +38,10 @@
             ]
           }
         },
+        "Age": {
+          "description": "Age/ age group of the subjects",
+          "type": "string"
+        },
         "Authors": {
           "description": "The authors involved with the signature.",
           "type": "string"
@@ -59,20 +63,24 @@
           "type": "string"
         },
         "Cell Line": {
-          "properties": {
-            "Accession": {
-              "description": "Accession number",
-              "type": "string"
+          "description": "The cell line context",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "description": "Official name of cell line",
+                "type": "string"
+              },
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              }
             },
-            "Name": {
-              "description": "Official name of cell line",
-              "type": "string"
-            }
-          },
-          "required": [
-            "Name"
-          ],
-          "type": "object"
+            "required": [
+              "Name"
+            ]
+          }
         },
         "Cellular Compartment": {
           "description": "Subcellular localization information",
@@ -114,9 +122,29 @@
             "down"
           ]
         },
+        "Disease": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+          "description": "Disease perturbations"
+        },
+        "Experimental Group": {
+          "description": "The group being measured",
+          "type": "string"
+        },
+        "Exact Source": {
+          "description": "Source of the Gene set",
+          "type": "string"
+        },
         "External Details Url": {
           "description": "External link for more details",
           "format": "uri",
+          "type": "string"
+        },
+        "Gene": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
+          "description": "Gene perturbations"
+        },
+        "Gene Set": {
+          "description": "Name of the gene set",
           "type": "string"
         },
         "GO": {
@@ -211,6 +239,10 @@
           "description": "The original string recognized during processing",
           "type": "string"
         },
+        "Other": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
+          "description": "Other perturbations"
+        },
         "PMID": {
           "description": "PubMed ID",
           "pattern": "[0-9]+",
@@ -232,7 +264,7 @@
               "description": "Name/ description of the pathway",
               "type": "string"
             },
-            "Accession":{
+            "Accession": {
               "description": "External accession of the pathway (Wiki Pathway ID/Pathway ID/KEGG ID)",
               "type": "string"
             }
@@ -245,137 +277,17 @@
           "description": "Patient Identifier",
           "type": "string"
         },
-        "Perturbation": {
-          "description": "The perturbation performed in the study",
-          "type": "object",
-          "properties": {
-            "Perturbation Type": {
-              "description": "The type of perturbation performed the study.",
-              "type": "string"
-            },
-            "Perturbation ID": {
-              "description": "The type of perturbation performed the study.",
-              "type": "string"
-            },
-            "Age": {
-              "description": "Age/ age group of the subjects",
-              "type": "string"
-            },
-            "Time Point": {
-             "description": "Time point of measurememt",
-             "type": "string" 
-            },
-            "Experiment": {
-             "description": "Experiment performed. TODO: Finish NERO stuff",
-             "type": "string" 
-            },
-            "Experimental Group": {
-             "description": "The group being measured",
-             "type": "string" 
-            },
-            "Exact Source": {
-             "description": "Source of the Gene set",
-             "type": "string" 
-            },
-            "Gene Set": {
-              "description": "Name of the gene set",
-              "type": "string"
-            },
-            "Disease": {
-              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
-              "description": "Disease perturbations" 
-            },
-            "Gene": {
-              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
-              "description": "Gene perturbations" 
-            },
-            "Other": {
-              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
-              "description": "Other perturbations" 
-            },
-            "Phenotype": {
-              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
-              "description": "Phenotype perturbations" 
-            },
-            "Small Molecule": {
-              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
-              "description": "Small Molecule used in the study" 
-            },
-            "Virus": {
-              "$ref" : "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
-              "description": "Virus perturbations TODO: Merge with disease perturbations" 
-            }
-          },
-          "required": [
-            "Perturbation Type"
-          ],
-          "oneOf": [
-            {
-              "required": [
-                "Perturbation Type",
-                "Disease"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Gene"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Phenotype"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Small Molecule"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Phenotype",
-                "Small Molecule"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Disease",
-                "Gene"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Disease",
-                "Small Molecule"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Small Molecule",
-                "Gene"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Experiment"
-              ]
-            },
-            {
-              "required": [
-                "Perturbation Type",
-                "Exact Source",
-                "Gene Set"
-              ]
-            }
-          ]
+        "Perturbation ID": {
+          "description": "The type of perturbation performed the study.",
+          "type": "string"
+        },
+        "Perturbation Type": {
+          "description": "The type of perturbation performed the study.",
+          "type": "string"
+        },
+        "Phenotype": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
+          "description": "Phenotype perturbations"
         },
         "Program": {
           "description": "The program/project involved witht the signature",
@@ -405,7 +317,10 @@
               "description": "Resource used to gather the signature",
               "type": "string"
             }
-          }
+          },
+          "required": [
+            "Assay"
+          ]
         },
         "Sex": {
           "description": "the sex of the sample",
@@ -414,6 +329,10 @@
             "male"
           ],
           "type": "string"
+        },
+        "Small Molecule": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
+          "description": "Small Molecule used in the study"
         },
         "Sub Category Code": {
           "description": "Sub-collection the signature belongs to",
@@ -458,6 +377,10 @@
               "Name"
             ]
           }
+        },
+        "Virus": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+          "description": "Virus perturbations TODO: Merge with disease perturbations"
         }
       },
       "required": [
