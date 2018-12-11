@@ -8,5 +8,7 @@ build/
 dist/
 key_group\.txt
 node_modules/
-
 tree\.json
+tree_new\.json
+tree_nkg\.json
+tree_pert_kg\.json

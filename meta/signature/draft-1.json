@@ -26,6 +26,7 @@
                   "GEO Dataset Accession",
                   "GEO Platform Accession",
                   "GEO Series Accession",
+                  "MGS ID",
                   "NCI PID UUID",
                   "Grant Number"
                 ]

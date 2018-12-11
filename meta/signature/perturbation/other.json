@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
@@ -8,7 +8,7 @@
     {
       "type": "array",
       "description": "Other kinds of perturbation",
-      "items":[
+      "items": [
         {
           "type": "object",
           "properties": {
@@ -16,7 +16,7 @@
               "description": "The name of the perturbation",
               "type": "string"
             },
-            "Accession" : {
+            "Accession": {
               "description": "The ontology accession of the perturbation",
               "type": "string"
             },
