@@ -57,14 +57,6 @@
           "type": "string",
           "example": "C0028043"
         },
-        "uuid_dn": {
-          "type": "string",
-          "example": "44ced60d-cfa8-412d-b791-0d3a321410fb"
-        },
-        "uuid_up": {
-          "type": "string",
-          "example": "96192947-584e-49da-abf3-fee29141a85c"
-        },
         "version": {
           "type": "string",
           "example": "1.0"
@@ -84,21 +76,33 @@
         "smiles": {
           "type": "string",
           "example": "C1=C(C(=O)NC(=O)N1)F"
+        },
+        "chdir_norm": {
+          "type": "string",
+          "example": "C1=C(C(=O)NC(=O)N1)F"
+        },
+        "hs_gene_symbol": {
+          "type": "string",
+          "example": "FOX01"
+        },
+        "mm_gene_symbol": {
+          "type": "string",
+          "example": "Foxo1"
+        },
+        "pert_type": {
+          "type": "string",
+          "example": "KO"
         }
       },
       "required": [
         "cell_type",
         "ctrl_ids",
         "curator",
-        "disease_name",
         "geo_id",
         "id",
         "organism",
         "pert_ids",
         "platform",
-        "umls_cui",
-        "uuid_dn",
-        "uuid_up",
         "version"
       ]
     }

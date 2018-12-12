@@ -1,3 +1,5 @@
+[![](https://img.shields.io/npm/v/@dcic/signature-commons-schema.svg)](https://www.npmjs.com/package/@dcic/signature-commons-schema) [![](https://img.shields.io/npm/l/@dcic/signature-commons-schema.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
 # Signature Commons Schema
 
 JSON-Schema validators for signature commons entities. Designed to allow one to flexibly validate arbitrary metadata in the signature commons database.
