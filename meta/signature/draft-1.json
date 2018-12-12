@@ -384,20 +384,99 @@
         }
       },
       "required": [
-        "Assay",
-        "Number of genes"
+        "Number of genes",
+        "Original String",
+        "$validator"
       ],
       "oneOf": [
         {
           "required": [
-            "Gene",
-            "Gene Family"
+            "Cell Line",
+            "Direction",
+            "Organism",
+            "Perturbation Type",
+            "Readout",
+            "Tissue"
           ]
         },
         {
           "required": [
+            "Cell Line",
+            "Direction",
+            "Organism",
+            "Perturbation Type",
+            "PMID",
+            "Readout"
+          ]
+        },
+        {
+          "required": [
+            "Accession",
+            "Gene Set",
+            "Organism",
+            "Perturbation Type",
+            "Readout"
+          ]
+        },
+        {
+          "required": [
+            "Organism",
+            "Perturbation Type",
+            "Readout",
             "Cell Line"
           ]
+        },
+        {
+          "required": [
+            "Organism",
+            "Perturbation Type",
+            "Readout",
+            "Tissue"
+          ]
+        },
+        {
+          "required": [
+            "Disease",
+            "Organism",
+            "Perturbation Type",
+            "Readout"
+          ]
+        },
+        {
+          "required": [
+            "Organism",
+            "Other",
+            "Perturbation Type",
+            "Readout"
+          ]
+        },
+        {
+          "required": [
+            "Organism",
+            "Perturbation Type",
+            "Phenotype",
+            "Readout"
+          ]
+        },
+        {
+          "required": [
+            "Organism",
+            "Pathway",
+            "Perturbation Type",
+            "Readout"
+          ]
+        },
+        {
+          "required": [
+            "Accession",
+            "Direction",
+            "Gene",
+            "Perturbation Type",
+            "Readout"
+          ]
+        },
+        {
+          "required": ["Number of genes", "Original String", "Perturbation Type", "Readout", "$validator", "Direction", "Accession", "Cell Line", "Disease"]
         }
       ]
     }
