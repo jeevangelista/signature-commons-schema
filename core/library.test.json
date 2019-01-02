@@ -15,6 +15,7 @@
           "Filename": "blah",
           "Spec": "hmm"
         },
+        "dataset": "test",
         "signatures": [
           "1"
         ]
