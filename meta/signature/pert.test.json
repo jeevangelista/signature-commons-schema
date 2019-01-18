@@ -1,0 +1,67 @@
+{
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "tests": [
+    {
+      "name": "Signature (Tissue)",
+      "valid": true,
+      "schema": "/@dcic/signature-commons-schema/core/signature.json",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
+        "id": "1",
+        "library": "0",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+          "Perturbation Type": "gene",
+          "Readout" : {
+            "Assay": "RNAseq"
+          },
+          "Number of genes": 0,
+          "Original String": "some string",
+          "Organism": "Homo sapiens",
+          "Tissue": [
+            {
+              "Name": "kidney"
+            }
+          ]
+        },
+        "entities": [
+          {
+            "entity": "2",
+            "value": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Signature (CL)",
+      "valid": true,
+      "schema": "/@dcic/signature-commons-schema/core/signature.json",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
+        "id": "1",
+        "library": "0",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+          "Perturbation Type": "gene",
+          "Readout" : {
+            "Assay": "RNAseq"
+          },
+          "Number of genes": 0,
+          "Original String": "some string",
+          "Organism": "Homo sapiens",
+          "Cell Line": [
+            {
+              "Name": "kidney"
+            }
+          ]
+        },
+        "entities": [
+          {
+            "entity": "2",
+            "value": 0.1
+          }
+        ]
+      }
+    }
+  ]
+}

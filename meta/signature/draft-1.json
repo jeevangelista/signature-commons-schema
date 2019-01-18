@@ -391,6 +391,25 @@
       "oneOf": [
         {
           "required": [
+            "Organism",
+            "Perturbation Type",
+            "Readout"
+          ],
+          "oneOf": [
+            {
+              "required" : [
+                "Cell Line"
+              ],
+            },
+            {
+              "required" : [
+                "Tissue"
+              ]
+            }
+          ]
+        },
+        {
+          "required": [
             "Cell Line",
             "Direction",
             "Organism",
@@ -416,22 +435,6 @@
             "Organism",
             "Perturbation Type",
             "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Organism",
-            "Perturbation Type",
-            "Readout",
-            "Cell Line"
-          ]
-        },
-        {
-          "required": [
-            "Organism",
-            "Perturbation Type",
-            "Readout",
-            "Tissue"
           ]
         },
         {
@@ -476,7 +479,14 @@
           ]
         },
         {
-          "required": ["Number of genes", "Original String", "Perturbation Type", "Readout", "$validator", "Direction", "Accession", "Cell Line", "Disease"]
+          "required": [
+            "Accession",
+            "Cell Line",
+            "Direction",
+            "Disease",
+            "Perturbation Type",
+            "Readout"
+          ]
         }
       ]
     }
