@@ -6,170 +6,160 @@
       "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
-      "type": "object",
       "properties": {
         "Access URL": {
-          "type": "string",
+          "description": "The url that this library can be acccessed from.",
           "format": "uri",
-          "description": "The url that this library can be acccessed from."
+          "type": "string"
         },
         "Assay": {
-          "type": "string",
           "description": "Type of assay (TODO: validate against official list)",
           "enum": [
-            "association",
+            "amino acid sequence analysis",
             "cell viability",
             "ChIP-seq",
             "computational prediction",
             "DNA sequencing",
-            "genome browser",
-            "phenotyping",
             "L1000",
             "literature curation",
             "mass spectrometry",
             "microarray",
             "mining queries",
+            "mouse KO phenotyping",
             "RNA-seq",
             "sequence analysis",
-            "text mining"
-          ]
+            "text mining",
+            "various"
+          ],
+          "type": "string"
         },
-        "Creation Date": {
-          "type": "string",
-          "pattern": "^([0-1][0-9]-)?[0-9]{4,}$",
-          "description": "The data this was created (TODO: more formal timestamp format)"
+        "DOI": {
+          "description": "The DOI for this publication",
+          "type": "string"
         },
-        "Creators": {
-          "type": "string",
-          "description": "The author(s) of this library (TODO: more formal author format)"
-        },
-        "Database": {
-          "type": "string",
-          "description": "The name of the library"
+        "Description": {
+          "description": "Description of the library",
+          "type": "string"
         },
         "Direction": {
-          "type": "string",
           "description": "Tells whether the data are up regulated or down regulated",
           "enum": [
             "up",
             "down"
-          ]
-        },
-        "DOI": {
-          "type": "string",
-          "description": "The DOI for this publication"
-        },
-        "Description": {
-          "type": "string",
-          "description": "Description of the library"
+          ],
+          "type": "string"
         },
         "Filename": {
-          "type": "string",
-          "description": "Filename of the library"
+          "description": "Filename of the library",
+          "type": "string"
         },
-        "Gene class": {
+        "Gene Family": {
+          "description": "The gene family of the signatures",
           "type": "string",
-          "description": "The gene class of the signatures"
+          "enum": [
+            "Kinases",
+            "Transcription factors",
+            "phosphatase"
+          ]
         },
-        "Last Modified Date": {
-          "type": "string",
-          "pattern": "^([0-1][0-9]-)?[0-9]{4,}$",
-          "description": "The data this was last modified (TODO: more formal timestamp format)"
+        "Icons": {
+          "description": "Path to the favicon",
+          "type": "string"
         },
-        "Link to paper": {
-          "type": "string",
-          "format": "uri",
-          "description": "The link to the paper where this was published"
+        "Library Name": {
+          "description": "The name of the library",
+          "type": "string"
+        },
+        "Library created by": {
+          "description": "Creator of the library",
+          "type": "string"
         },
         "Link to processing script": {
-          "type": "string",
-          "description": "Link to the script used to process the library"
+          "description": "Link to the script used to process the library",
+          "format": "uri",
+          "type": "string"
         },
         "Link to resource": {
-          "type": "array",
           "description": "List of links to library resource",
           "items": {
-            "type": "string",
+            "description": "The link to the resource",
             "format": "uri",
-            "description": "The link to the resource"
-          }
-        },
-        "Measurement": {
-          "type": "string",
-          "description": "What is being measured in this signature",
-          "enum": [
-            "association",
-            "chromatin association",
-            "chromosome location",
-            "co-expression",
-            "co-immunoprecipitation",
-            "comparison between time points",
-            "gene expression",
-            "LOF",
-            "phenotype",
-            "protein expression"
-          ]
-        },
-        "Ontology type": {
-          "type": "string",
-          "description": "Type of onthology (TODO: Have an official list of ontologies)",
-          "enum": [
-            "pathway",
-            "cellular component",
-            "molecular component",
-            "biological process"
-          ]
+            "type": "string"
+          },
+          "type": "array"
         },
         "Organism": {
-          "type": "string",
+          "description": "Scientific name of the source organism of the library",
           "pattern": "[A-Z][a-z]+ [a-z]+",
-          "description": "Scientific name of the source organism of the library"
+          "type": "string"
         },
-        "Perturbation Type": {
-          "type": "string",
-          "description": "The type of perturbation"
+        "Original Source": {
+          "description": "Original source of the library",
+          "type": "string"
         },
         "PMID": {
-          "type": "string",
+          "description": "The PubMed ID for this publication",
           "pattern": "^([0-9]+(; *)?)+$",
-          "description": "The PubMed ID for this publication"
+          "type": "string"
+        },
+        "Perturbation Type": {
+          "description": "The type of perturbation",
+          "type": "string"
         },
         "Primary Resource": {
-          "type": "string",
-          "description": "TODO: What is this"
+          "description": "Primary resource used",
+          "type": "string"
         },
-        "Secondary Resource": {
+        "Readout": {
+          "description": "The readout",
           "type": "string",
-          "description": "TODO: What is this"
+          "enum": [
+            "mRNA",
+            "gene",
+            "protein",
+            "various"
+          ]
         },
         "Spec": {
-          "type": "string",
-          "description": "Regex used to mine the metadata from the gmt file"
+          "description": "Regex used to mine the metadata from the gmt file",
+          "type": "string"
         },
         "Version": {
-          "type": "string",
-          "description": "The version of this library (TODO: more formal version format)"
+          "description": "The version of this library (TODO: more formal version format)",
+          "type": "string"
         },
         "Weighted": {
-          "type": "string",
           "description": "Whether the signatures are weighted or not (TODO: entire vocabulary for sig type)",
           "enum": [
             "True",
             "False"
-          ]
+          ],
+          "type": "string"
         },
         "Year": {
-          "type": "string",
+          "description": "Year the library was created",
           "pattern": "[0-9]{4}",
-          "description": "Year the library was created"
+          "type": "string"
         }
       },
       "required": [
+        "Access URL",
+        "Assay",
         "Description",
-        "Database",
         "Filename",
-        "Spec"
-      ]
+        "Icon",
+        "Library created by",
+        "Library name",
+        "Link to resource",
+        "Organism",
+        "Original source",
+        "Perturbation Type",
+        "Primary Resource",
+        "Readout",
+        "Spec",
+        "Version"
+      ],
+      "type": "object"
     }
   ]
 }

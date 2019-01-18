@@ -6,13 +6,10 @@
       "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
-      "type": "object",
       "properties": {
         "Accession": {
           "description": "External accession of the signature",
-          "type": "array",
           "items": {
-            "type": "object",
             "properties": {
               "ID": {
                 "description": "External identifier",
@@ -20,7 +17,6 @@
               },
               "Type": {
                 "description": "The type of the identifier",
-                "type": "string",
                 "enum": [
                   "ArrayExpress Accession",
                   "GEO Dataset Accession",
@@ -29,17 +25,24 @@
                   "MGS ID",
                   "NCI PID UUID",
                   "Grant Number"
-                ]
+                ],
+                "type": "string"
               }
             },
             "required": [
               "ID",
               "Type"
-            ]
-          }
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "Age": {
           "description": "Age/ age group of the subjects",
+          "type": "string"
+        },
+        "Assay": {
+          "description": "The assay (TODO: validate against official list)",
           "type": "string"
         },
         "Authors": {
@@ -64,23 +67,23 @@
         },
         "Cell Line": {
           "description": "The cell line context",
-          "type": "array",
           "items": {
-            "type": "object",
             "properties": {
-              "Name": {
-                "description": "Official name of cell line",
-                "type": "string"
-              },
               "Accession": {
                 "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Official name of cell line",
                 "type": "string"
               }
             },
             "required": [
               "Name"
-            ]
-          }
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "Cellular Compartment": {
           "description": "Subcellular localization information",
@@ -115,23 +118,23 @@
           "type": "string"
         },
         "Direction": {
-          "type": "string",
           "description": "Tells whether the data are up regulated or down regulated",
           "enum": [
             "up",
             "down"
-          ]
+          ],
+          "type": "string"
         },
         "Disease": {
           "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
           "description": "Disease perturbations"
         },
-        "Experimental Group": {
-          "description": "The group being measured",
-          "type": "string"
-        },
         "Exact Source": {
           "description": "Source of the Gene set",
+          "type": "string"
+        },
+        "Experimental Group": {
+          "description": "The group being measured",
           "type": "string"
         },
         "External Details Url": {
@@ -139,23 +142,9 @@
           "format": "uri",
           "type": "string"
         },
-        "Gene": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
-          "description": "Gene perturbations"
-        },
-        "Gene Set": {
-          "description": "Name of the gene set",
-          "type": "string"
-        },
         "GO": {
           "description": "Gene ontology annotations",
-          "type": "object",
           "properties": {
-            "GOID": {
-              "description": "Gene ontology ID",
-              "pattern": "GO:[0-9]+",
-              "type": "string"
-            },
             "Biological Process": {
               "description": "GO Biological Process.",
               "type": "string"
@@ -164,13 +153,15 @@
               "description": "GO Cellular Component",
               "type": "string"
             },
+            "GOID": {
+              "description": "Gene ontology ID",
+              "pattern": "GO:[0-9]+",
+              "type": "string"
+            },
             "Molecular Function": {
               "description": "GO molecular funtion",
               "type": "string"
             },
-            "required": [
-              "GOID"
-            ],
             "oneOf": [
               {
                 "required": [
@@ -190,11 +181,23 @@
                   "Molecular Function"
                 ]
               }
+            ],
+            "required": [
+              "GOID"
             ]
-          }
+          },
+          "type": "object"
+        },
+        "Gene": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
+          "description": "Gene involved"
         },
         "Gene Family": {
           "description": "The family of genes (TODO: validate against official list)",
+          "type": "string"
+        },
+        "Gene Set": {
+          "description": "Name of the gene set",
           "type": "string"
         },
         "Genome Build": {
@@ -207,21 +210,21 @@
         },
         "Metabolite": {
           "description": "The metabolite.",
-          "type": "object",
           "properties": {
-            "Name": {
-              "description": "Name of the metabolite",
-              "type": "string"
-            },
             "HMDID": {
               "description": "HMDB ID",
               "pattern": "HMDB[0-9]+",
+              "type": "string"
+            },
+            "Name": {
+              "description": "Name of the metabolite",
               "type": "string"
             }
           },
           "required": [
             "Name"
-          ]
+          ],
+          "type": "object"
         },
         "MicroRNA": {
           "description": "The microRNA",
@@ -258,20 +261,20 @@
         },
         "Pathway": {
           "description": "The signature's pathway",
-          "type": "Object",
           "properties": {
-            "Name": {
-              "description": "Name/ description of the pathway",
-              "type": "string"
-            },
             "Accession": {
               "description": "External accession of the pathway (Wiki Pathway ID/Pathway ID/KEGG ID)",
+              "type": "string"
+            },
+            "Name": {
+              "description": "Name/ description of the pathway",
               "type": "string"
             }
           },
           "required": [
             "Name"
-          ]
+          ],
+          "type": "Object"
         },
         "Patient ID": {
           "description": "Patient Identifier",
@@ -298,29 +301,8 @@
           "type": "string"
         },
         "Readout": {
-          "description": "Readout context of the signature",
-          "type": "object",
-          "properties": {
-            "Assay": {
-              "description": "The assay (TODO: validate against official list)",
-              "type": "string"
-            },
-            "Computational Method": {
-              "description": "Algorithm used",
-              "type": "string"
-            },
-            "Measurement": {
-              "description": "Measurement used in the study (inherited from library)",
-              "type": "string"
-            },
-            "Resource": {
-              "description": "Resource used to gather the signature",
-              "type": "string"
-            }
-          },
-          "required": [
-            "Assay"
-          ]
+          "description": "The readout",
+          "type": "string"
         },
         "Sex": {
           "description": "the sex of the sample",
@@ -360,23 +342,23 @@
         },
         "Tissue": {
           "description": "The tissue context",
-          "type": "array",
           "items": {
-            "type": "object",
             "properties": {
-              "Name": {
-                "description": "Name of the tissue",
-                "type": "string"
-              },
               "Accession": {
                 "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Name of the tissue",
                 "type": "string"
               }
             },
             "required": [
               "Name"
-            ]
-          }
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "Virus": {
           "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
@@ -386,109 +368,13 @@
       "required": [
         "Number of genes",
         "Original String",
-        "$validator"
+        "$validator",
+        "Readout",
+        "Perturbation Type",
+        "Assay",
+        "Organism"
       ],
-      "oneOf": [
-        {
-          "required": [
-            "Organism",
-            "Perturbation Type",
-            "Readout"
-          ],
-          "oneOf": [
-            {
-              "required" : [
-                "Cell Line"
-              ],
-            },
-            {
-              "required" : [
-                "Tissue"
-              ]
-            }
-          ]
-        },
-        {
-          "required": [
-            "Cell Line",
-            "Direction",
-            "Organism",
-            "Perturbation Type",
-            "Readout",
-            "Tissue"
-          ]
-        },
-        {
-          "required": [
-            "Cell Line",
-            "Direction",
-            "Organism",
-            "Perturbation Type",
-            "PMID",
-            "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Accession",
-            "Gene Set",
-            "Organism",
-            "Perturbation Type",
-            "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Disease",
-            "Organism",
-            "Perturbation Type",
-            "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Organism",
-            "Other",
-            "Perturbation Type",
-            "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Organism",
-            "Perturbation Type",
-            "Phenotype",
-            "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Organism",
-            "Pathway",
-            "Perturbation Type",
-            "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Accession",
-            "Direction",
-            "Gene",
-            "Perturbation Type",
-            "Readout"
-          ]
-        },
-        {
-          "required": [
-            "Accession",
-            "Cell Line",
-            "Direction",
-            "Disease",
-            "Perturbation Type",
-            "Readout"
-          ]
-        }
-      ]
+      "type": "object"
     }
   ]
 }
