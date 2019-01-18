@@ -16,6 +16,10 @@
           "$ref": "/@dcic/signature-commons-schema/core/meta.json",
           "description": "Arbitrary validatable metadata describing the library"
         },
+        "dataset": {
+          "type": "string",
+          "description": "Unique identifier referring to this signature's parent dataset."
+        },
         "signatures": {
           "type": "array",
           "description": "List of signatures that make up this library",
@@ -27,7 +31,8 @@
       },
       "required": [
         "id",
-        "meta"
+        "meta",
+        "dataset"
       ]
     }
   ]
