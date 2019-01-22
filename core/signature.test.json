@@ -11,11 +11,49 @@
         "library": "0",
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
-          "Assay": "RNA-seq",
-          "Gene": "STAT3",
+          "Assay": "microarray",
+          "Gene": [
+            {
+              "Name": "STAT3"
+            }
+          ],
+          "Readout": "mRNA",
+          "Perturbation Type": "gene",
+          "Original String": "some string",
+          "Organism": "Homo sapiens",
           "Gene Family": "",
-          "Number of genes": 0,
-          "Organism": ""
+          "Number of genes": 0
+        },
+        "entities": [
+          {
+            "entity": "2",
+            "value": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "name": "Signature Organism (Invalid)",
+      "valid": true,
+      "schema": "/@dcic/signature-commons-schema/core/signature.json",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
+        "id": "1",
+        "library": "0",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+          "Assay": "microarray",
+          "Gene": [
+            {
+              "Name": "STAT3"
+            }
+          ],
+          "Readout": "mRNA",
+          "Perturbation Type": "gene",
+          "Original String": "some string",
+          "Organism": "Homo sapiens",
+          "Gene Family": "",
+          "Number of genes": 0
         },
         "entities": [
           {

@@ -12,12 +12,11 @@
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
           "Perturbation Type": "gene",
-          "Readout" : {
-            "Assay": "RNAseq"
-          },
+          "Readout" : "mRNA",
           "Number of genes": 0,
           "Original String": "some string",
           "Organism": "Homo sapiens",
+          "Assay": "microarray",
           "Tissue": [
             {
               "Name": "kidney"
@@ -42,11 +41,12 @@
         "library": "0",
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
-          "Perturbation Type": "gene",
-          "Readout" : {
-            "Assay": "RNAseq"
-          },
+          "Readout" : "mRNA",
           "Number of genes": 0,
+          "Perturbation Type": "gene",
+          "Original String": "some string",
+          "Organism": "Homo sapiens",
+          "Assay": "microarray",
           "Original String": "some string",
           "Organism": "Homo sapiens",
           "Cell Line": [

@@ -11,9 +11,20 @@
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
           "Description": "My random description",
-          "Database": "whatever",
-          "Filename": "blah",
-          "Spec": "hmm"
+          "Spec": "hmm",
+          "Access URL": "http://website.com",
+          "Assay": "mining queries",
+          "Filename": "some file",
+          "Icon": "/favico",
+          "Library created by": "some string",
+          "Library name": "test lib",
+          "Link to resource": "http://resource.org",
+          "Organism": "Mus musculus",
+          "Original source": "Sauce",
+          "Perturbation Type": "gene",
+          "Primary Resource": "Primary sauce",
+          "Readout": "mRNA",
+          "Version": "2018"
         },
         "dataset": "test",
         "signatures": [

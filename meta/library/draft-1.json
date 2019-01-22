@@ -80,13 +80,9 @@
           "type": "string"
         },
         "Link to resource": {
-          "description": "List of links to library resource",
-          "items": {
-            "description": "The link to the resource",
-            "format": "uri",
-            "type": "string"
-          },
-          "type": "array"
+          "description": "Links to library resource",
+          "format": "uri",
+          "type": "string"
         },
         "Organism": {
           "description": "Scientific name of the source organism of the library",
