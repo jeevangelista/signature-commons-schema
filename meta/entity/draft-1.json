@@ -8,7 +8,19 @@
     {
       "type": "object",
       "properties": {
-        "aliases": {
+        "Name": {
+          "type": "string",
+          "description": "Preferred gene name"
+        },
+        "Taxon ID": {
+          "type": "string",
+          "description": "Taxon ID of the organism"
+        },
+        "Gene ID": {
+          "type": "string",
+          "description": "NCBI Gene ID"
+        },
+        "Synonyms": {
           "type": "array",
           "description": "Aliases for this specific entity",
           "items": {
@@ -17,7 +29,8 @@
         }
       },
       "required": [
-        "aliases"
+        "Synonyms",
+        "Name"
       ]
     }
   ]

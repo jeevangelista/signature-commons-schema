@@ -2,7 +2,7 @@
   "$validator": "/@dcic/signature-commons-schema/core/examples.json",
   "tests": [
     {
-      "name": "Signature (Valid)",
+      "name": "Signature (Tissue)",
       "valid": true,
       "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
@@ -11,18 +11,17 @@
         "library": "0",
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
-          "Assay": "microarray",
-          "Gene": [
-            {
-              "Name": "STAT3"
-            }
-          ],
-          "Readout": "mRNA",
           "Perturbation Type": "gene",
+          "Readout" : "mRNA",
+          "Number of genes": 0,
           "Original String": "some string",
           "Organism": "Homo sapiens",
-          "Gene Family": "",
-          "Number of genes": 0
+          "Assay": "microarray",
+          "Tissue": [
+            {
+              "Name": "kidney"
+            }
+          ]
         },
         "entities": [
           {
@@ -33,7 +32,7 @@
       }
     },
     {
-      "name": "Signature Organism (Invalid)",
+      "name": "Signature (CL)",
       "valid": true,
       "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
@@ -42,18 +41,19 @@
         "library": "0",
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
-          "Assay": "microarray",
-          "Gene": [
-            {
-              "Name": "STAT3"
-            }
-          ],
-          "Readout": "mRNA",
+          "Readout" : "mRNA",
+          "Number of genes": 0,
           "Perturbation Type": "gene",
           "Original String": "some string",
           "Organism": "Homo sapiens",
-          "Gene Family": "",
-          "Number of genes": 0
+          "Assay": "microarray",
+          "Original String": "some string",
+          "Organism": "Homo sapiens",
+          "Cell Line": [
+            {
+              "Name": "kidney"
+            }
+          ]
         },
         "entities": [
           {
@@ -61,19 +61,6 @@
             "value": 0.1
           }
         ]
-      }
-    },
-    {
-      "name": "Signature (Invalid)",
-      "valid": false,
-      "schema": "/@dcic/signature-commons-schema/core/signature.json",
-      "data": {
-        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
-        "meta": {
-          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
-          "Assay": []
-        },
-        "id": "1"
       }
     }
   ]

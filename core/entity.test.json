@@ -10,7 +10,8 @@
         "id": "2",
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/entity/draft-1.json",
-          "aliases": [
+          "Name": "STAT3",
+          "Synonyms": [
             "STAT3",
             "NCBI:6774",
             "Ensembl:ENSG00000168610",

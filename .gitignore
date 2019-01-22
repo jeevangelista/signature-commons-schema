@@ -1,8 +1,15 @@
-__pycache__/
-.env
 *.egg-info/
 *.ipynb
 *.ipynb_checkpoints/
+.env
+\.DS_Store
+__pycache__/
 build/
 dist/
+key_group\.txt
 node_modules/
+tree\.json
+tree_new\.json
+tree_nkg\.json
+tree_pert_kg\.json
+existing_key_group
