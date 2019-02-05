@@ -27,6 +27,14 @@
             "type": "string",
             "description": "Globally unique identifier referring to the actual signature"
           }
+        },
+        "Signature keys": {
+          "type": "array",
+          "description": "List of keys available in the signature's metadata",
+          "items": {
+            "type": "string",
+            "description": "Key identifier"
+          }
         }
       },
       "required": [
