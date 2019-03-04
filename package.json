@@ -1,6 +1,6 @@
 {
   "name": "@dcic/signature-commons-schema",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JSON-Schema validators for signature commons entities",
   "publishConfig": {
     "access": "public"
