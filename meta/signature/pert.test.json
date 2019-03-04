@@ -11,10 +11,10 @@
         "library": "0",
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
-          "Perturbation Type": "gene",
+          "Perturbation_Type": "gene",
           "Readout" : "mRNA",
-          "Number of genes": 0,
-          "Original String": "some string",
+          "Number_of_genes": 0,
+          "Original_String": "some string",
           "Organism": "Homo sapiens",
           "Assay": "microarray",
           "Tissue": [
@@ -42,12 +42,11 @@
         "meta": {
           "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
           "Readout" : "mRNA",
-          "Number of genes": 0,
-          "Perturbation Type": "gene",
-          "Original String": "some string",
+          "Number_of_genes": 0,
+          "Perturbation_Type": "gene",
+          "Original_String": "some string",
           "Organism": "Homo sapiens",
           "Assay": "microarray",
-          "Original String": "some string",
           "Organism": "Homo sapiens",
           "Cell Line": [
             {

@@ -53,7 +53,7 @@
           "description": "The batch",
           "type": "string"
         },
-        "Brain Region": {
+        "Brain_Region": {
           "description": "Region of the brain where the samples were harvested",
           "type": "string"
         },
@@ -61,11 +61,11 @@
           "description": "Breed of the sample",
           "type": "string"
         },
-        "Category Code": {
+        "Category_Code": {
           "description": "Category code of the gene set.",
           "type": "string"
         },
-        "Cell Line": {
+        "Cell_Line": {
           "description": "The cell line context",
           "items": {
             "properties": {
@@ -85,7 +85,7 @@
           },
           "type": "array"
         },
-        "Cellular Compartment": {
+        "Cellular_Compartment": {
           "description": "Subcellular localization information",
           "type": "string"
         },
@@ -93,7 +93,7 @@
           "description": "Source platform",
           "type": "string"
         },
-        "Chromosome Location": {
+        "Chromosome_Location": {
           "description": "Location in the chromosome",
           "type": "string"
         },
@@ -101,7 +101,7 @@
           "description": "Protein complexes",
           "type": "string"
         },
-        "Complex ID": {
+        "Complex_ID": {
           "description": "Complex Identifier",
           "type": "string"
         },
@@ -109,7 +109,7 @@
           "description": "Names of the contributors",
           "type": "string"
         },
-        "Contributor Org": {
+        "Contributor_Org": {
           "description": "Contributing organization",
           "type": "string"
         },
@@ -129,15 +129,15 @@
           "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
           "description": "Disease perturbations"
         },
-        "Exact Source": {
+        "Exact_Source": {
           "description": "Source of the Gene set",
           "type": "string"
         },
-        "Experimental Group": {
+        "Experimental_Group": {
           "description": "The group being measured",
           "type": "string"
         },
-        "External Details Url": {
+        "External_Details_Url": {
           "description": "External link for more details",
           "format": "uri",
           "type": "string"
@@ -145,11 +145,11 @@
         "GO": {
           "description": "Gene ontology annotations",
           "properties": {
-            "Biological Process": {
+            "Biological_Process": {
               "description": "GO Biological Process.",
               "type": "string"
             },
-            "Cellular Component": {
+            "Cellular_Component": {
               "description": "GO Cellular Component",
               "type": "string"
             },
@@ -158,7 +158,7 @@
               "pattern": "GO:[0-9]+",
               "type": "string"
             },
-            "Molecular Function": {
+            "Molecular_Function": {
               "description": "GO molecular funtion",
               "type": "string"
             },
@@ -166,19 +166,19 @@
               {
                 "required": [
                   "GOID",
-                  "Biological Process"
+                  "Biological_Process"
                 ]
               },
               {
                 "required": [
                   "GOID",
-                  "Cellular Component"
+                  "Cellular_Component"
                 ]
               },
               {
                 "required": [
                   "GOID",
-                  "Molecular Function"
+                  "Molecular_Function"
                 ]
               }
             ],
@@ -192,15 +192,15 @@
           "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
           "description": "Gene involved"
         },
-        "Gene Family": {
+        "Gene_Family": {
           "description": "The family of genes (TODO: validate against official list)",
           "type": "string"
         },
-        "Gene Set": {
+        "Gene_Set": {
           "description": "Name of the gene set",
           "type": "string"
         },
-        "Genome Build": {
+        "Genome_Build": {
           "description": "Genome assembly build",
           "type": "string"
         },
@@ -230,7 +230,7 @@
           "description": "The microRNA",
           "type": "string"
         },
-        "Number of genes": {
+        "Number_of_genes": {
           "description": "Number of genes in the signature",
           "type": "number"
         },
@@ -238,7 +238,7 @@
           "description": "The organism (TODO: validate against official list)",
           "type": "string"
         },
-        "Original String": {
+        "Original_String": {
           "description": "The original string recognized during processing",
           "type": "string"
         },
@@ -276,15 +276,15 @@
           ],
           "type": "Object"
         },
-        "Patient ID": {
+        "Patient_ID": {
           "description": "Patient Identifier",
           "type": "string"
         },
-        "Perturbation ID": {
+        "Perturbation_ID": {
           "description": "The type of perturbation performed the study.",
           "type": "string"
         },
-        "Perturbation Type": {
+        "Perturbation_Type": {
           "description": "The type of perturbation performed the study.",
           "type": "string"
         },
@@ -296,7 +296,7 @@
           "description": "The program/project involved witht the signature",
           "type": "string"
         },
-        "Protein Domain": {
+        "Protein_Domain": {
           "description": "Structural protein domain.",
           "type": "string"
         },
@@ -312,11 +312,11 @@
           ],
           "type": "string"
         },
-        "Small Molecule": {
+        "Small_Molecule": {
           "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
           "description": "Small Molecule used in the study"
         },
-        "Sub Category Code": {
+        "Sub_Category_Code": {
           "description": "Sub-collection the signature belongs to",
           "enum": [
             "CGN",
@@ -324,11 +324,11 @@
           ],
           "type": "string"
         },
-        "Systematic Name": {
+        "Systematic_Name": {
           "description": "Alternative identifier",
           "type": "string"
         },
-        "Table Number": {
+        "Table_Number": {
           "description": "Figure/Table number from the published literature where the signature was extracted",
           "type": "string"
         },
@@ -336,7 +336,7 @@
           "description": "The taxon involved in the study",
           "type": "string"
         },
-        "Time Point": {
+        "Time_Point": {
           "description": "Time points used in the study.",
           "type": "string"
         },
@@ -366,11 +366,11 @@
         }
       },
       "required": [
-        "Number of genes",
-        "Original String",
+        "Number_of_genes",
+        "Original_String",
         "$validator",
         "Readout",
-        "Perturbation Type",
+        "Perturbation_Type",
         "Assay",
         "Organism"
       ],

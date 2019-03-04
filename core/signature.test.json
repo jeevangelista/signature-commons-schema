@@ -18,11 +18,11 @@
             }
           ],
           "Readout": "mRNA",
-          "Perturbation Type": "gene",
-          "Original String": "some string",
+          "Perturbation_Type": "gene",
+          "Original_String": "some string",
           "Organism": "Homo sapiens",
           "Gene Family": "",
-          "Number of genes": 0
+          "Number_of_genes": 0
         },
         "entities": [
           {
@@ -49,11 +49,11 @@
             }
           ],
           "Readout": "mRNA",
-          "Perturbation Type": "gene",
-          "Original String": "some string",
+          "Perturbation_Type": "gene",
+          "Original_String": "some string",
           "Organism": "Homo sapiens",
-          "Gene Family": "",
-          "Number of genes": 0
+          "Gene_Family": "",
+          "Number_of_genes": 0
         },
         "entities": [
           {

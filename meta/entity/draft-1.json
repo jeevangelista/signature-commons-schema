@@ -12,11 +12,11 @@
           "type": "string",
           "description": "Preferred gene name"
         },
-        "Taxon ID": {
+        "Taxon_ID": {
           "type": "string",
           "description": "Taxon ID of the organism"
         },
-        "Gene ID": {
+        "Gene_ID": {
           "type": "string",
           "description": "NCBI Gene ID"
         },
