@@ -14,7 +14,7 @@
               "description": "The name of the phenotype",
               "type": "string"
             },
-            "Phenotype ID" : {
+            "Phenotype_ID" : {
               "description": "External ID of the phenotype",
               "type": "string"
             }

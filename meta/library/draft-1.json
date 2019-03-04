@@ -7,7 +7,7 @@
     },
     {
       "properties": {
-        "Access URL": {
+        "Access_URL": {
           "description": "The url that this library can be acccessed from.",
           "format": "uri",
           "type": "string"
@@ -53,7 +53,7 @@
           "description": "Filename of the library",
           "type": "string"
         },
-        "Gene Family": {
+        "Gene_Family": {
           "description": "The gene family of the signatures",
           "type": "string",
           "enum": [
@@ -62,24 +62,24 @@
             "phosphatase"
           ]
         },
-        "Icons": {
+        "Icon": {
           "description": "Path to the favicon",
           "type": "string"
         },
-        "Library Name": {
+        "Library_Name": {
           "description": "The name of the library",
           "type": "string"
         },
-        "Library created by": {
+        "Library_created_by": {
           "description": "Creator of the library",
           "type": "string"
         },
-        "Link to processing script": {
+        "Link_to_processing_scripts_on_GitHub": {
           "description": "Link to the script used to process the library",
           "format": "uri",
           "type": "string"
         },
-        "Link to resource": {
+        "Link_to_resource": {
           "description": "Links to library resource",
           "format": "uri",
           "type": "string"
@@ -98,11 +98,11 @@
           "pattern": "^([0-9]+(; *)?)+$",
           "type": "string"
         },
-        "Perturbation Type": {
+        "Perturbation_Type": {
           "description": "The type of perturbation",
           "type": "string"
         },
-        "Primary Resource": {
+        "Primary_Resource": {
           "description": "Primary resource used",
           "type": "string"
         },
@@ -139,18 +139,19 @@
         }
       },
       "required": [
-        "Access URL",
+        "$validator",
+        "Access_URL",
         "Assay",
         "Description",
         "Filename",
         "Icon",
-        "Library created by",
-        "Library name",
-        "Link to resource",
+        "Library_created_by",
+        "Library_name",
+        "Link_to_resource",
         "Organism",
-        "Original source",
-        "Perturbation Type",
-        "Primary Resource",
+        "Original_source",
+        "Perturbation_Type",
+        "Primary_Resource",
         "Readout",
         "Spec",
         "Version"
