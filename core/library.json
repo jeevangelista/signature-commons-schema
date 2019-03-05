@@ -26,13 +26,22 @@
           "items": {
             "type": "string",
             "description": "Globally unique identifier referring to the actual signature"
+          },
+          "Signature_keys": {
+            "type": "array",
+            "description": "The signature fields of this library.",
+            "items": {
+              "type": "string",
+              "description": "Name of the field"
+            }
           }
         }
       },
       "required": [
         "id",
         "meta",
-        "dataset"
+        "dataset",
+        "Signature_keys"
       ]
     }
   ]

@@ -29,6 +29,10 @@
         "dataset": "test",
         "signatures": [
           "1"
+        ],
+        "Signature_keys": [
+          "Genes",
+          "Cell_Line"
         ]
       }
     },
