@@ -36,7 +36,7 @@
             "description": "Globally unique identifier referring to the actual signature"
           }
         },
-        "Signature keys": {
+        "Signature_keys": {
           "type": "array",
           "description": "List of keys available in the signature's metadata",
           "items": {
