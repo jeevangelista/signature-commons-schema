@@ -20,6 +20,14 @@
           "type": "string",
           "description": "Unique identifier referring to this signature's parent dataset."
         },
+        "dataset_type": {
+          "type": "string",
+          "description": "Unique identifier referring to this signature's parent dataset type.",
+          "enum": [
+            "geneset_library",
+            "rank_matrix"
+          ]
+        },
         "signatures": {
           "type": "array",
           "description": "List of signatures that make up this library",
@@ -40,7 +48,8 @@
       "required": [
         "id",
         "meta",
-        "dataset"
+        "dataset",
+        "dataset_type"
       ]
     }
   ]
