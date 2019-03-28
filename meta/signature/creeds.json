@@ -94,7 +94,6 @@
       "required": [
         "cell_type",
         "ctrl_ids",
-        "curator",
         "geo_id",
         "id",
         "Organism",
