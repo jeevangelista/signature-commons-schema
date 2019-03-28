@@ -20,6 +20,14 @@
           "type": "string",
           "description": "Unique identifier referring to this signature's parent dataset."
         },
+        "dataset_type": {
+          "type": "string",
+          "description": "Unique identifier referring to this signature's parent dataset type.",
+          "enum": [
+            "geneset_library",
+            "rank_matrix"
+          ]
+        },
         "signatures": {
           "type": "array",
           "description": "List of signatures that make up this library",
@@ -35,13 +43,21 @@
               "description": "Name of the field"
             }
           }
+        },
+        "Signature_keys": {
+          "type": "array",
+          "description": "List of keys available in the signature's metadata",
+          "items": {
+            "type": "string",
+            "description": "Key identifier"
+          }
         }
       },
       "required": [
         "id",
         "meta",
         "dataset",
-        "Signature_keys"
+        "dataset_type"
       ]
     }
   ]

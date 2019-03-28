@@ -27,6 +27,7 @@
           "Version": "2018"
         },
         "dataset": "test",
+        "dataset_type": "geneset_library",
         "signatures": [
           "1"
         ],
