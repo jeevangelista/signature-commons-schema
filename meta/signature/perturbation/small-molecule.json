@@ -28,6 +28,10 @@
             "Remarks": {
               "description": "Remark about this perturbation",
               "type": "string"
+            },
+            "Smiles": {
+              "description": "Remark about this perturbation",
+              "type": "string"
             }
           },
           "required": [

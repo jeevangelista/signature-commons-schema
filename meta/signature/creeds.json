@@ -23,12 +23,9 @@
         "curator": {
           "type": "string"
         },
-        "disease_name": {
-          "type": "string",
-          "example": "Nicotine addiction"
-        },
-        "do_id": {
-          "type": "string"
+        "Disease": {
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+          "description": "Disease perturbations"
         },
         "geo_id": {
           "type": "string",
@@ -38,9 +35,9 @@
           "type": "string",
           "example": "dz:325"
         },
-        "organism": {
+        "Organism": {
           "type": "string",
-          "example": "human"
+          "example": "Homo sapiens"
         },
         "pert_ids": {
           "type": "array",
@@ -100,7 +97,7 @@
         "curator",
         "geo_id",
         "id",
-        "organism",
+        "Organism",
         "pert_ids",
         "platform",
         "version"
