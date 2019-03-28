@@ -86,7 +86,6 @@
         },
         "Organism": {
           "description": "Scientific name of the source organism of the library",
-          "pattern": "[A-Z][a-z]+ [a-z]+",
           "type": "string"
         },
         "Original Source": {
