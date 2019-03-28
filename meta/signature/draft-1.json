@@ -57,10 +57,6 @@
           "description": "Region of the brain where the samples were harvested",
           "type": "string"
         },
-        "Breed": {
-          "description": "Breed of the sample",
-          "type": "string"
-        },
         "Category_Code": {
           "description": "Category code of the gene set.",
           "type": "string"
@@ -228,6 +224,10 @@
         },
         "MicroRNA": {
           "description": "The microRNA",
+          "type": "string"
+        },
+        "Mouse_Model": {
+          "description": "Mouse model",
           "type": "string"
         },
         "Number_of_genes": {
