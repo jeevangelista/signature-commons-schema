@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/disease.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {

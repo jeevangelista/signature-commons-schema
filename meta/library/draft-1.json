@@ -1,9 +1,9 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
+  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/library/draft-1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
+      "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/meta.json"
     },
     {
       "properties": {

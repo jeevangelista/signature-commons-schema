@@ -1,9 +1,9 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
+  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/draft-1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
+      "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/meta.json"
     },
     {
       "properties": {
@@ -122,7 +122,7 @@
           "type": "string"
         },
         "Disease": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/disease.json",
           "description": "Disease perturbations"
         },
         "Exact_Source": {
@@ -185,7 +185,7 @@
           "type": "object"
         },
         "Gene": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/gene.json",
           "description": "Gene involved"
         },
         "Gene_Family": {
@@ -243,7 +243,7 @@
           "type": "string"
         },
         "Other": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/other.json",
           "description": "Other perturbations"
         },
         "PMID": {
@@ -289,7 +289,7 @@
           "type": "string"
         },
         "Phenotype": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/phenotype.json",
           "description": "Phenotype perturbations"
         },
         "Program": {
@@ -313,7 +313,7 @@
           "type": "string"
         },
         "Small_Molecule": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/small-molecule.json",
           "description": "Small Molecule used in the study"
         },
         "Sub_Category_Code": {
@@ -361,7 +361,7 @@
           "type": "array"
         },
         "Virus": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/disease.json",
           "description": "Virus perturbations TODO: Merge with disease perturbations"
         }
       },

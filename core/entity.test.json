@@ -1,15 +1,15 @@
 {
-  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/examples.json",
   "tests": [
     {
       "name": "Entity (Valid)",
       "valid": true,
-      "schema": "/@dcic/signature-commons-schema/core/entity.json",
+      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/entity.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/core/entity.json",
+        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/entity.json",
         "id": "2",
         "meta": {
-          "$validator": "/@dcic/signature-commons-schema/meta/entity/draft-1.json",
+          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/entity/draft-1.json",
           "Name": "STAT3",
           "Synonyms": [
             "STAT3",
@@ -30,12 +30,12 @@
     {
       "name": "Entity (Invalid)",
       "valid": false,
-      "schema": "/@dcic/signature-commons-schema/core/entity.json",
+      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/entity.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/core/entity.json",
+        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/entity.json",
         "id": "2",
         "meta": {
-          "$validator": "/@dcic/signature-commons-schema/meta/entity/draft-1.json",
+          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/entity/draft-1.json",
           "al_iases": [
             "STAT3",
             "NCBI:6774",

@@ -1,15 +1,15 @@
 {
-  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/examples.json",
   "tests": [
     {
       "name": "Library (Valid)",
       "valid": true,
-      "schema": "/@dcic/signature-commons-schema/core/library.json",
+      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/core/library.json",
+        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
         "id": "0",
         "meta": {
-          "$validator": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
+          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/library/draft-1.json",
           "Description": "My random description",
           "Spec": "hmm",
           "Access_URL": "http://website.com",
@@ -40,12 +40,12 @@
     {
       "name": "Library (Invalid)",
       "valid": false,
-      "schema": "/@dcic/signature-commons-schema/core/library.json",
+      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/core/library.json",
+        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
         "id": "0",
         "meta": {
-          "$validator": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
+          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/library/draft-1.json",
           "Description": 5
         },
         "signatures": [
