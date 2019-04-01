@@ -6,7 +6,7 @@
       "valid": true,
       "schema": "meta",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validate/test_function.js",
+        "$validator": "/@jeevangelista/signature-commons-schema/dist/validate/test_function.js",
         "id": 0
       }
     },
@@ -15,7 +15,7 @@
       "valid": false,
       "schema": "meta",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validate/test_function.js"
+        "$validator": "/@jeevangelista/signature-commons-schema/dist/validate/test_function.js"
       }
     },
     {
@@ -23,7 +23,7 @@
       "valid": true,
       "schema": "meta",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validate/test_async_function.js",
+        "$validator": "/@jeevangelista/signature-commons-schema/dist/validate/test_async_function.js",
         "id": 0
       }
     },
@@ -32,7 +32,7 @@
       "valid": false,
       "schema": "meta",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validate/test_async_function.js"
+        "$validator": "/@jeevangelista/signature-commons-schema/dist/validate/test_async_function.js"
       }
     },
     {
@@ -71,7 +71,7 @@
     {
       "$id": "function-args-active",
       "$validator": [
-        "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validate/test_function_args.js",
+        "/@jeevangelista/signature-commons-schema/dist/validate/test_function_args.js",
         {
           "active": true
         }
@@ -80,7 +80,7 @@
     {
       "$id": "function-args-not-active",
       "$validator": [
-        "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validate/test_function_args.js",
+        "/@jeevangelista/signature-commons-schema/dist/validate/test_function_args.js",
         {
           "active": false
         }

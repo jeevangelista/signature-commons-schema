@@ -1,5 +1,5 @@
 {
-  "name": "@dcic/signature-commons-schema",
+  "name": "@jeevangelista/signature-commons-schema",
   "version": "1.2.3",
   "description": "JSON-Schema validators for signature commons entities",
   "publishConfig": {
