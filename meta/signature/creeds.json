@@ -58,6 +58,10 @@
           "type": "string",
           "example": "1.0"
         },
+        "Small_Molecule": {
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/small-molecule.json",
+          "description": "Small Molecule used in the study"
+        },
         "drug_name": {
           "type": "string",
           "example": "Fluorouracil"

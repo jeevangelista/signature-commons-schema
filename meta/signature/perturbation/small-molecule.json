@@ -21,6 +21,10 @@
               "description": "The concentration used for the study",
               "type": "string"
             },
+            "DrugBankID": {
+              "description": "The Drug Bank ID accession of the small molecule",
+              "type": "string"
+            },
             "PubChemID": {
               "description": "The pubchem ID accession of the small molecule",
               "type": "string"
