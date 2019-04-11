@@ -82,18 +82,10 @@
           "type": "string",
           "example": "C1=C(C(=O)NC(=O)N1)F"
         },
-        "hs_gene_symbol": {
-          "type": "string",
-          "example": "FOX01"
+        "Gene": {
+          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/gene.json",
+          "description": "Gene involved"
         },
-        "mm_gene_symbol": {
-          "type": "string",
-          "example": "Foxo1"
-        },
-        "pert_type": {
-          "type": "string",
-          "example": "KO"
-        }
       },
       "required": [
         "cell_type",

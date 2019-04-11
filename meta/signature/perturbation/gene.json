@@ -13,6 +13,10 @@
               "description": "The name of the gene",
               "type": "string"
             },
+            "Human_or_Mouse_Symbol": {
+              "description": "Name of the gene for mouse (if organism is human ) and vice versa",
+              "type": "string"
+            },
             "Accession": {
               "description": "The ontology accession of the gene",
               "type": "string"
