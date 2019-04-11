@@ -13,8 +13,12 @@
               "description": "The name of the gene",
               "type": "string"
             },
-            "Human_or_Mouse_Symbol": {
-              "description": "Name of the gene for mouse (if organism is human ) and vice versa",
+            "Human_Symbol": {
+              "description": "Human symbol of gene",
+              "type": "string"
+            },
+            "Mouse_Symbol": {
+              "description": "Mouse symbol of gene",
               "type": "string"
             },
             "Accession": {

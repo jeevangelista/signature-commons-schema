@@ -75,6 +75,50 @@
         },
         "id": "1"
       }
+    },
+    {
+      "name": "Signature Creeds (Valid)",
+      "valid": true,
+      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/signature.json",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
+        "id": "00118a62-5bb8-460e-acfe-b295349e3f70",
+        "library": "e419c08f-e7ec-42df-84b6-1c9daae9e4a0",
+        "meta": {
+          "id": "gene:1032",
+          "geo_id": "GSE35979",
+          "curator": "OliFucMuc",
+          "version": "1.0",
+          "Organism": "Mus musculus",
+          "ctrl_ids": [
+            "GSM878546",
+            "GSM878547",
+            "GSM878548",
+            "GSM878549"
+          ],
+          "pert_ids": [
+            "GSM878544",
+            "GSM878545"
+          ],
+          "platform": "GPL1261",
+          "cell_type": "Lung",
+          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/creeds.json"
+        },
+        "Gene": [
+          {
+            "Name": "Il13",
+            "Gene_Perturbation": "OE",
+            "Accession": "16163",
+            "Human_Symbol": "IL13"
+          }
+        ],
+        "entities": [
+          {
+            "entity": "2",
+            "value": 0.1
+          }
+        ]
+      }
     }
   ]
 }

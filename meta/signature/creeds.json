@@ -85,7 +85,7 @@
         "Gene": {
           "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/gene.json",
           "description": "Gene involved"
-        },
+        }
       },
       "required": [
         "cell_type",
