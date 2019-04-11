@@ -1,10 +1,10 @@
 {
-  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/l1000-fwd.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/l1000-fwd.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as described by http://amp.pharm.mssm.edu/l1000fwd/api_page",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
       "type": "object",

@@ -1,5 +1,5 @@
 {
-  "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/examples.json",
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
   "tests": [
     {
       "name": "Bio ontology with term (Valid)",
@@ -36,7 +36,7 @@
     {
       "name": "Bio ontology without ontology (Invalid)",
       "valid": false,
-      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validators/bioontology",
+      "schema": "/@dcic/signature-commons-schema/dist/validators/bioontology",
       "data": {
         "label": "allantoic fluid"
       }
@@ -46,7 +46,7 @@
     {
       "$id": "specific-ontology",
       "$validator": [
-        "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/dist/validators/bioontology",
+        "/@dcic/signature-commons-schema/dist/validators/bioontology",
         {
           "ontology": "BTO"
         }

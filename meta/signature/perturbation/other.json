@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/other.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {

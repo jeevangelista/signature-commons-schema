@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/small-molecule.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
@@ -21,19 +21,11 @@
               "description": "The concentration used for the study",
               "type": "string"
             },
-            "DrugBankID": {
-              "description": "The Drug Bank ID accession of the small molecule",
-              "type": "string"
-            },
             "PubChemID": {
               "description": "The pubchem ID accession of the small molecule",
               "type": "string"
             },
             "Remarks": {
-              "description": "Remark about this perturbation",
-              "type": "string"
-            },
-            "Smiles": {
               "description": "Remark about this perturbation",
               "type": "string"
             }

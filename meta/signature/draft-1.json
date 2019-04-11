@@ -1,9 +1,9 @@
 {
-  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/draft-1.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
       "properties": {
@@ -55,6 +55,10 @@
         },
         "Brain_Region": {
           "description": "Region of the brain where the samples were harvested",
+          "type": "string"
+        },
+        "Breed": {
+          "description": "Breed of the sample",
           "type": "string"
         },
         "Category_Code": {
@@ -122,7 +126,7 @@
           "type": "string"
         },
         "Disease": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/disease.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
           "description": "Disease perturbations"
         },
         "Exact_Source": {
@@ -185,7 +189,7 @@
           "type": "object"
         },
         "Gene": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/gene.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
           "description": "Gene involved"
         },
         "Gene_Family": {
@@ -226,10 +230,6 @@
           "description": "The microRNA",
           "type": "string"
         },
-        "Mouse_Model": {
-          "description": "Mouse model",
-          "type": "string"
-        },
         "Number_of_genes": {
           "description": "Number of genes in the signature",
           "type": "number"
@@ -243,7 +243,7 @@
           "type": "string"
         },
         "Other": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/other.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
           "description": "Other perturbations"
         },
         "PMID": {
@@ -289,7 +289,7 @@
           "type": "string"
         },
         "Phenotype": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/phenotype.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
           "description": "Phenotype perturbations"
         },
         "Program": {
@@ -313,7 +313,7 @@
           "type": "string"
         },
         "Small_Molecule": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/small-molecule.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule.json",
           "description": "Small Molecule used in the study"
         },
         "Sub_Category_Code": {
@@ -361,7 +361,7 @@
           "type": "array"
         },
         "Virus": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/disease.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
           "description": "Virus perturbations TODO: Merge with disease perturbations"
         }
       },

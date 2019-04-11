@@ -1,16 +1,16 @@
 {
-  "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/examples.json",
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
   "tests": [
     {
       "name": "Signature (Tissue)",
       "valid": true,
-      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/signature.json",
+      "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/signature.json",
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
         "id": "1",
         "library": "0",
         "meta": {
-          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/draft-1.json",
+          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
           "Perturbation_Type": "gene",
           "Readout" : "mRNA",
           "Number_of_genes": 0,
@@ -34,13 +34,13 @@
     {
       "name": "Signature (CL)",
       "valid": true,
-      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/signature.json",
+      "schema": "/@dcic/signature-commons-schema/core/signature.json",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/signature.json",
+        "$validator": "/@dcic/signature-commons-schema/core/signature.json",
         "id": "1",
         "library": "0",
         "meta": {
-          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/draft-1.json",
+          "$validator": "/@dcic/signature-commons-schema/meta/signature/draft-1.json",
           "Readout" : "mRNA",
           "Number_of_genes": 0,
           "Perturbation_Type": "gene",

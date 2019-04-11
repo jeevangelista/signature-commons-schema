@@ -1,5 +1,5 @@
 {
-  "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/examples.json",
+  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
   "tests": [
     {
       "name": "simple pass",

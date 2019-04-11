@@ -8,7 +8,7 @@ const cache: {
 /**
  * Fetch object from remote, caching any results.
  *  Treats `^/` as an `import`,
- *  @jeevangelista/signature-commons-schema pointing to the local tree
+ *  @dcic/signature-commons-schema pointing to the local tree
  * 
  * @param url The url to fetch the object from
  */
@@ -18,7 +18,7 @@ export async function fetch_cached<T extends {} = {}>(url: string): Promise<T> {
     cache[url] = (
       await import(
         url.replace(
-          /^\/@jeevangelista\/signature-commons-schema/,
+          /^\/@dcic\/signature-commons-schema/,
           '/../..'
         ).substr(1)
       )

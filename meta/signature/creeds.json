@@ -1,10 +1,10 @@
 {
-  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/creeds.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/creeds.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as seen in http://amp.pharm.mssm.edu/creeds/#downloads json downloads",
   "allOf": [
     {
-      "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
     },
     {
       "type": "object",
@@ -23,9 +23,12 @@
         "curator": {
           "type": "string"
         },
-        "Disease": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/disease.json",
-          "description": "Disease perturbations"
+        "disease_name": {
+          "type": "string",
+          "example": "Nicotine addiction"
+        },
+        "do_id": {
+          "type": "string"
         },
         "geo_id": {
           "type": "string",
@@ -35,9 +38,9 @@
           "type": "string",
           "example": "dz:325"
         },
-        "Organism": {
+        "organism": {
           "type": "string",
-          "example": "Homo sapiens"
+          "example": "human"
         },
         "pert_ids": {
           "type": "array",
@@ -57,10 +60,6 @@
         "version": {
           "type": "string",
           "example": "1.0"
-        },
-        "Small_Molecule": {
-          "$ref": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/signature/perturbation/small-molecule.json",
-          "description": "Small Molecule used in the study"
         },
         "drug_name": {
           "type": "string",
@@ -98,9 +97,10 @@
       "required": [
         "cell_type",
         "ctrl_ids",
+        "curator",
         "geo_id",
         "id",
-        "Organism",
+        "organism",
         "pert_ids",
         "platform",
         "version"

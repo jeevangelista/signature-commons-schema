@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/meta.json",
+  "$id": "/@dcic/signature-commons-schema/core/meta.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "$validator": {
