@@ -88,7 +88,6 @@
         }
       },
       "required": [
-        "cell_type",
         "ctrl_ids",
         "geo_id",
         "id",
