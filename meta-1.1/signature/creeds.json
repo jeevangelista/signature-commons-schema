@@ -50,10 +50,6 @@
           "type": "string",
           "example": "GPL570"
         },
-        "umls_cui": {
-          "type": "string",
-          "example": "C0028043"
-        },
         "version": {
           "type": "string",
           "example": "1.0"
@@ -61,22 +57,6 @@
         "Small_Molecule": {
           "$ref": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/small-molecule.json",
           "description": "Small Molecule used in the study"
-        },
-        "drug_name": {
-          "type": "string",
-          "example": "Fluorouracil"
-        },
-        "drugbank_id": {
-          "type": "string",
-          "example": "DB00544"
-        },
-        "pubchem_cid": {
-          "type": "number",
-          "example": 3385
-        },
-        "smiles": {
-          "type": "string",
-          "example": "C1=C(C(=O)NC(=O)N1)F"
         },
         "chdir_norm": {
           "type": "string",
