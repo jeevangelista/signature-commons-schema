@@ -1,15 +1,15 @@
 {
-  "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/examples.json",
+  "$validator": "/@jeevangelista/signature-commons-schema/core/examples.json",
   "tests": [
     {
       "name": "Library (Valid)",
       "valid": true,
-      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
+      "schema": "/@jeevangelista/signature-commons-schema/core/library.json",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
+        "$validator": "/@jeevangelista/signature-commons-schema/core/library.json",
         "id": "0",
         "meta": {
-          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/library/draft-1.json",
+          "$validator": "/@jeevangelista/signature-commons-schema/meta/library/draft-1.json",
           "Description": "My random description",
           "Spec": "hmm",
           "Access_URL": "http://website.com",
@@ -32,7 +32,7 @@
           "1"
         ],
         "Signature_keys": {
-          "keys": [
+          "Signature_keys": [
             "Genes",
             "Cell_Line"
           ]
@@ -42,12 +42,12 @@
     {
       "name": "Library (Invalid)",
       "valid": false,
-      "schema": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
+      "schema": "/@jeevangelista/signature-commons-schema/core/library.json",
       "data": {
-        "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/core/library.json",
+        "$validator": "/@jeevangelista/signature-commons-schema/core/library.json",
         "id": "0",
         "meta": {
-          "$validator": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/local/meta/library/draft-1.json",
+          "$validator": "/@jeevangelista/signature-commons-schema/meta/library/draft-1.json",
           "Description": 5
         },
         "signatures": [
