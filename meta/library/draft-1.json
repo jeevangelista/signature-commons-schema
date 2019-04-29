@@ -76,7 +76,6 @@
         },
         "Link_to_processing_scripts_on_GitHub": {
           "description": "Link to the script used to process the library",
-          "format": "uri",
           "type": "string"
         },
         "Link_to_resource": {
