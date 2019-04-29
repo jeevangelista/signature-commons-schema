@@ -151,7 +151,6 @@
         "Perturbation_Type",
         "Primary_Resource",
         "Readout",
-        "Spec",
         "Version"
       ],
       "type": "object"
