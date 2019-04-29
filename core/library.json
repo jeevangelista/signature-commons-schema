@@ -37,17 +37,11 @@
           }
         },
         "Signature_keys": {
-          "type": "object",
-          "description": "Signature keys object",
-          "properties":{
-            "Signature_keys": {
-              "type": "array",
-              "description": "List of keys available in the signature's metadata",
-              "items": {
-                "type": "string",
-                "description": "Key identifier"
-              }
-            }
+          "type": "array",
+          "description": "List of keys available in the signature's metadata",
+          "items": {
+            "type": "string",
+            "description": "Key identifier"
           }
         }
       },

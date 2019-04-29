@@ -31,12 +31,10 @@
         "signatures": [
           "1"
         ],
-        "Signature_keys": {
-          "Signature_keys": [
-            "Genes",
-            "Cell_Line"
-          ]
-        }
+        "Signature_keys": [
+          "Genes",
+          "Cell_Line"
+        ]
       }
     },
     {
