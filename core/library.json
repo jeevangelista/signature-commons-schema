@@ -36,11 +36,17 @@
             "description": "Globally unique identifier referring to the actual signature"
           },
           "Signature_keys": {
-            "type": "array",
-            "description": "The signature fields of this library.",
-            "items": {
-              "type": "string",
-              "description": "Name of the field"
+            "type": "object",
+            "description": "List of keys available in the signature's metadata",
+            "properties": {
+              "keys": {
+                "type": "list",
+                "description": "List of keys available in the signature's metadata",
+                "items":{
+                  "type": "string",
+                  "description": "Key identifier"
+                }
+              }
             }
           }
         },
