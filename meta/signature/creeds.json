@@ -9,10 +9,6 @@
     {
       "type": "object",
       "properties": {
-        "cell_type": {
-          "type": "string",
-          "example": "Ganglioneuroblastoma"
-        },
         "ctrl_ids": {
           "type": "array",
           "items": {
