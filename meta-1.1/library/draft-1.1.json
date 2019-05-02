@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta-1.1/library/draft-1.json",
+  "$id": "/@dcic/signature-commons-schema/meta-1.1/library/draft-1.1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
@@ -76,7 +76,6 @@
         },
         "Link_to_processing_scripts_on_GitHub": {
           "description": "Link to the script used to process the library",
-          "format": "uri",
           "type": "string"
         },
         "Link_to_resource": {
@@ -142,7 +141,6 @@
         "Access_URL",
         "Assay",
         "Description",
-        "Filename",
         "Icon",
         "Library_created_by",
         "Library_name",
@@ -152,7 +150,6 @@
         "Perturbation_Type",
         "Primary_Resource",
         "Readout",
-        "Spec",
         "Version"
       ],
       "type": "object"

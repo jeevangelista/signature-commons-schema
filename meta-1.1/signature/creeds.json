@@ -9,16 +9,32 @@
     {
       "type": "object",
       "properties": {
-        "cell_type": {
-          "type": "string",
-          "example": "Ganglioneuroblastoma"
-        },
         "ctrl_ids": {
           "type": "array",
           "items": {
             "type": "string",
             "example": "GSM282582"
           }
+        },
+        "Cell_Line": {
+          "description": "The cell line context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Official name of cell line",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "curator": {
           "type": "string"
@@ -50,6 +66,10 @@
           "type": "string",
           "example": "GPL570"
         },
+        "umls_cui": {
+          "type": "string",
+          "example": "C0028043"
+        },
         "version": {
           "type": "string",
           "example": "1.0"
@@ -58,25 +78,52 @@
           "$ref": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/small-molecule.json",
           "description": "Small Molecule used in the study"
         },
+        "drug_name": {
+          "type": "string",
+          "example": "Fluorouracil"
+        },
+        "drugbank_id": {
+          "type": "string",
+          "example": "DB00544"
+        },
+        "pubchem_cid": {
+          "type": "number",
+          "example": 3385
+        },
+        "smiles": {
+          "type": "string",
+          "example": "C1=C(C(=O)NC(=O)N1)F"
+        },
         "chdir_norm": {
           "type": "string",
           "example": "C1=C(C(=O)NC(=O)N1)F"
         },
-        "hs_gene_symbol": {
-          "type": "string",
-          "example": "FOX01"
+        "Tissue": {
+          "description": "The tissue context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Name of the tissue",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
-        "mm_gene_symbol": {
-          "type": "string",
-          "example": "Foxo1"
-        },
-        "pert_type": {
-          "type": "string",
-          "example": "KO"
+        "Gene": {
+          "$ref": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/gene.json",
+          "description": "Gene involved"
         }
       },
       "required": [
-        "cell_type",
         "ctrl_ids",
         "geo_id",
         "id",

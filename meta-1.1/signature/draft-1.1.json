@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta-1.1/signature/draft-1.json",
+  "$id": "/@dcic/signature-commons-schema/meta-1.1/signature/draft-1.1.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
@@ -308,7 +308,9 @@
           "description": "the sex of the sample",
           "enum": [
             "female",
-            "male"
+            "male",
+            "male v female",
+            "mixed sex"
           ],
           "type": "string"
         },
