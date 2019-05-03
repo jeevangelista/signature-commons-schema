@@ -1,18 +1,14 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/creeds.json",
+  "$id": "/@dcic/signature-commons-schema/v3/meta/signature/creeds.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as seen in http://amp.pharm.mssm.edu/creeds/#downloads json downloads",
   "allOf": [
     {
-      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/v3/core/meta.json"
     },
     {
       "type": "object",
       "properties": {
-        "cell_type": {
-          "type": "string",
-          "example": "Ganglioneuroblastoma"
-        },
         "ctrl_ids": {
           "type": "array",
           "items": {
@@ -20,15 +16,32 @@
             "example": "GSM282582"
           }
         },
+        "Cell_Line": {
+          "description": "The cell line context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Official name of cell line",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
         "curator": {
           "type": "string"
         },
-        "disease_name": {
-          "type": "string",
-          "example": "Nicotine addiction"
-        },
-        "do_id": {
-          "type": "string"
+        "Disease": {
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/disease.json",
+          "description": "Disease perturbations"
         },
         "geo_id": {
           "type": "string",
@@ -38,9 +51,9 @@
           "type": "string",
           "example": "dz:325"
         },
-        "organism": {
+        "Organism": {
           "type": "string",
-          "example": "human"
+          "example": "Homo sapiens"
         },
         "pert_ids": {
           "type": "array",
@@ -60,6 +73,10 @@
         "version": {
           "type": "string",
           "example": "1.0"
+        },
+        "Small_Molecule": {
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/small-molecule.json",
+          "description": "Small Molecule used in the study"
         },
         "drug_name": {
           "type": "string",
@@ -81,26 +98,36 @@
           "type": "string",
           "example": "C1=C(C(=O)NC(=O)N1)F"
         },
-        "hs_gene_symbol": {
-          "type": "string",
-          "example": "FOX01"
+        "Tissue": {
+          "description": "The tissue context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Name of the tissue",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
-        "mm_gene_symbol": {
-          "type": "string",
-          "example": "Foxo1"
-        },
-        "pert_type": {
-          "type": "string",
-          "example": "KO"
+        "Gene": {
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/gene.json",
+          "description": "Gene involved"
         }
       },
       "required": [
-        "cell_type",
         "ctrl_ids",
-        "curator",
         "geo_id",
         "id",
-        "organism",
+        "Organism",
         "pert_ids",
         "platform",
         "version"

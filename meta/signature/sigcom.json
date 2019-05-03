@@ -1,9 +1,9 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/draft-2.json",
+  "$id": "/@dcic/signature-commons-schema/v3/meta/signature/sigcom.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/v3/core/meta.json"
     },
     {
       "properties": {
@@ -122,7 +122,7 @@
           "type": "string"
         },
         "Disease": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/disease.json",
           "description": "Disease perturbations"
         },
         "Exact_Source": {
@@ -185,7 +185,7 @@
           "type": "object"
         },
         "Gene": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene-2.json",
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/gene.json",
           "description": "Gene involved"
         },
         "Gene_Family": {
@@ -243,7 +243,7 @@
           "type": "string"
         },
         "Other": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/other.json",
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/other.json",
           "description": "Other perturbations"
         },
         "PMID": {
@@ -289,7 +289,7 @@
           "type": "string"
         },
         "Phenotype": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/phenotype.json",
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/phenotype.json",
           "description": "Phenotype perturbations"
         },
         "Program": {
@@ -315,7 +315,7 @@
           "type": "string"
         },
         "Small_Molecule": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule-2.json",
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/small-molecule.json",
           "description": "Small Molecule used in the study"
         },
         "Sub_Category_Code": {
@@ -363,7 +363,7 @@
           "type": "array"
         },
         "Virus": {
-          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
+          "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/disease.json",
           "description": "Virus perturbations TODO: Merge with disease perturbations"
         }
       },

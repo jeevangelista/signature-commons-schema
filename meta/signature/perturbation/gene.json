@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene.json",
+  "$id": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/gene.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
@@ -11,6 +11,14 @@
           "properties": {
             "Name": {
               "description": "The name of the gene",
+              "type": "string"
+            },
+            "Human_Symbol": {
+              "description": "Human symbol of gene",
+              "type": "string"
+            },
+            "Mouse_Symbol": {
+              "description": "Mouse symbol of gene",
               "type": "string"
             },
             "Accession": {

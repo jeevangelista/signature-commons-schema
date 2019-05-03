@@ -13,12 +13,13 @@ const cache: {
  * @param url The url to fetch the object from
  */
 export async function fetch_cached<T extends {} = {}>(url: string): Promise<T> {
+  
   if(url.indexOf('/') === 0) {
     // Fetch url's that start with / as impots
     cache[url] = (
       await import(
         url.replace(
-          /^\/@dcic\/signature-commons-schema/,
+          /^\/@dcic\/signature-commons-schema\/[^/]+/,
           '/../..'
         ).substr(1)
       )
