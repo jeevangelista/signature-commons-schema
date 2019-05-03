@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta-1.1/library/draft-1.1.json",
+  "$id": "/@dcic/signature-commons-schema/meta/library/draft-2.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {

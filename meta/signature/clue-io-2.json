@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta-1.1/signature/clue-io.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/clue-io-2.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as described by https://api.clue.io/public/apis",
   "allOf": [

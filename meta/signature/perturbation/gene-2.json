@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/gene.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene-2.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {

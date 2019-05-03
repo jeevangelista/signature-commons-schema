@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta-1.1/signature/creeds.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/creeds-2.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as seen in http://amp.pharm.mssm.edu/creeds/#downloads json downloads",
   "allOf": [
@@ -40,7 +40,7 @@
           "type": "string"
         },
         "Disease": {
-          "$ref": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/disease.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/disease.json",
           "description": "Disease perturbations"
         },
         "geo_id": {
@@ -75,7 +75,7 @@
           "example": "1.0"
         },
         "Small_Molecule": {
-          "$ref": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/small-molecule.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule-2.json",
           "description": "Small Molecule used in the study"
         },
         "drug_name": {
@@ -119,7 +119,7 @@
           "type": "array"
         },
         "Gene": {
-          "$ref": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/gene.json",
+          "$ref": "/@dcic/signature-commons-schema/meta/signature/perturbation/gene-2.json",
           "description": "Gene involved"
         }
       },

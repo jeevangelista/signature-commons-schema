@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta-1.1/signature/perturbation/small-molecule.json",
+  "$id": "/@dcic/signature-commons-schema/meta/signature/perturbation/small-molecule-2.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
