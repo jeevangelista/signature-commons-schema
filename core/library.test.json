@@ -1,15 +1,15 @@
 {
-  "$validator": "/@dcic/signature-commons-schema/core/examples.json",
+  "$validator": "/@dcic/signature-commons-schema/v3/core/examples.json",
   "tests": [
     {
       "name": "Library (Valid)",
       "valid": true,
-      "schema": "/@dcic/signature-commons-schema/core/library.json",
+      "schema": "/@dcic/signature-commons-schema/v3/core/library.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/core/library.json",
+        "$validator": "/@dcic/signature-commons-schema/v3/core/library.json",
         "id": "0",
         "meta": {
-          "$validator": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
+          "$validator": "/@dcic/signature-commons-schema/v3/meta/library/sigcom.json",
           "Description": "My random description",
           "Spec": "hmm",
           "Access_URL": "http://website.com",
@@ -36,12 +36,12 @@
     {
       "name": "Library (Invalid)",
       "valid": false,
-      "schema": "/@dcic/signature-commons-schema/core/library.json",
+      "schema": "/@dcic/signature-commons-schema/v3/core/library.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/core/library.json",
+        "$validator": "/@dcic/signature-commons-schema/v3/core/library.json",
         "id": "0",
         "meta": {
-          "$validator": "/@dcic/signature-commons-schema/meta/library/draft-1.json",
+          "$validator": "/@dcic/signature-commons-schema/v3/meta/library/sigcom.json",
           "Description": 5
         },
         "signatures": [

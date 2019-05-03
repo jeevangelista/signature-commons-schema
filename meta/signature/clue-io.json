@@ -1,10 +1,10 @@
 {
-  "$id": "/@dcic/signature-commons-schema/meta/signature/clue-io.json",
+  "$id": "/@dcic/signature-commons-schema/v3/meta/signature/clue-io.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as described by https://api.clue.io/public/apis",
   "allOf": [
     {
-      "$ref": "/@dcic/signature-commons-schema/core/meta.json"
+      "$ref": "/@dcic/signature-commons-schema/v3/core/meta.json"
     },
     {
       "type": "object",
@@ -13,9 +13,25 @@
           "description": "Identifier of the parent brew folder",
           "type": "string"
         },
-        "cell_id": {
-          "description": "Cell type",
-          "type": "string"
+         "Cell_Line": {
+          "description": "The cell line context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Official name of cell line",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
         },
         "cgs_vs_sister_cc": {
           "description": "Spearman correlation of cgs with each hp",
@@ -250,7 +266,7 @@
       },
       "required": [
         "brew_prefix",
-        "cell_id",
+        "Cell_Line",
         "created",
         "distil_cc_q75",
         "distil_id",
