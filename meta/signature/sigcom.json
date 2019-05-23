@@ -7,38 +7,12 @@
     },
     {
       "properties": {
-        "Accession": {
-          "description": "External accession of the signature",
-          "items": {
-            "properties": {
-              "ID": {
-                "description": "External identifier",
-                "type": "string"
-              },
-              "Type": {
-                "description": "The type of the identifier",
-                "enum": [
-                  "ArrayExpress Accession",
-                  "GEO Dataset Accession",
-                  "GEO Platform Accession",
-                  "GEO Series Accession",
-                  "MGS ID",
-                  "NCI PID UUID",
-                  "Grant Number"
-                ],
-                "type": "string"
-              }
-            },
-            "required": [
-              "ID",
-              "Type"
-            ],
-            "type": "object"
-          },
-          "type": "array"
-        },
         "Age": {
           "description": "Age/ age group of the subjects",
+          "type": "string"
+        },
+        "ArrayExpress_Accession": {
+          "description": "ArrayExpress Accession code",
           "type": "string"
         },
         "Assay": {
@@ -138,51 +112,17 @@
           "format": "uri",
           "type": "string"
         },
-        "GO": {
-          "description": "Gene ontology annotations",
-          "properties": {
-            "Biological_Process": {
-              "description": "GO Biological Process.",
-              "type": "string"
-            },
-            "Cellular_Component": {
-              "description": "GO Cellular Component",
-              "type": "string"
-            },
-            "GOID": {
-              "description": "Gene ontology ID",
-              "pattern": "GO:[0-9]+",
-              "type": "string"
-            },
-            "Molecular_Function": {
-              "description": "GO molecular funtion",
-              "type": "string"
-            },
-            "oneOf": [
-              {
-                "required": [
-                  "GOID",
-                  "Biological_Process"
-                ]
-              },
-              {
-                "required": [
-                  "GOID",
-                  "Cellular_Component"
-                ]
-              },
-              {
-                "required": [
-                  "GOID",
-                  "Molecular_Function"
-                ]
-              }
-            ],
-            "required": [
-              "GOID"
-            ]
-          },
-          "type": "object"
+        "GEO_Dataset_Accession": {
+          "description": "GEO_Dataset_Accession code",
+          "type": "string"
+        },
+        "GEO_Platform_Accession": {
+          "description": "GEO_Platform_Accession code",
+          "type": "string"
+        },
+        "GEO_Series_Accession": {
+          "description": "GEO_Series_Accession code",
+          "type": "string"
         },
         "Gene": {
           "$ref": "/@dcic/signature-commons-schema/v3/meta/signature/perturbation/gene.json",
@@ -198,6 +138,36 @@
         },
         "Genome_Build": {
           "description": "Genome assembly build",
+          "type": "string"
+        },
+        "GO": {
+          "description": "Gene ontology annotations",
+          "properties": {
+            "Biological_Process": {
+              "description": "GO Biological Process.",
+              "type": "string"
+            },
+            "Cellular_Component": {
+              "description": "GO Cellular Component",
+              "type": "string"
+            },
+            "Accession": {
+              "description": "Gene ontology ID",
+              "pattern": "GO:[0-9]+",
+              "type": "string"
+            },
+            "Molecular_Function": {
+              "description": "GO molecular funtion",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "required": [
+            "Accession"
+          ]
+        },
+        "Grant_Number": {
+          "description": "Grant_Number code",
           "type": "string"
         },
         "Library": {
@@ -228,6 +198,14 @@
         },
         "Mouse_Model": {
           "description": "Mouse model",
+          "type": "string"
+        },
+        "MGS_ID": {
+          "description": "MGS_ID code",
+          "type": "string"
+        },
+        "NCI_PID_UUID": {
+          "description": "NCI_PID_UUID code",
           "type": "string"
         },
         "Number_of_genes": {
