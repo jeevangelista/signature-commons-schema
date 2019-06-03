@@ -112,15 +112,15 @@
           "format": "uri",
           "type": "string"
         },
-        "GEO_Dataset_Accession": {
+        "geo_dataset": {
           "description": "GEO_Dataset_Accession code",
           "type": "string"
         },
-        "GEO_Platform_Accession": {
+        "platform": {
           "description": "GEO_Platform_Accession code",
           "type": "string"
         },
-        "GEO_Series_Accession": {
+        "geo_id": {
           "description": "GEO_Series_Accession code",
           "type": "string"
         },
