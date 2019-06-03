@@ -17,7 +17,7 @@ export async function fetch_cached<T extends {} = {}>(url: string): Promise<T> {
     // Fetch url's that start with / as impots
     const m = /^\/@dcic\/signature-commons-schema(\/v\d+)?(.*)$/.exec(url)
     if (m) {
-      if (m[1] === '/v3') {
+      if (m[1] === '/v4') {
         cache[url] = await import(`../..${m[2]}`)
       } else if (m[1] === undefined) {
         url = `https://raw.githubusercontent.com/dcic/signature-commons-schema/v1${m[2]}`
