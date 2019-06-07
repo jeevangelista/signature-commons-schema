@@ -38,7 +38,9 @@
       "required": [
         "Resource_Name",
         "Description",
-        "PMID"
+        "PMID",
+        "URL",
+        "Signature_Count"
       ],
       "type": "object"
     }
