@@ -1,0 +1,45 @@
+{
+  "$validator": "/@dcic/signature-commons-schema/v4/core/examples.json",
+  "tests": [
+    {
+      "name": "Resource (Valid)",
+      "valid": true,
+      "schema": "/@dcic/signature-commons-schema/v4/core/resource.json",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/v4/core/resource.json",
+        "id": "0",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/v4/meta/resource/sigcom.json",
+          "Resource_Name": "My Cool Resource",
+          "Description": "It's very very cool and interesting",
+          "PMID": "12345",
+          "URL": "http://coolresource.zzz",
+          "Signature_Count": "123"
+        },
+        "libraries": [
+          "1"
+        ]
+      }
+    },
+    {
+      "name": "Resource (invalid)",
+      "valid": false,
+      "schema": "/@dcic/signature-commons-schema/v4/core/resource.json",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/v4/core/resource.json",
+        "id": "0",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/v4/meta/resource/sigcom.json",
+          "Resource_Name": "My Cool Resource",
+          "Description": "It's very very cool and interesting",
+          "PMID": "12345",
+          "URL": "www.coolresource.zzz",
+          "Signature_Count": 123
+        },
+        "libraries": [
+          "1"
+        ]
+      }
+    }
+  ]
+}
