@@ -8,6 +8,7 @@
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/library.json",
         "id": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
+        "resource": "80d4feee-97e5-49f7-9517-f8137024ac8d",
         "meta": {
           "$validator": "/dcic/signature-commons-schema/v4/meta/library/sigcom.json",
           "Description": "My random description",
