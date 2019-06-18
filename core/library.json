@@ -16,6 +16,17 @@
           "$ref": "/dcic/signature-commons-schema/v4/core/meta.json",
           "description": "Arbitrary validatable metadata describing the library"
         },
+        "resource": {
+          "description": "Unique identifier referring to this signature's parent resource.",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
         "dataset": {
           "type": "string",
           "description": "Unique identifier referring to this signature's parent dataset."
