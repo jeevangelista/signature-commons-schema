@@ -15,7 +15,7 @@ const cache: {
 export async function fetch_cached<T extends {} = {}>(url: string): Promise<T> {
   if(url.indexOf('/') === 0) {
     // Fetch url's that start with / as impots
-    const m = /^\/@dcic\/signature-commons-schema(\/v\d+)?(.*)$/.exec(url)
+    const m = /^\/@?dcic\/signature-commons-schema(\/v\d+)?(.*)$/.exec(url)
     if (m) {
       if (m[1] === '/v4') {
         cache[url] = await import(`../..${m[2]}`)
