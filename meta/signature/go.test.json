@@ -7,8 +7,8 @@
       "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Name": "embryonic stem cell",
@@ -36,8 +36,8 @@
       "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Accession": "GO:123",
@@ -65,8 +65,8 @@
       "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Accession": "GO:123"
@@ -93,8 +93,8 @@
       "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Accession": "GO123",

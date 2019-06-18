@@ -7,7 +7,7 @@
       "schema": "/dcic/signature-commons-schema/v4/core/entity.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/entity.json",
-        "id": "2",
+        "id": "1438c47f-fa57-4cc2-9c8b-5b7b8b3edb0e",
         "meta": {
           "$validator": "/dcic/signature-commons-schema/v4/meta/entity/sigcom.json",
           "Name": "STAT3",
@@ -33,7 +33,7 @@
       "schema": "/dcic/signature-commons-schema/v4/core/entity.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/entity.json",
-        "id": "2",
+        "id": "1438c47f-fa57-4cc2-9c8b-5b7b8b3edb0e",
         "meta": {
           "$validator": "/dcic/signature-commons-schema/v4/meta/entity/sigcom.json",
           "al_iases": [

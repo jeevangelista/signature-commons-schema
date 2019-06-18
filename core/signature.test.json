@@ -7,7 +7,7 @@
       "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
         "library": "0",
         "meta": {
           "$validator": "/dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
@@ -38,7 +38,7 @@
       "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
         "library": "0",
         "meta": {
           "$validator": "/dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
@@ -73,7 +73,7 @@
           "$validator": "/dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
           "Assay": []
         },
-        "id": "1"
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6"
       }
     }
   ]
