@@ -1,15 +1,15 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v4/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
   "tests": [
     {
       "name": "Schema (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/ui-schema.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
           "match": {
             "${$validator}": "/@dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
           },
@@ -32,12 +32,12 @@
     {
       "name": "Schema (Invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/ui-schema.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
           "match": {
             "${$validator}": "/@dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
           },
@@ -52,12 +52,12 @@
     {
       "name": "Counts Table (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/counting.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
           "Field_Name": "libraries",
           "Type": "table",
           "Preferred_Name": "Libraries",
@@ -70,12 +70,12 @@
     {
       "name": "Counts Meta (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/counting.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
           "Field_Name": "peak",
           "Type": "string",
           "Table": "signatures",
@@ -88,12 +88,12 @@
     {
       "name": "Counts Table (invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/counting.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
           "Field_Name": "libraries",
           "Preferred_Name": "Libraries",
           "MDI_Icon": "mdi-library-books",
@@ -106,12 +106,12 @@
     {
       "name": "Counts Meta (invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/counting.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
           "Field_Name": "peak",
           "Type": "string",
           "MDI_Icon": "mdi-chart-bell-curve",
@@ -123,12 +123,12 @@
     {
       "name": "Counts Meta (invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/counting.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
           "Field_Name": "peak",
           "Type": "string",
           "Table": "libraries",
@@ -141,12 +141,12 @@
     {
       "name": "UI (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/landing-ui.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
           "admin": true,
           "content": {}
         }
@@ -155,12 +155,12 @@
     {
       "name": "UI (invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
         "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/landing-ui.json",
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
           "admin": "true",
           "content": {
             "metadata_placeholder": "Search over half a million signatures",
