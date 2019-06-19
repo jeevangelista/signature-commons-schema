@@ -137,6 +137,48 @@
           "Pie_Count": false
         }
       }
+    },
+    {
+      "name": "UI (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/landing-ui.json",
+          "admin": true,
+          "content": {}
+        }
+      }
+    },
+    {
+      "name": "UI (invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/landing-ui.json",
+          "admin": "true",
+          "content": {
+            "metadata_placeholder": "Search over half a million signatures",
+            "geneset_placeholder": "Genes that are regulated in signature or overlap with gene set",
+            "up_genes_placeholder": "Genes that are up-regulated in signature or overlap with gene set",
+            "down_genes_placeholder": "Genes that are down-regulated in signature or overlap with gene set",
+            "text_1": "Explore an extensive collection of well-annotated gene-sets and signatures",
+            "text_2": "Search across a broad gathering of perturbations",
+            "text_3": "Examine metadata:",
+            "text_4": "Start using Signature Commons on your project",
+            "resource_pie_caption": "Signatures per Resource",
+            "bar-chart": {
+              "Field_Name": ["Version"],
+              "Caption": "Libraries per year"
+            }
+          }
+        }
+      }
     }
   ]
 }
