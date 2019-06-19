@@ -26,7 +26,7 @@
                       "description": "The field type",
                       "type": "string",
                       "enum": [
-                        "img", "text", "text-default", "object"
+                        "header-img", "img", "text", "text-default", "object"
                       ]
                     },
                     "visibility": {
@@ -60,6 +60,25 @@
                 }
               ],
               "oneOf": [
+                {
+                  "type": "object",
+                  "description": "Image field",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "header-img" ]
+                    },
+                    "src": {
+                      "description": "The image source url",
+                      "type": "string"
+                    },
+                    "alt": {
+                      "description": "The image alt description",
+                      "type": "string"
+                    }
+                  }
+                },
                 {
                   "type": "object",
                   "description": "Image field",
