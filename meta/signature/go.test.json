@@ -1,14 +1,14 @@
 {
-  "$validator": "/@dcic/signature-commons-schema/v4/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/v4/core/examples.json",
   "tests": [
     {
       "name": "Wrong entries",
       "valid": false,
-      "schema": "/@dcic/signature-commons-schema/v4/core/signature.json",
+      "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Name": "embryonic stem cell",
@@ -17,7 +17,7 @@
           "Assay": "literature curation",
           "Readout": "gene",
           "Organism": "Homo sapiens",
-          "$validator": "/@dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
           "Number_of_genes": 9,
           "Original_String": "positive regulation of glycogen biosynthetic process (GO:0045725)",
           "Perturbation_Type": "shared function"
@@ -33,11 +33,11 @@
     {
       "name": "correct entries",
       "valid": true,
-      "schema": "/@dcic/signature-commons-schema/v4/core/signature.json",
+      "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Accession": "GO:123",
@@ -46,7 +46,7 @@
           "Assay": "literature curation",
           "Readout": "gene",
           "Organism": "Homo sapiens",
-          "$validator": "/@dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
           "Number_of_genes": 9,
           "Original_String": "positive regulation of glycogen biosynthetic process (GO:0045725)",
           "Perturbation_Type": "shared function"
@@ -62,11 +62,11 @@
     {
       "name": "Accession only",
       "valid": true,
-      "schema": "/@dcic/signature-commons-schema/v4/core/signature.json",
+      "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Accession": "GO:123"
@@ -74,7 +74,7 @@
           "Assay": "literature curation",
           "Readout": "gene",
           "Organism": "Homo sapiens",
-          "$validator": "/@dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
           "Number_of_genes": 9,
           "Original_String": "positive regulation of glycogen biosynthetic process (GO:0045725)",
           "Perturbation_Type": "shared function"
@@ -90,11 +90,11 @@
     {
       "name": "Wrong Accession",
       "valid": false,
-      "schema": "/@dcic/signature-commons-schema/v4/core/signature.json",
+      "schema": "/dcic/signature-commons-schema/v4/core/signature.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/v4/core/signature.json",
-        "id": "1",
-        "library": "0",
+        "$validator": "/dcic/signature-commons-schema/v4/core/signature.json",
+        "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
+        "library": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
         "meta": {
           "GO": {
             "Accession": "GO123",
@@ -103,7 +103,7 @@
           "Assay": "literature curation",
           "Readout": "gene",
           "Organism": "Homo sapiens",
-          "$validator": "/@dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v4/meta/signature/sigcom.json",
           "Number_of_genes": 9,
           "Original_String": "positive regulation of glycogen biosynthetic process (GO:0045725)",
           "Perturbation_Type": "shared function"

@@ -1,0 +1,53 @@
+{
+  "$validator": "/dcic/signature-commons-schema/v4/core/examples.json",
+  "tests": [
+    {
+      "name": "Schema (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/ui-schema.json",
+          "match": {
+            "${$validator}": "/@dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
+          },
+          "properties": {
+            "Image": {
+              "visibility": 1,
+              "type": "img",
+              "alt": "${meta['Library_name']}",
+              "src": "${PREFIX}/static/images/default-black.png"
+            },
+            "Library": {
+              "visibility": 1,
+              "type": "text",
+              "text": "${meta['Library_name']}"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Schema (Invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v4/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v4/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v4/meta/schema/ui-schema.json",
+          "match": {
+            "${$validator}": "/@dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
+          },
+          "properties": {
+            "Image": {
+              "type": "blah"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

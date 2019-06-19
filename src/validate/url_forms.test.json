@@ -1,0 +1,32 @@
+{
+  "$validator": "/dcic/signature-commons-schema/v4/core/examples.json",
+  "tests": [
+    {
+      "name": "simple test with optional @",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v4/core/meta.json",
+      "data": {
+        "$validator": "/@dcic/signature-commons-schema/v4/core/unknown.json",
+        "test": "hi"
+      }
+    },
+    {
+      "name": "simple test with optional version",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v4/core/meta.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/core/unknown.json",
+        "test": "hi"
+      }
+    },
+    {
+      "name": "simple test with old version",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v4/core/meta.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v2/core/unknown.json",
+        "test": "hi"
+      }
+    }
+  ]
+}

@@ -1,46 +1,32 @@
 {
-  "$id": "/@dcic/signature-commons-schema/v4/meta/library/sigcom.json",
+  "$id": "/dcic/signature-commons-schema/v4/meta/resource/sigcom.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Metadata describing a signature commons resource",
   "allOf": [
     {
-      "$ref": "/@dcic/signature-commons-schema/v4/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v4/core/meta.json"
     },
     {
       "properties": {
-        "Description": {
-          "description": "A short description of the resource",
-          "type": "string"
-        },
-        "Icon": {
-          "description": "Path to the favicon",
+        "Resource_Name": {
+          "description": "The name of this resource",
           "type": "string"
         },
         "PMID": {
-          "description": "The PubMed ID for the resource",
-          "pattern": "^([0-9]+(; *)?)+$",
-          "type": "string"
-        },
-        "Resource_Name": {
-          "description": "Name of the resource",
-          "type": "string"
-        },
-        "Signature_Count": {
-          "description": "Number of signatures in the resource",
-          "pattern": "^([0-9]+(; *)?)+$",
+          "description": "The PMID associated with the resource's publication",
           "type": "string"
         },
         "URL": {
-          "description": "Link to the resource",
-          "format": "uri",
+          "description": "A URL for accessing the resource",
+          "type": "string"
+        },
+        "Description": {
+          "description": "A description of the resource",
           "type": "string"
         }
       },
       "required": [
-        "Resource_Name",
-        "Description",
-        "PMID",
-        "URL",
-        "Signature_Count"
+        "Resource_Name"
       ],
       "type": "object"
     }
