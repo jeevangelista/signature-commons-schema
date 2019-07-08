@@ -118,53 +118,9 @@
           "description": "Field to use as 'library name'",
           "type": "string"
         },
-        "signature_search": {
-          "description": "Tells whether signature search is active or not",
-          "type": "boolean"
-        },
-        "metadata_search": {
-          "description": "Tells whether metadata search is active or not",
-          "type": "boolean"
-        },
-        "resources": {
-          "description": "Tells whether resources is active or not",
-          "type": "boolean"
-        },
-        "resources_list_style": {
-          "description": "Style to use for resources page",
-          "type": "object",
-          "patternProperties": {
-            ".*": {
-              "description": "Any css key",
-              "oneOf": [
-                {
-                  "type": "null"
-                },
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "boolean"
-                },
-                {
-                  "type": "integer"
-                },
-                {
-                  "type": "number"
-                }
-              ]
-            }
-          }
-        },
-        "resource_from_library": {
-          "description": "Fields in the library to use to determine what resource it came from",
-          "type": "array",
-          "items": [
-            {
-              "type": "string",
-              "description": "Field"
-            }
-          ]
+        "resource_name": {
+          "description": "Field to use as 'resource name'",
+          "type": "string"
         },
         "preferred_name_singular": {
           "description": "Singular names of tables (used when displaying metadata",
@@ -180,11 +136,22 @@
               "description": "preferred singular term for entities"
             }
           }
+        },
+        "counting_validator": {
+          "description": "ID of counting validator",
+          "type": "string"
+        },
+        "ui_schema": {
+          "description": "ID of ui_schema",
+          "type": "string"
+        },
+        "deactivate_download": {
+          "description": "Deactivates download button",
+          "type": "boolean"
         }
       },
       "required": [
-        "library_name",
-        "resource_from_library"
+        "library_name"
       ]
     }
   ]
