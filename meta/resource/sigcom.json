@@ -23,6 +23,10 @@
         "Description": {
           "description": "A description of the resource",
           "type": "string"
+        },
+        "$hidden": {
+          "description": "Tells the UI to hide this resource",
+          "type": "string"
         }
       },
       "required": [
