@@ -5,7 +5,8 @@ describe('validators', () => {
   describe('bioontology', () => {
     describe('API', () => {
       describe('search', () => {
-        it('works', async () => {
+        const _it = (process.env.BIO_ONTOLOGY_API_KEY === undefined) ? it.skip : it
+        _it('works', async () => {
           const results = await BioOntologyAPI.search({
             q: 'allantoic fluid',
             ontologies: ['BTO'],
