@@ -16,7 +16,7 @@
     "build": "tsc",
     "clean": "test -d ./dist && rm -r ./dist || exit 0",
     "generate": "ts-node bin/generate.ts",
-    "prepublish": "npm run clean && npm run build && npm run generate && npm run test",
+    "prepublish": "npm run clean && npm run build && npm run generate",
     "test": "mocha -r ts-node/register src/**/*.test.ts"
   },
   "repository": {
