@@ -31,10 +31,16 @@ describe('util', () => {
 
           for(const test of examples.tests) {
             let _it
-            if(test.skip !== undefined && test.skip) {
-              _it = it.skip
-            } else {
+            if(test.skip === undefined) {
               _it = it
+            } else {
+              if (typeof test.skip === 'boolean' && test.skip === true) {
+                _it = it.skip
+              } else if (typeof test.skip === 'string' && eval(test.skip)) {
+                _it = it.skip
+              } else {
+                _it = it
+              }
             }
             _it(test.name, async () => {
               let success: boolean

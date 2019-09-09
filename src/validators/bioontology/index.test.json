@@ -4,6 +4,7 @@
     {
       "name": "Bio ontology with term (Valid)",
       "valid": true,
+      "skip": "process.env.BIO_ONTOLOGY_API_KEY === undefined",
       "schema": "specific-ontology",
       "data": {
         "label": "allantoic fluid"
@@ -12,6 +13,7 @@
     {
       "name": "Bio ontology with id (Valid)",
       "valid": true,
+      "skip": "process.env.BIO_ONTOLOGY_API_KEY === undefined",
       "schema": "specific-ontology",
       "data": {
         "@id": "http://purl.obolibrary.org/obo/BTO_0001662"
@@ -20,6 +22,7 @@
     {
       "name": "Bio ontology with neither (Invalid)",
       "valid": false,
+      "skip": "process.env.BIO_ONTOLOGY_API_KEY === undefined",
       "schema": "specific-ontology",
       "data": {
       }
@@ -27,6 +30,7 @@
     {
       "name": "Bio ontology with both (Invalid)",
       "valid": false,
+      "skip": "process.env.BIO_ONTOLOGY_API_KEY === undefined",
       "schema": "specific-ontology",
       "data": {
         "@id": "http://purl.obolibrary.org/obo/BTO_0001662",
@@ -36,6 +40,7 @@
     {
       "name": "Bio ontology without ontology (Invalid)",
       "valid": false,
+      "skip": "process.env.BIO_ONTOLOGY_API_KEY === undefined",
       "schema": "/dcic/signature-commons-schema/v5/dist/validators/bioontology",
       "data": {
         "label": "allantoic fluid"
