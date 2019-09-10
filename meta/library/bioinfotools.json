@@ -82,7 +82,6 @@
         "base_url": {
           "description": "Landing page of the tool",
           "type": "string",
-          "format": "uri"
         },
         "cited_by_tweeters_count": {
           "description": "Tweet cite counts",
