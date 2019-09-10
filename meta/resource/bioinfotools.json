@@ -1,5 +1,5 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/resource/sigcom.json",
+  "$id": "https://raw.githubusercontent.com/jeevangelista/signature-commons-schema/master/meta/resource/bioinfotools.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Metadata describing a journal",
   "allOf": [
