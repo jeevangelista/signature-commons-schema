@@ -14,16 +14,30 @@ const readline = require('readline')
   })
   let exit_code = 0
   let success = 0
+  let running = 0
   rl.on('line', async (line: string) => {
+    running += 1
     try {
       console.log(JSON.stringify(await validate(JSON.parse(line), validator)))
+      running -= 1
       success += 1
     } catch (e) {
       console.error(JSON.stringify(e))
+      running -= 1
       exit_code += 1
     }
   })
-  await new Promise((resolve, reject) => rl.on('close', () => resolve()))
+  await new Promise(
+    (resolve, reject) =>
+      rl.on('close', () => // Don't stop until all lines are done processing
+        setInterval(
+          () => {
+            if (running <= 0) { resolve() }
+          },
+          100
+        )
+      )
+  )
   if (success + exit_code === 0) {
     console.log(`Usage: echo '{"data":{"to": "validate"}}' | signature-commons-schema [validator] > {"validated":"data"}`)
     console.log(`Exit Code:`)
