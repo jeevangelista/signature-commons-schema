@@ -1,6 +1,6 @@
 {
   "name": "@dcic/signature-commons-schema",
-  "version": "1.3.8",
+  "version": "1.3.9",
   "description": "JSON-Schema validators for signature commons entities",
   "bin": {
     "signature-commons-schema": "dist/cli.js"
