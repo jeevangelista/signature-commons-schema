@@ -117,8 +117,14 @@
               "description": "Name of the author"
             },
             "affiliation": {
-              "type": "string",
-              "description": "Affiliation of the author"
+              "type": "array",
+              "description": "Affiliations of the author",
+              "items": [
+                {
+                  "description": "affiliation",
+                  "type": "string"
+                }
+              ]
             }
           }
         },
