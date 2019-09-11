@@ -187,7 +187,7 @@
         "up_down": {
           "description": "Tag that tells if the website is up or down",
           "type": "string",
-          "oneOf": [
+          "enum": [
             "up",
             "down"
           ]
