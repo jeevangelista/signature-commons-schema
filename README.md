@@ -24,8 +24,8 @@ validate({your_object})
   "your": "json"
 }
 EOF
-  # Run it through the validator
-) | signature-commons-schema your_validator
+  # Run it through the validator (with verbose debugging; otherwise omit DEBUG)
+) | DEBUG=signature-commons-schema signature-commons-schema your_validator
 # stdout    -- the valid json(s)
 # stderr    -- any errors
 # exit code -- the number of errors
