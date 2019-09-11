@@ -102,7 +102,9 @@ export async function get_validator(validator: string | object | Validator): Pro
       const ret = this.ajv.getSchema(validator) as object
       if(ret !== undefined)
         validator = ret
-    } catch(e) {}
+    } catch(e) {
+      debug(JSON.stringify(e))
+    }
   }
 
   if(typeof validator === 'string') {
@@ -117,7 +119,9 @@ export async function get_validator(validator: string | object | Validator): Pro
           validator = (<ValidatorFunction>ret).default
         }
       }
-    } catch(e) {}
+    } catch(e) {
+      debug(JSON.stringify(e))
+    }
   }
 
   if(typeof validator === 'object') {
