@@ -15,6 +15,22 @@ import { validate } from '@dcic/signature-commons-schema'
 validate({your_object})
 ```
 
+### CLI
+```bash
+(
+  # Parse and put json on single line
+  jq -c '.' << EOF
+{
+  "your": "json"
+}
+EOF
+  # Run it through the validator (with verbose debugging; otherwise omit DEBUG)
+) | DEBUG=signature-commons-schema signature-commons-schema your_validator
+# stdout    -- the valid json(s)
+# stderr    -- any errors
+# exit code -- the number of errors
+```
+s
 ## Project Layout
 - `core/`: Fundamental schemas which define how the schemas should even be used
   - `meta.json`: JSON-LD style constraints

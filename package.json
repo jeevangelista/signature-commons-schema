@@ -1,7 +1,10 @@
 {
   "name": "@dcic/signature-commons-schema",
-  "version": "1.3.8",
+  "version": "1.3.9",
   "description": "JSON-Schema validators for signature commons entities",
+  "bin": {
+    "signature-commons-schema": "dist/cli.js"
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -40,13 +43,13 @@
     "@types/glob": "^7.1.1",
     "@types/mkdirp": "^0.5.2",
     "@types/mocha": "^5.2.7",
-    "@types/node": "^10.14.9",
+    "@types/node": "^10.14.18",
     "glob": "^7.1.4",
     "json-schema-to-typescript": "^6.1.3",
     "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.17.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.6.3"
   }
 }
