@@ -1,16 +1,16 @@
 {
-  "$id": "/dcic/signature-commons-schema/v6/meta/schemas/ui-schema.json",
+  "$id": "/dcic/signature-commons-schema/v5/meta/schemas/ui-schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Metadata describing a signature commons ui schema",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
     },
     {
       "properties": {
         "match": {
           "description": "The partial rules to match a data instance `${variable}` can be used for variable substitution",
-          "$ref": "/dcic/signature-commons-schema/v6/meta/schema/match.json"
+          "$ref": "/dcic/signature-commons-schema/v5/meta/schema/match.json"
         },
         "properties": {
           "description": "UI-defined properties for the given match",
@@ -26,7 +26,7 @@
                       "description": "The field type",
                       "type": "string",
                       "enum": [
-                        "header-img", "img", "title", "subtitle", "display", "text", "array", "object", "component", "score", "description"
+                        "header-img", "img", "title", "subtitle", "display", "text", "array", "object", "component", "score", "description", "text-default"
                       ]
                     },
                     "visibility": {
@@ -39,8 +39,7 @@
                     },
                     "href": {
                       "description": "Hyperlink for the field",
-                      "type": "string",
-                      "format": "uri"
+                      "type": "string"
                     },
                     "icon": {
                       "description": "MDIcon to use",
@@ -57,7 +56,7 @@
                     "condition": {
                       "type": "object",
                       "description": "A mapping of conditions to compare",
-                      "$ref": "/dcic/signature-commons-schema/v6/meta/schema/match.json"
+                      "$ref": "/dcic/signature-commons-schema/v5/meta/schema/match.json"
                     },
                     "columnType": {
                       "type": "string",
@@ -98,105 +97,11 @@
                       "description": "The image alt description",
                       "type": "string"
                     }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "Display this as a title",
-                  "properties": {
-                    "type": {
-                      "description": "The field type",
-                      "type": "string",
-                      "enum": [ "title" ]
-                    },
-                    "text": {
-                      "description": "The text to be shown",
-                      "type": "string"
-                    }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "Display these as subtitles. If type is display, it will be shown as <Property Name>: <text>",
-                  "properties": {
-                    "type": {
-                      "description": "The field type",
-                      "type": "string",
-                      "enum": [ "subtitle", "display"  ]
-                    },
-                    "text": {
-                      "description": "The text to be shown",
-                      "type": "string"
-                    }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "Display these as tooltips",
-                  "properties": {
-                    "type": {
-                      "description": "The field type",
-                      "type": "string",
-                      "enum": [ "description" ]
-                    },
-                    "text": {
-                      "description": "The text to be shown",
-                      "type": "string"
-                    }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "Display this as a chip",
-                  "properties": {
-                    "type": {
-                      "description": "The field type",
-                      "type": "string",
-                      "enum": [ "text" ]
-                    },
-                    "text": {
-                      "description": "The text to be shown",
-                      "type": "string"
-                    }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "Display this as list of chips",
-                  "properties": {
-                    "type": {
-                      "description": "The field type",
-                      "type": "string",
-                      "enum": [ "object", "array" ]
-                    },
-                    "field": {
-                      "description": "Field to mine the text",
-                      "type": "string"
-                    },
-                    "text": {
-                      "description": "The text to be shown",
-                      "type": "string"
-                    }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "Sortable scores",
-                  "properties": {
-                    "type": {
-                      "description": "The field type",
-                      "type": "string",
-                      "enum": [ "score" ]
-                    },
-                    "field": {
-                      "description": "Field to sort it",
-                      "type": "string"
-                    },
-                    "text": {
-                      "description": "The text to be shown (typically same as field but with ${field}",
-                      "type": "string"
-                    }
-                  }
+                  },
+                  "required": [
+                    "src",
+                    "type"
+                  ]
                 },
                 {
                   "type": "object",
@@ -208,7 +113,7 @@
                       "enum": [ "component" ]
                     },
                     "text": {
-                      "description": "The text to be shown",
+                      "description": "The component to be imported",
                       "type": "string"
                     },
                     "props": {
@@ -241,7 +146,134 @@
                       "type": "string",
                       "enum": ["page", "list", "side", "chip"]
                     }
-                  }
+                  },
+                  "required": [
+                    "text",
+                    "location",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display this as a title",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "title" ]
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display these as subtitles. If type is display, it will be shown as <Property Name>: <text>",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "subtitle", "display"  ]
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display these as tooltips",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "description" ]
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display this as a chip",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "text" ]
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display this as list of chips",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "object", "array" ]
+                    },
+                    "field": {
+                      "description": "Field to mine the text",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "field",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Sortable scores",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "score" ]
+                    },
+                    "field": {
+                      "description": "Field to sort it",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "The text to be shown (typically same as field but with ${field}",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
                 },
                 {
                   "type": "object",
@@ -256,7 +288,11 @@
                       "description": "The text to be shown",
                       "type": "string"
                     }
-                  }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
                 }
               ]
             }
